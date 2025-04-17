@@ -1,0 +1,15 @@
+diff -uprN a/internal/bazeldnf.bzl b/internal/bazeldnf.bzl
+--- a/internal/bazeldnf.bzl	2025-02-10 10:30:02.000000000 +0100
++++ b/internal/bazeldnf.bzl	2025-04-17 09:18:33.844394719 +0200
+@@ -15,7 +15,10 @@ def _bazeldnf_impl(ctx):
+         args.extend(["--rpmtree", ctx.attr.rpmtree])
+     if ctx.file.tar:
+         args.extend(["--input", ctx.file.tar.path])
+-        transitive_dependencies.extend(ctx.attr.tar.files)
++        if type(ctx.attr.tar.files) == "depset":
++            transitive_dependencies.append(ctx.attr.tar.files)
++        else:
++            transitive_dependencies.extend(ctx.attr.tar.files)
+     args.extend(ctx.attr.libs)
+
+     toolchain = ctx.toolchains[BAZELDNF_TOOLCHAIN]

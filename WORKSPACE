@@ -5,129 +5,39 @@ load("//bazel/toolchain:toolchain.bzl", "register_all_toolchains")
 
 register_all_toolchains()
 
-load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 load(
     "@bazel_tools//tools/build_defs/repo:http.bzl",
     "http_archive",
     "http_file",
 )
 
-http_archive(
-    name = "rules_python",
-    sha256 = "934c9ceb552e84577b0faf1e5a2f0450314985b4d8712b2b70717dc679fdc01b",
-    urls = [
-        "https://github.com/bazelbuild/rules_python/releases/download/0.3.0/rules_python-0.3.0.tar.gz",
-        "https://storage.googleapis.com/builddeps/934c9ceb552e84577b0faf1e5a2f0450314985b4d8712b2b70717dc679fdc01b",
-    ],
-)
-
-# Bazel buildtools prebuilt binaries
-http_archive(
-    name = "buildifier_prebuilt",
-    sha256 = "7f85b688a4b558e2d9099340cfb510ba7179f829454fba842370bccffb67d6cc",
-    strip_prefix = "buildifier-prebuilt-7.3.1",
-    urls = [
-        "http://github.com/keith/buildifier-prebuilt/archive/7.3.1.tar.gz",
-        "https://storage.googleapis.com/builddeps/7f85b688a4b558e2d9099340cfb510ba7179f829454fba842370bccffb67d6cc",
-    ],
-)
-
-load("@buildifier_prebuilt//:deps.bzl", "buildifier_prebuilt_deps")
-
-buildifier_prebuilt_deps()
-
 # Additional bazel rules
 http_archive(
-    name = "rules_proto",
-    sha256 = "bc12122a5ae4b517fa423ea03a8d82ea6352d5127ea48cb54bc324e8ab78493c",
-    strip_prefix = "rules_proto-af6481970a34554c6942d993e194a9aed7987780",
-    urls = [
-        "https://github.com/bazelbuild/rules_proto/archive/af6481970a34554c6942d993e194a9aed7987780.tar.gz",
-        "https://storage.googleapis.com/builddeps/bc12122a5ae4b517fa423ea03a8d82ea6352d5127ea48cb54bc324e8ab78493c",
-    ],
-)
-
-load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
-
-rules_proto_dependencies()
-
-rules_proto_toolchains()
-
-http_archive(
-    name = "io_bazel_rules_go",
-    sha256 = "80a98277ad1311dacd837f9b16db62887702e9f1d1c4c9f796d0121a46c8e184",
-    urls = [
-        "https://mirror.bazel.build/github.com/bazelbuild/rules_go/releases/download/v0.46.0/rules_go-v0.46.0.zip",
-        "https://github.com/bazelbuild/rules_go/releases/download/v0.46.0/rules_go-v0.46.0.zip",
-        "https://storage.googleapis.com/builddeps/80a98277ad1311dacd837f9b16db62887702e9f1d1c4c9f796d0121a46c8e184",
-    ],
-)
-
-load("@buildifier_prebuilt//:defs.bzl", "buildifier_prebuilt_register_toolchains", "buildtools_assets")
-
-buildifier_prebuilt_register_toolchains(
-    assets = buildtools_assets(
-        arches = [
-            "amd64",
-            "arm64",
-            "s390x",
-        ],
-        names = [
-            "buildifier",
-            "buildozer",
-        ],
-        platforms = [
-            "darwin",
-            "linux",
-            "windows",
-        ],
-        sha256_values = {
-            "buildifier_darwin_amd64": "375f823103d01620aaec20a0c29c6cbca99f4fd0725ae30b93655c6704f44d71",
-            "buildifier_darwin_arm64": "5a6afc6ac7a09f5455ba0b89bd99d5ae23b4174dc5dc9d6c0ed5ce8caac3f813",
-            "buildifier_linux_amd64": "5474cc5128a74e806783d54081f581662c4be8ae65022f557e9281ed5dc88009",
-            "buildifier_linux_arm64": "0bf86c4bfffaf4f08eed77bde5b2082e4ae5039a11e2e8b03984c173c34a561c",
-            "buildifier_linux_s390x": "e2d79ff5885d45274f76531f1adbc7b73a129f59e767f777e8fbde633d9d4e2e",
-            "buildifier_windows_amd64": "370cd576075ad29930a82f5de132f1a1de4084c784a82514bd4da80c85acf4a8",
-            "buildozer_darwin_amd64": "854c9583efc166602276802658cef3f224d60898cfaa60630b33d328db3b0de2",
-            "buildozer_darwin_arm64": "31b1bfe20d7d5444be217af78f94c5c43799cdf847c6ce69794b7bf3319c5364",
-            "buildozer_linux_amd64": "3305e287b3fcc68b9a35fd8515ee617452cd4e018f9e6886b6c7cdbcba8710d4",
-            "buildozer_linux_arm64": "0b5a2a717ac4fc911e1fec8d92af71dbb4fe95b10e5213da0cc3d56cea64a328",
-            "buildozer_linux_s390x": "7e28da8722656e800424989f5cdbc095cb29b2d398d33e6b3d04e0f50bc0bb10",
-            "buildozer_windows_amd64": "58d41ce53257c5594c9bc86d769f580909269f68de114297f46284fbb9023dcf",
-        },
-        version = "v7.3.1",
-    ),
-)
-
-http_archive(
-    name = "bazel_gazelle",
-    sha256 = "d3fa66a39028e97d76f9e2db8f1b0c11c099e8e01bf363a923074784e451f809",
-    urls = [
-        "https://mirror.bazel.build/github.com/bazelbuild/bazel-gazelle/releases/download/v0.33.0/bazel-gazelle-v0.33.0.tar.gz",
-        "https://github.com/bazelbuild/bazel-gazelle/releases/download/v0.33.0/bazel-gazelle-v0.33.0.tar.gz",
-        "https://storage.googleapis.com/builddeps/d3fa66a39028e97d76f9e2db8f1b0c11c099e8e01bf363a923074784e451f809",
-    ],
-)
-
-http_archive(
     name = "io_bazel_rules_docker",
-    sha256 = "95d39fd84ff4474babaf190450ee034d958202043e366b9fc38f438c9e6c3334",
-    strip_prefix = "rules_docker-0.16.0",
+    sha256 = "b1e80761a8a8243d03ebca8845e9cc1ba6c82ce7c5179ce2b295cd36f7e394bf",
     urls = [
-        "https://github.com/bazelbuild/rules_docker/releases/download/v0.16.0/rules_docker-v0.16.0.tar.gz",
-        "https://storage.googleapis.com/builddeps/95d39fd84ff4474babaf190450ee034d958202043e366b9fc38f438c9e6c3334",
+        "https://github.com/bazelbuild/rules_docker/releases/download/v0.25.0/rules_docker-v0.25.0.tar.gz",
+        "https://storage.googleapis.com/builddeps/b1e80761a8a8243d03ebca8845e9cc1ba6c82ce7c5179ce2b295cd36f7e394bf",
     ],
+    patch_strip = 1,
+    patches = [
+       "@//bazel:patches/rules_docker.patch"
+    ]
+
 )
 
 http_archive(
-    name = "com_github_ash2k_bazel_tools",
-    sha256 = "46fdbc00930c8dc9d84690b5bd94db6b4683b061199967d2cda1cfbda8f02c49",
-    strip_prefix = "bazel-tools-19b174803c0db1a01e77f10fa2079c35f54eed6e",
+    name = "io_bazel_rules_go_bazel_features",
+    sha256 = "2f057dd02098a106095ea291b4344257398a059eadb2c74cc470de0f9664dccd",
+    strip_prefix = "bazel_features-1.28.0",
     urls = [
-        "https://github.com/ash2k/bazel-tools/archive/19b174803c0db1a01e77f10fa2079c35f54eed6e.zip",
-        "https://storage.googleapis.com/builddeps/46fdbc00930c8dc9d84690b5bd94db6b4683b061199967d2cda1cfbda8f02c49",
+        "https://github.com/bazel-contrib/bazel_features/releases/download/v1.28.0/bazel_features-v1.28.0.tar.gz",
+        "https://storage.googleapis.com/builddeps/2f057dd02098a106095ea291b4344257398a059eadb2c74cc470de0f9664dccd",
     ],
 )
+
+load("@bazel_features//:deps.bzl", "bazel_features_deps")
+bazel_features_deps()
 
 # Disk images
 http_file(
@@ -184,139 +94,11 @@ http_file(
     ],
 )
 
-http_archive(
-    name = "bazeldnf",
-    sha256 = "fb24d80ad9edad0f7bd3000e8cffcfbba89cc07e495c47a7d3b1f803bd527a40",
-    urls = [
-        "https://github.com/rmohr/bazeldnf/releases/download/v0.5.9/bazeldnf-v0.5.9.tar.gz",
-        "https://storage.googleapis.com/builddeps/fb24d80ad9edad0f7bd3000e8cffcfbba89cc07e495c47a7d3b1f803bd527a40",
-    ],
-)
-
-load("@bazeldnf//:deps.bzl", "bazeldnf_dependencies", "rpm")
-load(
-    "@io_bazel_rules_go//go:deps.bzl",
-    "go_register_toolchains",
-    "go_rules_dependencies",
-)
-
-go_rules_dependencies()
-
-go_register_toolchains(
-    go_version = "1.23.4",
-    nogo = "@//:nogo_vet",
-)
-
-load("@com_github_ash2k_bazel_tools//goimports:deps.bzl", "goimports_dependencies")
-
-goimports_dependencies()
-
-load(
-    "@bazel_gazelle//:deps.bzl",
-    "gazelle_dependencies",
-    "go_repository",
-)
-
-go_repository(
-    name = "org_golang_google_grpc",
-    build_file_proto_mode = "disable",
-    importpath = "google.golang.org/grpc",
-    sum = "h1:BjnpXut1btbtgN/6sp+brB2Kbm2LjNXnidYujAVbSoQ=",
-    version = "v1.58.3",
-)
-
-go_repository(
-    name = "org_golang_google_genproto_googleapis_rpc",
-    build_file_proto_mode = "disable_global",
-    importpath = "google.golang.org/genproto/googleapis/rpc",
-    sum = "h1:uvYuEyMHKNt+lT4K3bN6fGswmK8qSvcreM3BwjDh+y4=",
-    version = "v0.0.0-20230822172742-b8732ec3820d",
-)
-
-gazelle_dependencies()
-
-bazeldnf_dependencies()
-
-# Winrmcli dependencies
-go_repository(
-    name = "com_github_masterzen_winrmcli",
-    commit = "c85a68ee8b6e3ac95af2a5fd62d2f41c9e9c5f32",
-    importpath = "github.com/masterzen/winrm-cli",
-)
-
-# Winrmcp deps
-go_repository(
-    name = "com_github_packer_community_winrmcp",
-    commit = "c76d91c1e7db27b0868c5d09e292bb540616c9a2",
-    importpath = "github.com/packer-community/winrmcp",
-)
-
-go_repository(
-    name = "com_github_masterzen_winrm_cli",
-    commit = "6f0c57dee4569c04f64c44c335752b415e5d73a7",
-    importpath = "github.com/masterzen/winrm-cli",
-)
-
-go_repository(
-    name = "com_github_masterzen_winrm",
-    commit = "1d17eaf15943ca3554cdebb3b1b10aaa543a0b7e",
-    importpath = "github.com/masterzen/winrm",
-)
-
-go_repository(
-    name = "com_github_nu7hatch_gouuid",
-    commit = "179d4d0c4d8d407a32af483c2354df1d2c91e6c3",
-    importpath = "github.com/nu7hatch/gouuid",
-)
-
-go_repository(
-    name = "com_github_dylanmei_iso8601",
-    commit = "2075bf119b58e5576c6ed9f867b8f3d17f2e54d4",
-    importpath = "github.com/dylanmei/iso8601",
-)
-
-go_repository(
-    name = "com_github_gofrs_uuid",
-    commit = "abfe1881e60ef34074c1b8d8c63b42565c356ed6",
-    importpath = "github.com/gofrs/uuid",
-)
-
-go_repository(
-    name = "com_github_christrenkamp_goxpath",
-    commit = "c5096ec8773dd9f554971472081ddfbb0782334e",
-    importpath = "github.com/ChrisTrenkamp/goxpath",
-)
-
-go_repository(
-    name = "com_github_azure_go_ntlmssp",
-    commit = "4a21cbd618b459155f8b8ee7f4491cd54f5efa77",
-    importpath = "github.com/Azure/go-ntlmssp",
-)
-
-go_repository(
-    name = "com_github_masterzen_simplexml",
-    commit = "31eea30827864c9ab643aa5a0d5b2d4988ec8409",
-    importpath = "github.com/masterzen/simplexml",
-)
-
-go_repository(
-    name = "org_golang_x_crypto",
-    commit = "4def268fd1a49955bfb3dda92fe3db4f924f2285",
-    importpath = "golang.org/x/crypto",
-)
-
-# override rules_docker issue with this dependency
-# rules_docker 0.16 uses 0.1.4, let's grab by commit
-go_repository(
-    name = "com_github_google_go_containerregistry",
-    commit = "8a2841911ffee4f6892ca0083e89752fb46c48dd",  # v0.1.4
-    importpath = "github.com/google/go-containerregistry",
-)
+load("@bazeldnf//internal:rpm.bzl", "rpm")
 
 # bazel docker rules
 load(
     "@io_bazel_rules_docker//container:container.bzl",
-    "container_image",
     "container_pull",
 )
 load(
@@ -326,9 +108,9 @@ load(
 
 container_repositories()
 
-load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
+#load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
 
-container_deps()
+#container_deps()
 
 # Pull go_image_base
 container_pull(
@@ -440,11 +222,9 @@ http_file(
 )
 
 # some repos which are not part of go_rules anymore
-go_repository(
-    name = "org_golang_x_net",
-    importpath = "golang.org/x/net",
-    sum = "h1:oWX7TPOiFAMXLq8o0ikBYfCJVlRHBcsciT5bXOrH628=",
-    version = "v0.0.0-20190311183353-d8887717615a",
+load(
+    "@bazel_gazelle//:deps.bzl",
+    "go_repository",
 )
 
 go_repository(
@@ -453,8 +233,6 @@ go_repository(
     sum = "h1:g61tztE5qeGQ89tm6NTjjM9VPIm088od1l6aSorWRWg=",
     version = "v0.3.0",
 )
-
-register_toolchains("//:py_toolchain")
 
 go_repository(
     name = "org_golang_x_mod",

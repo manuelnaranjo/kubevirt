@@ -45,3 +45,5 @@ hack/builder/manifests/
 .bazeldnf/
 user.bazelrc
 .vscode/
+# could be pushed into the repo
+MODULE.bazel.lock

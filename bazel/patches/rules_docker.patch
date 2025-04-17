@@ -1,0 +1,22 @@
+diff -uprN orig/go/image.bzl new/go/image.bzl
+--- orig/go/image.bzl	2022-06-21 22:07:23.000000000 +0200
++++ new/go/image.bzl	2025-04-17 08:50:48.186252390 +0200
+@@ -28,10 +28,6 @@ load(
+     "//lang:image.bzl",
+     "app_layer",
+ )
+-load(
+-    "//repositories:go_repositories.bzl",
+-    _go_deps = "go_deps",
+-)
+ 
+ # Load the resolved digests.
+ load(":go.bzl", BASE_DIGESTS = "DIGESTS")
+@@ -43,7 +39,6 @@ def repositories():
+     Call the core "go_deps" function to reduce boilerplate. This is
+     idempotent if folks call it themselves.
+     """
+-    _go_deps()
+ 
+     excludes = native.existing_rules().keys()
+     if "go_image_base" not in excludes:

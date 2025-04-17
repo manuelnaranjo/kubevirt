@@ -1,11 +1,9 @@
 load("@bazel_gazelle//:def.bzl", "gazelle")
 load("@bazel_skylib//lib:dicts.bzl", "dicts")
-
-# See https://github.com/bazelbuild/bazel/issues/7899
-load("@bazel_tools//tools/python:toolchain.bzl", "py_runtime_pair")
-load("@bazeldnf//:def.bzl", "bazeldnf")
+load("@bazeldnf//bazeldnf:defs.bzl", "bazeldnf")
 load("@buildifier_prebuilt//:rules.bzl", "buildifier")
-load("@com_github_ash2k_bazel_tools//goimports:def.bzl", "goimports")
+
+# load("@com_github_ash2k_bazel_tools//goimports:def.bzl", "goimports")
 load(
     "@io_bazel_rules_docker//container:container.bzl",
     "container_bundle",
@@ -23,43 +21,19 @@ load(
 load("@io_bazel_rules_go//go:def.bzl", "go_library", "nogo")
 load("@rules_pkg//:pkg.bzl", "pkg_tar")
 
-py_runtime(
-    name = "py2_runtime",
-    interpreter_path = "/usr/bin/python2",
-    python_version = "PY2",
-)
-
-py_runtime(
-    name = "py3_runtime",
-    interpreter_path = "/usr/bin/python3",
-    python_version = "PY3",
-)
-
-py_runtime_pair(
-    name = "py_runtime_pair",
-    py2_runtime = ":py2_runtime",
-    py3_runtime = ":py3_runtime",
-)
-
-toolchain(
-    name = "py_toolchain",
-    toolchain = "py_runtime_pair",
-    toolchain_type = "@bazel_tools//tools/python:toolchain_type",
-)
-
-goimports(
-    name = "goimports",
-    display_diffs = True,
-    exclude_paths = [
-        "./vendor/*",
-        "./.history/*",
-        "./.git/*",
-        "./_ci-configs/*",
-    ],
-    local = ["kubevirt.io/kubevirt"],
-    prefix = "kubevirt.io/kubevirt",
-    write = True,
-)
+#goimports(
+#    name = "goimports",
+#    display_diffs = True,
+#    exclude_paths = [
+#        "./vendor/*",
+#        "./.history/*",
+#        "./.git/*",
+#        "./_ci-configs/*",
+#    ],
+#    local = ["kubevirt.io/kubevirt"],
+#    prefix = "kubevirt.io/kubevirt",
+#    write = True,
+#)
 
 nogo(
     name = "nogo_vet",
@@ -687,7 +661,10 @@ genrule(
 
 filegroup(
     name = "coverage_files",
-    srcs = glob(["bazel-out/k8-fastbuild/testlogs/**/coverage.dat"]),
+    srcs = glob(
+        ["bazel-out/k8-fastbuild/testlogs/**/coverage.dat"],
+        allow_empty = True,
+    ),
 )
 
 genrule(

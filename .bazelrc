@@ -2,6 +2,12 @@
 try-import ci.bazelrc
 try-import .bazeldnf/sandbox.bazelrc
 
+# temporary until getting rid of rules_docker
+common --enable_workspace
+build --@io_bazel_rules_docker//transitions:enable=false
+query --@io_bazel_rules_docker//transitions:enable=false
+fetch --@io_bazel_rules_docker//transitions:enable=false
+
 # Set common values for all builds (run, test and coverage inherit from build)
 build --stamp --workspace_status_command=./hack/print-workspace-status.sh --host_force_python=PY3
 
