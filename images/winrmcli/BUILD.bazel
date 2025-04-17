@@ -15,7 +15,7 @@ container_image(
     base = "//images:kubevirt-testing-base",
     directory = "/usr/bin",
     files = [
-        "@com_github_masterzen_winrmcli//:winrm-cli",
+        "@com_github_masterzen_winrm_cli//:winrm-cli",
         "@com_github_packer_community_winrmcp//:winrmcp",
     ],
     visibility = ["//visibility:public"],

@@ -26,6 +26,10 @@ http_archive(
 
 )
 
+#load("@io_bazel_rules_docker//repositories:go_repositories.bzl", _rules_docker_go_deps = "go_deps")
+
+#_rules_docker_go_deps()
+
 http_archive(
     name = "io_bazel_rules_go_bazel_features",
     sha256 = "2f057dd02098a106095ea291b4344257398a059eadb2c74cc470de0f9664dccd",
