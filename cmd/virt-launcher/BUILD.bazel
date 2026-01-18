@@ -2,7 +2,7 @@ load("@bazeldnf//bazeldnf:defs.bzl", "xattrs")
 load("@io_bazel_rules_docker//contrib:group.bzl", "group_entry", "group_file")
 load("@io_bazel_rules_docker//contrib:passwd.bzl", "passwd_entry", "passwd_file")
 load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
-load("@rules_oci//oci:defs.bzl", "oci_image")
+load("@rules_oci//oci:defs.bzl", "oci_image", "oci_load", "oci_push")
 load("@rules_pkg//:pkg.bzl", "pkg_tar")
 load("//staging/src/kubevirt.io/client-go/version:def.bzl", "version_x_defs")
 
@@ -196,5 +196,17 @@ oci_image(
     base = ":version-container",
     entrypoint = ["/usr/bin/virt-launcher"],
     tars = [":setcaps"],
+)
+
+oci_push(
+    name = "push",
+    image = ":virt-launcher-image",
+    repository = "quay.io/kubevirt/virt-launcher",
     visibility = ["//visibility:public"],
+)
+
+oci_load(
+    name = "load",
+    image = ":virt-launcher-image",
+    repo_tags = ["bazel/virt-launcher:latest"],
 )

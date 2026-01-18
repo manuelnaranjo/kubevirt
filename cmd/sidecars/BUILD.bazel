@@ -1,5 +1,5 @@
 load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
-load("@rules_oci//oci:defs.bzl", "oci_image")
+load("@rules_oci//oci:defs.bzl", "oci_image", "oci_load", "oci_push")
 load("@rules_pkg//:pkg.bzl", "pkg_tar")
 
 go_library(
@@ -36,11 +36,26 @@ pkg_tar(
 
 oci_image(
     name = "sidecar-shim-image",
-    base = "//:passwd-image",
+    base = "//bazel/compat:go_image_base",
     entrypoint = ["/sidecar-shim"],
     tars = [
         "//bazel/compat:sidecar-shim",
+        "//:passwd-tar",
         ":sidecar-shim-tar",
     ],
+    user = "1001",
     visibility = ["//visibility:public"],
+)
+
+oci_push(
+    name = "push",
+    image = ":sidecar-shim-image",
+    repository = "quay.io/kubevirt/sidecar-shim",
+    visibility = ["//visibility:public"],
+)
+
+oci_load(
+    name = "load",
+    image = ":sidecar-shim-image",
+    repo_tags = ["bazel/sidecar-shim:latest"],
 )

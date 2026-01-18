@@ -1,5 +1,5 @@
 load("@bazel_gazelle//:def.bzl", "gazelle")
-load("@rules_oci//oci:defs.bzl", "oci_image")
+load("@rules_oci//oci:defs.bzl", "oci_image", "oci_load", "oci_push")
 load("@rules_pkg//:pkg.bzl", "pkg_tar")
 
 gazelle(name = "gazelle")
@@ -19,5 +19,17 @@ oci_image(
     tars = [
         ":winrm-cli-tar",
     ],
+)
+
+oci_push(
+    name = "push",
+    image = ":winrmcli-image",
+    repository = "quay.io/kubevirt/winrmcli",
     visibility = ["//visibility:public"],
+)
+
+oci_load(
+    name = "load",
+    image = ":winrmcli-image",
+    repo_tags = ["bazel/winrmcli:latest"],
 )

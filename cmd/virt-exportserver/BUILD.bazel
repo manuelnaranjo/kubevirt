@@ -1,6 +1,6 @@
 load("@io_bazel_rules_docker//contrib:passwd.bzl", "passwd_entry", "passwd_file")
 load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
-load("@rules_oci//oci:defs.bzl", "oci_image")
+load("@rules_oci//oci:defs.bzl", "oci_image", "oci_load", "oci_push")
 load("@rules_pkg//:pkg.bzl", "pkg_tar")
 load("//staging/src/kubevirt.io/client-go/version:def.bzl", "version_x_defs")
 
@@ -79,5 +79,17 @@ oci_image(
         ":virt-exportserver-bin",
     ],
     user = "1001",
+)
+
+oci_push(
+    name = "push",
+    image = ":virt-exportserver-image",
+    repository = "quay.io/kubevirt/virt-exportserver",
     visibility = ["//visibility:public"],
+)
+
+oci_load(
+    name = "load",
+    image = ":virt-exportserver-image",
+    repo_tags = ["bazel/virt-exportserver:latest"],
 )

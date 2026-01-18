@@ -1,5 +1,5 @@
 load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
-load("@rules_oci//oci:defs.bzl", "oci_image")
+load("@rules_oci//oci:defs.bzl", "oci_image", "oci_load", "oci_push")
 load("@rules_pkg//:pkg.bzl", "pkg_tar")
 
 go_library(
@@ -38,5 +38,17 @@ oci_image(
     tars = [
         ":passt-binding-tar",
     ],
+)
+
+oci_push(
+    name = "push",
+    image = ":network-passt-binding-cni-image",
+    repository = "quay.io/kubevirt/network-passt-binding-cni",
     visibility = ["//visibility:public"],
+)
+
+oci_load(
+    name = "load",
+    image = ":network-passt-binding-cni-image",
+    repo_tags = ["bazel/network-passt-binding-cni:latest"],
 )

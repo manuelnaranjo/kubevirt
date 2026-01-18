@@ -8,14 +8,8 @@ load("@buildifier_prebuilt//:rules.bzl", "buildifier")
 load("@com_github_ash2k_bazel_tools//goimports:def.bzl", "goimports")
 load("@io_bazel_rules_docker//contrib:passwd.bzl", "passwd_entry", "passwd_file")
 
-# heads up: docker_push is loaded from contrib:push-all, while container_push is loaded earlier from container:container
-load("@io_bazel_rules_docker//contrib:push-all.bzl", "docker_push")
-load(
-    "@io_bazel_rules_docker//repositories:repositories.bzl",
-    container_repositories = "repositories",
-)
 load("@io_bazel_rules_go//go:def.bzl", "go_library", "nogo")
-load("@rules_oci//oci:defs.bzl", "oci_image", "oci_push")
+load("@rules_oci//oci:defs.bzl", "oci_image")
 load("@rules_pkg//:pkg.bzl", "pkg_tar")
 
 py_runtime(
@@ -163,199 +157,155 @@ pkg_tar(
     visibility = ["//visibility:public"],
 )
 
-oci_image(
-    name = "passwd-image",
-    base = "//bazel/compat:go_image_base",
-    tars = [":passwd-tar"],
-    user = "1001",
-    visibility = ["//visibility:public"],
-)
-
 config_setting(
     name = "release",
     values = {"define": "release=true"},
 )
 
-# we need to push virt images with the rule from container:container in order to get the digest file
-oci_push(
+# Aliases for oci_push targets - the actual rules are defined alongside the images
+alias(
     name = "push-virt-operator",
-    image = "//cmd/virt-operator:virt-operator-image",
-    repository = "quay.io/kubevirt/virt-operator",
+    actual = "//cmd/virt-operator:push",
 )
 
-oci_push(
+alias(
     name = "push-virt-api",
-    image = "//cmd/virt-api:virt-api-image",
-    repository = "quay.io/kubevirt/virt-api",
+    actual = "//cmd/virt-api:push",
 )
 
-oci_push(
+alias(
     name = "push-virt-controller",
-    image = "//cmd/virt-controller:virt-controller-image",
-    repository = "quay.io/kubevirt/virt-controller",
+    actual = "//cmd/virt-controller:push",
 )
 
-oci_push(
+alias(
     name = "push-virt-handler",
-    image = "//cmd/virt-handler:virt-handler-image",
-    repository = "quay.io/kubevirt/virt-handler",
+    actual = "//cmd/virt-handler:push",
 )
 
-oci_push(
+alias(
     name = "push-virt-launcher",
-    image = "//cmd/virt-launcher:virt-launcher-image",
-    repository = "quay.io/kubevirt/virt-launcher",
+    actual = "//cmd/virt-launcher:push",
 )
 
-oci_push(
+alias(
     name = "push-conformance",
-    testonly = True,
-    image = "//tests:conformance_image",
-    repository = "quay.io/kubevirt/conformance",
+    actual = "//tests:push",
 )
 
-oci_push(
+alias(
     name = "push-libguestfs-tools",
-    image = "//cmd/libguestfs:libguestfs-tools-image",
-    repository = "quay.io/kubevirt/libguestfs-tools",
+    actual = "//cmd/libguestfs:push",
 )
 
-oci_push(
+alias(
     name = "push-virt-exportserver",
-    image = "//cmd/virt-exportserver:virt-exportserver-image",
-    repository = "quay.io/kubevirt/virt-exportserver",
+    actual = "//cmd/virt-exportserver:push",
 )
 
-oci_push(
+alias(
     name = "push-virt-exportproxy",
-    image = "//cmd/virt-exportproxy:virt-exportproxy-image",
-    repository = "quay.io/kubevirt/virt-exportproxy",
+    actual = "//cmd/virt-exportproxy:push",
 )
 
-oci_push(
+alias(
     name = "push-virt-synchronization-controller",
-    image = "//cmd/synchronization-controller:virt-synchronization-controller-image",
-    repository = "quay.io/kubevirt/virt-synchronization-controller",
+    actual = "//cmd/synchronization-controller:push",
 )
 
-oci_push(
+alias(
     name = "push-pr-helper",
-    image = "//cmd/pr-helper:pr-helper-image",
-    repository = "quay.io/kubevirt/pr-helper",
+    actual = "//cmd/pr-helper:push",
 )
 
-# The following container_push list is synced with the images in container_bundle "build-other-images".
-# cmd images
-oci_push(
+alias(
     name = "push-sidecar-shim",
-    image = "//cmd/sidecars:sidecar-shim-image",
-    repository = "quay.io/kubevirt/sidecar-shim",
+    actual = "//cmd/sidecars:push",
 )
 
-oci_push(
+alias(
     name = "push-network-slirp-binding",
-    image = "//cmd/sidecars/network-slirp-binding:network-slirp-binding-image",
-    repository = "quay.io/kubevirt/network-slirp-binding",
+    actual = "//cmd/sidecars/network-slirp-binding:push",
 )
 
-oci_push(
+alias(
     name = "push-network-passt-binding",
-    image = "//cmd/sidecars/network-passt-binding:network-passt-binding-image",
-    repository = "quay.io/kubevirt/network-passt-binding",
+    actual = "//cmd/sidecars/network-passt-binding:push",
 )
 
-oci_push(
+alias(
     name = "push-network-passt-binding-cni",
-    image = "//cmd/cniplugins/passt-binding/cmd:network-passt-binding-cni-image",
-    repository = "quay.io/kubevirt/network-passt-binding-cni",
+    actual = "//cmd/cniplugins/passt-binding/cmd:push",
 )
 
-oci_push(
+alias(
     name = "push-example-hook-sidecar",
-    image = "//cmd/sidecars/smbios:example-hook-sidecar-image",
-    repository = "quay.io/kubevirt/example-hook-sidecar",
+    actual = "//cmd/sidecars/smbios:push",
 )
 
-oci_push(
+alias(
     name = "push-example-disk-mutation-hook-sidecar",
-    image = "//cmd/sidecars/disk-mutation:example-disk-mutation-hook-sidecar-image",
-    repository = "quay.io/kubevirt/example-disk-mutation-hook-sidecar",
+    actual = "//cmd/sidecars/disk-mutation:push",
 )
 
-oci_push(
+alias(
     name = "push-example-cloudinit-hook-sidecar",
-    image = "//cmd/sidecars/cloudinit:example-cloudinit-hook-sidecar-image",
-    repository = "quay.io/kubevirt/example-cloudinit-hook-sidecar",
+    actual = "//cmd/sidecars/cloudinit:push",
 )
 
-# container-disk images
-oci_push(
-    name = "push-alpine-container-disk-demo",
-    image = "//containerimages:alpine-container-disk-image",
-    repository = "quay.io/kubevirt/alpine-container-disk-demo",
+alias(
+    name = "push-alpine-container-disk-image",
+    actual = "//containerimages:push-alpine-container-disk-image",
 )
 
-oci_push(
-    name = "push-cirros-container-disk-demo",
-    image = "//containerimages:cirros-container-disk-image",
-    repository = "quay.io/kubevirt/cirros-container-disk-demo",
+alias(
+    name = "push-cirros-container-disk-image",
+    actual = "//containerimages:push-cirros-container-disk-image",
 )
 
-oci_push(
-    name = "push-cirros-custom-container-disk-demo",
-    image = "//containerimages:cirros-custom-container-disk-image",
-    repository = "quay.io/kubevirt/cirros-custom-container-disk-demo",
+alias(
+    name = "push-cirros-custom-container-disk-image",
+    actual = "//containerimages:push-cirros-custom-container-disk-image",
 )
 
-oci_push(
-    name = "push-virtio-container-disk",
-    image = "//containerimages:virtio-container-disk-image",
-    repository = "quay.io/kubevirt/virtio-container-disk",
+alias(
+    name = "push-virtio-container-disk-image",
+    actual = "//containerimages:push-virtio-container-disk-image",
 )
 
-# Kernel boot container
-oci_push(
-    name = "push-alpine-ext-kernel-boot-demo",
-    image = "//containerimages:alpine-ext-kernel-boot-demo-container",
-    repository = "quay.io/kubevirt/alpine-ext-kernel-boot-demo",
+alias(
+    name = "push-alpine-ext-kernel-boot-demo-image",
+    actual = "//containerimages:push-alpine-ext-kernel-boot-demo-image",
 )
 
-# Customized container-disk images
-oci_push(
-    name = "push-fedora-with-test-tooling-container-disk",
-    image = "//containerimages:fedora-with-test-tooling",
-    repository = "quay.io/fedora-with-test-tooling-container-disk",
+alias(
+    name = "push-fedora-with-test-tooling-image",
+    actual = "//containerimages:push-fedora-with-test-tooling-image",
 )
 
-oci_push(
-    name = "push-alpine-with-test-tooling-container-disk",
-    image = "//containerimages:alpine-with-test-tooling",
-    repository = "quay.io/kubevirt/alpine-with-test-tooling-container-disk",
+alias(
+    name = "push-alpine-with-test-tooling-image",
+    actual = "//containerimages:push-alpine-with-test-tooling-image",
 )
 
-oci_push(
-    name = "push-fedora-realtime-container-disk",
-    image = "//containerimages:fedora-realtime",
-    repository = "quay.io/kubevirt/fedora-realtime-container-disk",
+alias(
+    name = "push-fedora-realtime-image",
+    actual = "//containerimages:push-fedora-realtime-image",
 )
 
-# testing images
-oci_push(
+alias(
     name = "push-disks-images-provider",
-    image = "//images/disks-images-provider:disks-images-provider-image",
-    repository = "quay.io/kubevirt/disks-images-provider",
+    actual = "//images/disks-images-provider:push",
 )
 
-oci_push(
+alias(
     name = "push-vm-killer",
-    image = "//images/vm-killer:vm-killer-image",
-    repository = "quay.io/kubevirt/vm-killer",
+    actual = "//images/vm-killer:push",
 )
 
-oci_push(
+alias(
     name = "push-winrmcli",
-    image = "//images/winrmcli:winrmcli-image",
-    repository = "quay.io/kubevirt/winrmcli",
+    actual = "//images/winrmcli:push",
 )
 
 genrule(

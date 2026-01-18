@@ -1,5 +1,5 @@
 load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library", "go_test")
-load("@rules_oci//oci:defs.bzl", "oci_image")
+load("@rules_oci//oci:defs.bzl", "oci_image", "oci_load", "oci_push")
 load("@rules_pkg//:pkg.bzl", "pkg_tar")
 
 go_library(
@@ -33,7 +33,19 @@ oci_image(
     tars = [
         ":onDefineDomain-tar",
     ],
+)
+
+oci_push(
+    name = "push",
+    image = ":example-hook-sidecar-image",
+    repository = "quay.io/kubevirt/example-hook-sidecar",
     visibility = ["//visibility:public"],
+)
+
+oci_load(
+    name = "load",
+    image = ":example-hook-sidecar-image",
+    repo_tags = ["bazel/example-hook-sidecar:latest"],
 )
 
 go_test(

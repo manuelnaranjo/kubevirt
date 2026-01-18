@@ -1,8 +1,20 @@
-load("@rules_oci//oci:defs.bzl", "oci_image")
+load("@rules_oci//oci:defs.bzl", "oci_image", "oci_load", "oci_push")
 
 oci_image(
     name = "vm-killer-image",
     base = "//images:kubevirt-testing-base",
     user = "1001",
+)
+
+oci_push(
+    name = "push",
+    image = ":vm-killer-image",
+    repository = "quay.io/kubevirt/vm-killer",
     visibility = ["//visibility:public"],
+)
+
+oci_load(
+    name = "load",
+    image = ":vm-killer-image",
+    repo_tags = ["bazel/vm-killer:latest"],
 )

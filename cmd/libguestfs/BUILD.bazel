@@ -1,4 +1,4 @@
-load("@rules_oci//oci:defs.bzl", "oci_image")
+load("@rules_oci//oci:defs.bzl", "oci_image", "oci_load", "oci_push")
 load("@rules_pkg//:pkg.bzl", "pkg_tar")
 
 pkg_tar(
@@ -51,14 +51,6 @@ pkg_tar(
     visibility = ["//visibility:public"],
 )
 
-oci_image(
-    name = "version-container",
-    base = "//:passwd-image",
-    tars = [
-        ":version",
-    ],
-)
-
 alias(
     name = "appliance_layer",
     actual = select({
@@ -69,12 +61,26 @@ alias(
 
 oci_image(
     name = "libguestfs-tools-image",
-    base = ":version-container",
+    base = "//bazel/compat:go_image_base",
+    user = "1001",
     entrypoint = ["/entrypoint.sh"],
     tars = [
-        ":appliance_layer",
         "//bazel/compat:libguestfs-tools",
-        ":entrypoint",
+        ":appliance_layer",
+        "//:passwd-tar",
+        ":version",
     ],
+)
+
+oci_push(
+    name = "push",
+    image = ":libguestfs-tools-image",
+    repository = "quay.io/kubevirt/libguestfs-tools",
     visibility = ["//visibility:public"],
+)
+
+oci_load(
+    name = "load",
+    image = ":libguestfs-tools-image",
+    repo_tags = ["bazel/libguestfs-tools:latest"],
 )
