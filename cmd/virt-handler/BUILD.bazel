@@ -1,6 +1,6 @@
 load("@bazeldnf//bazeldnf:defs.bzl", "tar2files")
 load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
-load("@rules_oci//oci:defs.bzl", "oci_image")
+load("@rules_oci//oci:defs.bzl", "oci_image", "oci_load", "oci_push")
 load("@rules_pkg//:pkg.bzl", "pkg_tar")
 load("//bazel:image.bzl", "provision_user")
 load("//staging/src/kubevirt.io/client-go/version:def.bzl", "version_x_defs")
@@ -136,5 +136,17 @@ oci_image(
     tars = [
         "virt-handler-tar",
     ],
+)
+
+oci_push(
+    name = "push",
+    image = ":virt-handler-image",
+    repository = "quay.io/kubevirt/virt-handler",
     visibility = ["//visibility:public"],
+)
+
+oci_load(
+    name = "load",
+    image = ":virt-handler-image",
+    repo_tags = ["bazel/virt-handler:latest"],
 )

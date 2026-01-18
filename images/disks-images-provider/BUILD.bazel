@@ -1,4 +1,4 @@
-load("@rules_oci//oci:defs.bzl", "oci_image")
+load("@rules_oci//oci:defs.bzl", "oci_image", "oci_load", "oci_push")
 load("@rules_pkg//:pkg.bzl", "pkg_tar")
 
 genrule(
@@ -56,5 +56,17 @@ oci_image(
         ":alpine-tar",
         ":custom-tar",
     ],
+)
+
+oci_push(
+    name = "push",
+    image = ":disks-images-provider-image",
+    repository = "quay.io/kubevirt/disks-images-provider",
     visibility = ["//visibility:public"],
+)
+
+oci_load(
+    name = "load",
+    image = ":disks-images-provider-image",
+    repo_tags = ["bazel/disks-images-provider:latest"],
 )

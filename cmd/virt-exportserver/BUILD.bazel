@@ -1,5 +1,5 @@
 load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
-load("@rules_oci//oci:defs.bzl", "oci_image")
+load("@rules_oci//oci:defs.bzl", "oci_image", "oci_load", "oci_push")
 load("@rules_pkg//:pkg.bzl", "pkg_tar")
 load("//bazel:image.bzl", "provision_user")
 load("//staging/src/kubevirt.io/client-go/version:def.bzl", "version_x_defs")
@@ -67,5 +67,17 @@ oci_image(
         ":virt-exportserver-bin",
     ],
     user = "1001",  # this ID is different than the NONROOT_ID one
+)
+
+oci_push(
+    name = "push",
+    image = ":virt-exportserver-image",
+    repository = "quay.io/kubevirt/virt-exportserver",
     visibility = ["//visibility:public"],
+)
+
+oci_load(
+    name = "load",
+    image = ":virt-exportserver-image",
+    repo_tags = ["bazel/virt-exportserver:latest"],
 )

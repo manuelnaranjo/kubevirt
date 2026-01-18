@@ -1,5 +1,5 @@
 load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
-load("@rules_oci//oci:defs.bzl", "oci_image")
+load("@rules_oci//oci:defs.bzl", "oci_image", "oci_load", "oci_push")
 load("@rules_pkg//:pkg.bzl", "pkg_tar")
 
 go_library(
@@ -36,19 +36,26 @@ pkg_tar(
 )
 
 oci_image(
-    name = "version-container",
-    base = "//:passwd-image",
-    tars = [
-        ":get-version",
-    ],
-)
-
-oci_image(
     name = "network-passt-binding-image",
-    base = ":version-container",
+    base = "//bazel/compat:go_image_base",
     entrypoint = ["/network-passt-binding"],
     tars = [
+        "//:passwd-tar",
         ":network-passt-binding-tar",
+        ":get-version",
     ],
+    user = "1001",
+)
+
+oci_push(
+    name = "push",
+    image = ":network-passt-binding-image",
+    repository = "quay.io/kubevirt/network-passt-binding",
     visibility = ["//visibility:public"],
+)
+
+oci_load(
+    name = "load",
+    image = ":network-passt-binding-image",
+    repo_tags = ["bazel/network-passt-binding:latest"],
 )

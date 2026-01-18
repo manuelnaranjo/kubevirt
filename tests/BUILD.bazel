@@ -1,5 +1,5 @@
 load("@io_bazel_rules_go//go:def.bzl", "go_test")
-load("@rules_oci//oci:defs.bzl", "oci_image")
+load("@rules_oci//oci:defs.bzl", "oci_image", "oci_load", "oci_push")
 load("@rules_pkg//:pkg.bzl", "pkg_tar")
 
 pkg_tar(
@@ -22,11 +22,11 @@ pkg_tar(
 oci_image(
     name = "conformance_image_base",
     testonly = True,
-    base = "//:passwd-image",
+    base = "//bazel/compat:go_image_base",
     tars = [
+        "//:passwd-tar",
         ":conformance-config",
     ],
-    visibility = ["//visibility:public"],
 )
 
 oci_image(
@@ -37,7 +37,21 @@ oci_image(
     tars = [
         ":conformance-tests",
     ],
+)
+
+oci_push(
+    name = "push",
+    testonly = True,
+    image = ":conformance_image",
+    repository = "quay.io/kubevirt/conformance",
     visibility = ["//visibility:public"],
+)
+
+oci_load(
+    name = "load",
+    testonly = True,
+    image = ":conformance_image",
+    repo_tags = ["bazel/conformance:latest"],
 )
 
 go_test(

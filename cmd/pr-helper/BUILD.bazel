@@ -1,4 +1,4 @@
-load("@rules_oci//oci:defs.bzl", "oci_image")
+load("@rules_oci//oci:defs.bzl", "oci_image", "oci_load", "oci_push")
 load("@rules_pkg//:pkg.bzl", "pkg_tar")
 
 pkg_tar(
@@ -22,19 +22,28 @@ pkg_tar(
 )
 
 oci_image(
-    name = "version-container",
-    base = "//:passwd-image",
+    name = "pr-helper-image",
+    base = "//bazel/compat:go_image_base",
+    entrypoint = ["/usr/bin/qemu-pr-helper"],
     tars = [
+        "//bazel/compat:pr-helper",
+        "//:passwd-tar",
         ":multipath",
         ":entrypoint",
-        "//bazel/compat:pr-helper",
         ":get-version",
     ],
+    user = "1001",
 )
 
-oci_image(
-    name = "pr-helper-image",
-    base = ":version-container",
-    entrypoint = ["/usr/bin/qemu-pr-helper"],
+oci_push(
+    name = "push",
+    image = ":pr-helper-image",
+    repository = "quay.io/kubevirt/pr-helper",
     visibility = ["//visibility:public"],
+)
+
+oci_load(
+    name = "load",
+    image = ":pr-helper-image",
+    repo_tags = ["bazel/pr-helper:latest"],
 )

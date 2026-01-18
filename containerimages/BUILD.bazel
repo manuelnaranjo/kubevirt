@@ -1,4 +1,4 @@
-load("@rules_oci//oci:defs.bzl", "oci_image")
+load("@rules_oci//oci:defs.bzl", "oci_image", "oci_load", "oci_push")
 load("@rules_pkg//:pkg.bzl", "pkg_tar")
 
 pkg_tar(
@@ -23,7 +23,6 @@ oci_image(
     }),
     os = "linux",
     tars = [":alpine-image-tar"],
-    visibility = ["//visibility:public"],
 )
 
 pkg_tar(
@@ -45,7 +44,6 @@ oci_image(
     }),
     os = "linux",
     tars = [":cirros-image-tar"],
-    visibility = ["//visibility:public"],
 )
 
 pkg_tar(
@@ -68,7 +66,6 @@ oci_image(
     }),
     os = "linux",
     tars = [":cirros-custom-image-tar"],
-    visibility = ["//visibility:public"],
 )
 
 pkg_tar(
@@ -87,7 +84,6 @@ oci_image(
     }),
     os = "linux",
     tars = [":virtio-image-tar"],
-    visibility = ["//visibility:public"],
 )
 
 oci_image(
@@ -97,7 +93,6 @@ oci_image(
         "@io_bazel_rules_go//go/platform:linux_s390x": "@fedora_with_test_tooling_s390x",
         "//conditions:default": "@fedora_with_test_tooling",
     }),
-    visibility = ["//visibility:public"],
 )
 
 oci_image(
@@ -107,7 +102,6 @@ oci_image(
         "@io_bazel_rules_go//go/platform:linux_s390x": "@alpine_with_test_tooling",
         "//conditions:default": "@alpine_with_test_tooling",
     }),
-    visibility = ["//visibility:public"],
 )
 
 oci_image(
@@ -118,7 +112,6 @@ oci_image(
         "//conditions:default": "@alpine-ext-kernel-boot-demo-container-base",
     }),
     tars = [":alpine-image-tar"],
-    visibility = ["//visibility:public"],
 )
 
 oci_image(
@@ -128,5 +121,108 @@ oci_image(
         "@io_bazel_rules_go//go/platform:linux_s390x": "@fedora_realtime",
         "//conditions:default": "@fedora_realtime",
     }),
+)
+
+oci_push(
+    name = "push-alpine-container-disk-image",
+    image = ":alpine-container-disk-image",
+    repository = "quay.io/kubevirt/alpine-container-disk-demo",
     visibility = ["//visibility:public"],
+)
+
+oci_push(
+    name = "push-cirros-container-disk-image",
+    image = ":cirros-container-disk-image",
+    repository = "quay.io/kubevirt/cirros-container-disk-demo",
+    visibility = ["//visibility:public"],
+)
+
+oci_push(
+    name = "push-cirros-custom-container-disk-image",
+    image = ":cirros-custom-container-disk-image",
+    repository = "quay.io/kubevirt/cirros-custom-container-disk-demo",
+    visibility = ["//visibility:public"],
+)
+
+oci_push(
+    name = "push-virtio-container-disk-image",
+    image = ":virtio-container-disk-image",
+    repository = "quay.io/kubevirt/virtio-container-disk",
+    visibility = ["//visibility:public"],
+)
+
+oci_push(
+    name = "push-alpine-ext-kernel-boot-demo-image",
+    image = ":alpine-ext-kernel-boot-demo-container",
+    repository = "quay.io/kubevirt/alpine-ext-kernel-boot-demo",
+    visibility = ["//visibility:public"],
+)
+
+oci_push(
+    name = "push-fedora-with-test-tooling-image",
+    image = ":fedora-with-test-tooling",
+    repository = "quay.io/fedora-with-test-tooling-container-disk",
+    visibility = ["//visibility:public"],
+)
+
+oci_push(
+    name = "push-alpine-with-test-tooling-image",
+    image = ":alpine-with-test-tooling",
+    repository = "quay.io/kubevirt/alpine-with-test-tooling-container-disk",
+    visibility = ["//visibility:public"],
+)
+
+oci_push(
+    name = "push-fedora-realtime-image",
+    image = ":fedora-realtime",
+    repository = "quay.io/kubevirt/fedora-realtime-container-disk",
+    visibility = ["//visibility:public"],
+)
+
+oci_load(
+    name = "load-alpine-container-disk-image",
+    image = ":alpine-container-disk-image",
+    repo_tags = ["bazel/alpine-container-disk:latest"],
+)
+
+oci_load(
+    name = "load-cirros-container-disk-image",
+    image = ":cirros-container-disk-image",
+    repo_tags = ["bazel/cirros-container-disk:latest"],
+)
+
+oci_load(
+    name = "load-cirros-custom-container-disk-image",
+    image = ":cirros-custom-container-disk-image",
+    repo_tags = ["bazel/cirros-custom-container-disk:latest"],
+)
+
+oci_load(
+    name = "load-virtio-container-disk-image",
+    image = ":virtio-container-disk-image",
+    repo_tags = ["bazel/virtio-container-disk:latest"],
+)
+
+oci_load(
+    name = "load-alpine-ext-kernel-boot-demo",
+    image = ":alpine-ext-kernel-boot-demo-container",
+    repo_tags = ["bazel/alpine-ext-kernel-boot-demo-container:latest"],
+)
+
+oci_load(
+    name = "load-fedora-with-test-tooling",
+    image = ":fedora-with-test-tooling",
+    repo_tags = ["bazel/fedora-with-test-tooling:latest"],
+)
+
+oci_load(
+    name = "load-alpine-with-test-tooling",
+    image = ":alpine-with-test-tooling",
+    repo_tags = ["bazel/alpine-with-test-tooling:latest"],
+)
+
+oci_load(
+    name = "load-fedora-realtime",
+    image = ":fedora-realtime",
+    repo_tags = ["bazel/fedora-realtime:latest"],
 )
