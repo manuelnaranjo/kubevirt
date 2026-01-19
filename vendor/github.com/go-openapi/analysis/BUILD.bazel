@@ -15,6 +15,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/go-openapi/analysis",
     importpath = "github.com/go-openapi/analysis",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/go-openapi/analysis/internal/debug:go_default_library",

@@ -8,6 +8,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/opencontainers/runc/libcontainer/cgroups/fscommon",
     importpath = "github.com/opencontainers/runc/libcontainer/cgroups/fscommon",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/opencontainers/runc/libcontainer/cgroups:go_default_library",

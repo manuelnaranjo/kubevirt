@@ -11,6 +11,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/moby/spdystream",
     importpath = "github.com/moby/spdystream",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = ["//vendor/github.com/moby/spdystream/spdy:go_default_library"],
 )

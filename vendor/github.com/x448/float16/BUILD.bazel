@@ -5,5 +5,6 @@ go_library(
     srcs = ["float16.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/x448/float16",
     importpath = "github.com/x448/float16",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

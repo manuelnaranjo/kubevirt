@@ -17,6 +17,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/mdlayher/socket",
     importpath = "github.com/mdlayher/socket",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/golang.org/x/sys/unix:go_default_library",

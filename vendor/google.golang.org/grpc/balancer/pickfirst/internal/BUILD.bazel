@@ -5,5 +5,6 @@ go_library(
     srcs = ["internal.go"],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/grpc/balancer/pickfirst/internal",
     importpath = "google.golang.org/grpc/balancer/pickfirst/internal",
+    tags = ["manual"],
     visibility = ["//vendor/google.golang.org/grpc/balancer/pickfirst:__subpackages__"],
 )

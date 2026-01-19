@@ -5,6 +5,7 @@ go_library(
     srcs = ["metrics.pb.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/prometheus/client_model/go",
     importpath = "github.com/prometheus/client_model/go",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/google.golang.org/protobuf/reflect/protoreflect:go_default_library",

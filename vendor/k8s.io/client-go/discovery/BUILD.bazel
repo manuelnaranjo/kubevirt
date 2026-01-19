@@ -10,6 +10,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/client-go/discovery",
     importpath = "k8s.io/client-go/discovery",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/google/gnostic-models/openapiv2:go_default_library",

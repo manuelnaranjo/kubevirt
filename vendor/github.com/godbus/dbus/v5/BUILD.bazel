@@ -46,5 +46,6 @@ go_library(
     cgo = True,
     importmap = "kubevirt.io/kubevirt/vendor/github.com/godbus/dbus/v5",
     importpath = "github.com/godbus/dbus/v5",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

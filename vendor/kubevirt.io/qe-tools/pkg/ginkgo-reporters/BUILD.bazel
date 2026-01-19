@@ -8,6 +8,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/kubevirt.io/qe-tools/pkg/ginkgo-reporters",
     importpath = "kubevirt.io/qe-tools/pkg/ginkgo-reporters",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/onsi/ginkgo/v2/config:go_default_library",

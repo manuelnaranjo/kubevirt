@@ -5,6 +5,7 @@ go_library(
     srcs = ["proxyattributes.go"],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/grpc/internal/proxyattributes",
     importpath = "google.golang.org/grpc/internal/proxyattributes",
+    tags = ["manual"],
     visibility = ["//vendor/google.golang.org/grpc:__subpackages__"],
     deps = ["//vendor/google.golang.org/grpc/resolver:go_default_library"],
 )

@@ -5,6 +5,7 @@ go_library(
     srcs = ["duration.pb.go"],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/protobuf/types/known/durationpb",
     importpath = "google.golang.org/protobuf/types/known/durationpb",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/google.golang.org/protobuf/reflect/protoreflect:go_default_library",

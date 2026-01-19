@@ -11,5 +11,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/modern-go/concurrent",
     importpath = "github.com/modern-go/concurrent",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

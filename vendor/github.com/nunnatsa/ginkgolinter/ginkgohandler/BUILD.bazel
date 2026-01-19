@@ -5,5 +5,6 @@ go_library(
     srcs = ["handler.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/nunnatsa/ginkgolinter/ginkgohandler",
     importpath = "github.com/nunnatsa/ginkgolinter/ginkgohandler",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

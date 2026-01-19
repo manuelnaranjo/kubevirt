@@ -9,5 +9,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/mxk/go-flowrate/flowrate",
     importpath = "github.com/mxk/go-flowrate/flowrate",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

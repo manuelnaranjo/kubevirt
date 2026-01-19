@@ -5,6 +5,7 @@ go_library(
     srcs = ["s2k.go"],
     importmap = "kubevirt.io/kubevirt/vendor/golang.org/x/crypto/openpgp/s2k",
     importpath = "golang.org/x/crypto/openpgp/s2k",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = ["//vendor/golang.org/x/crypto/openpgp/errors:go_default_library"],
 )

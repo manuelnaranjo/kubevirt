@@ -5,6 +5,7 @@ go_library(
     srcs = ["myers.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/pkg/diff/myers",
     importpath = "github.com/pkg/diff/myers",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = ["//vendor/github.com/pkg/diff/edit:go_default_library"],
 )

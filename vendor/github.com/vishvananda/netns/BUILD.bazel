@@ -11,6 +11,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/vishvananda/netns",
     importpath = "github.com/vishvananda/netns",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = select({
         "@io_bazel_rules_go//go/platform:android": [

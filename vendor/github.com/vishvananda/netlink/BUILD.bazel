@@ -68,6 +68,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/vishvananda/netlink",
     importpath = "github.com/vishvananda/netlink",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/vishvananda/netlink/nl:go_default_library",

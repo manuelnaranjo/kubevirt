@@ -18,6 +18,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/u-root/uio/uio",
     importpath = "github.com/u-root/uio/uio",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/josharian/native:go_default_library",

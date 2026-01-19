@@ -26,6 +26,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/klauspost/compress/flate",
     importpath = "github.com/klauspost/compress/flate",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = ["//vendor/github.com/klauspost/compress/internal/le:go_default_library"],
 )

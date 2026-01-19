@@ -5,5 +5,6 @@ go_library(
     srcs = ["reverse_assertion.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/nunnatsa/ginkgolinter/reverseassertion",
     importpath = "github.com/nunnatsa/ginkgolinter/reverseassertion",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

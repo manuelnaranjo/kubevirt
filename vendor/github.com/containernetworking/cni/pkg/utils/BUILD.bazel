@@ -5,6 +5,7 @@ go_library(
     srcs = ["utils.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/containernetworking/cni/pkg/utils",
     importpath = "github.com/containernetworking/cni/pkg/utils",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = ["//vendor/github.com/containernetworking/cni/pkg/types:go_default_library"],
 )

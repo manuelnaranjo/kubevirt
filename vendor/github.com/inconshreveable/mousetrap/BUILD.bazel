@@ -8,5 +8,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/inconshreveable/mousetrap",
     importpath = "github.com/inconshreveable/mousetrap",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

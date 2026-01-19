@@ -5,6 +5,7 @@ go_library(
     srcs = ["protodelim.go"],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/protobuf/encoding/protodelim",
     importpath = "google.golang.org/protobuf/encoding/protodelim",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/google.golang.org/protobuf/encoding/protowire:go_default_library",

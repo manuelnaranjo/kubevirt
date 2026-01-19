@@ -5,6 +5,7 @@ go_library(
     srcs = ["api.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/prometheus/client_golang/api/prometheus/v1",
     importpath = "github.com/prometheus/client_golang/api/prometheus/v1",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/json-iterator/go:go_default_library",

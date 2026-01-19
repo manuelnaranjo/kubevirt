@@ -8,6 +8,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/sigs.k8s.io/controller-runtime/pkg/controller/priorityqueue",
     importpath = "sigs.k8s.io/controller-runtime/pkg/controller/priorityqueue",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/go-logr/logr:go_default_library",

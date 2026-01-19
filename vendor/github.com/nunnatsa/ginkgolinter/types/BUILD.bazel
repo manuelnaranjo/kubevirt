@@ -8,5 +8,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/nunnatsa/ginkgolinter/types",
     importpath = "github.com/nunnatsa/ginkgolinter/types",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

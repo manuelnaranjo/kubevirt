@@ -41,6 +41,7 @@ go_library(
     cgo = True,
     importmap = "kubevirt.io/kubevirt/vendor/github.com/prometheus/client_golang/prometheus",
     importpath = "github.com/prometheus/client_golang/prometheus",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/beorn7/perks/quantile:go_default_library",

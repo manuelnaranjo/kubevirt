@@ -5,6 +5,7 @@ go_library(
     srcs = ["clientset.go"],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/kube-aggregator/pkg/client/clientset_generated/clientset",
     importpath = "k8s.io/kube-aggregator/pkg/client/clientset_generated/clientset",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/k8s.io/client-go/discovery:go_default_library",

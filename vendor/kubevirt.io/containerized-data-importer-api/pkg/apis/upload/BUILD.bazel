@@ -5,5 +5,6 @@ go_library(
     srcs = ["register.go"],
     importmap = "kubevirt.io/kubevirt/vendor/kubevirt.io/containerized-data-importer-api/pkg/apis/upload",
     importpath = "kubevirt.io/containerized-data-importer-api/pkg/apis/upload",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

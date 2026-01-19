@@ -11,6 +11,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/golang.org/x/text/internal/language/compact",
     importpath = "golang.org/x/text/internal/language/compact",
+    tags = ["manual"],
     visibility = ["//vendor/golang.org/x/text:__subpackages__"],
     deps = ["//vendor/golang.org/x/text/internal/language:go_default_library"],
 )

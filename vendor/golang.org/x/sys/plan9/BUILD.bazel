@@ -24,5 +24,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/golang.org/x/sys/plan9",
     importpath = "golang.org/x/sys/plan9",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

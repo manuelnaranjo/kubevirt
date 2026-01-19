@@ -5,5 +5,6 @@ go_library(
     srcs = ["operator.go"],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/apimachinery/pkg/selection",
     importpath = "k8s.io/apimachinery/pkg/selection",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

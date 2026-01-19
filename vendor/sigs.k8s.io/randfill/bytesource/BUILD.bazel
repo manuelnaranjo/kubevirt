@@ -5,5 +5,6 @@ go_library(
     srcs = ["bytesource.go"],
     importmap = "kubevirt.io/kubevirt/vendor/sigs.k8s.io/randfill/bytesource",
     importpath = "sigs.k8s.io/randfill/bytesource",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

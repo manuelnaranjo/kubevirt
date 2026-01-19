@@ -5,6 +5,7 @@ go_library(
     srcs = ["endpointsharding.go"],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/grpc/balancer/endpointsharding",
     importpath = "google.golang.org/grpc/balancer/endpointsharding",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/google.golang.org/grpc/balancer:go_default_library",

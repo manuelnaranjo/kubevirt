@@ -9,6 +9,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/go-toolsmith/astcopy",
     importpath = "github.com/go-toolsmith/astcopy",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = ["//vendor/golang.org/x/exp/typeparams:go_default_library"],
 )

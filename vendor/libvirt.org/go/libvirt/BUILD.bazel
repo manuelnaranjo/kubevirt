@@ -112,5 +112,6 @@ go_library(
     cgo = True,
     importmap = "kubevirt.io/kubevirt/vendor/libvirt.org/go/libvirt",
     importpath = "libvirt.org/go/libvirt",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

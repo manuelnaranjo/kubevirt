@@ -5,5 +5,6 @@ go_library(
     srcs = ["ring_growing.go"],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/utils/buffer",
     importpath = "k8s.io/utils/buffer",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

@@ -5,6 +5,7 @@ go_library(
     srcs = ["binarylog.pb.go"],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/grpc/binarylog/grpc_binarylog_v1",
     importpath = "google.golang.org/grpc/binarylog/grpc_binarylog_v1",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/google.golang.org/protobuf/reflect/protoreflect:go_default_library",

@@ -12,6 +12,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/rhobs/operator-observability-toolkit/pkg/operatorrules",
     importpath = "github.com/rhobs/operator-observability-toolkit/pkg/operatorrules",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring/v1:go_default_library",

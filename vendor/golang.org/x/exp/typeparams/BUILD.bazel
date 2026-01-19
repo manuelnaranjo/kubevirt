@@ -12,5 +12,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/golang.org/x/exp/typeparams",
     importpath = "golang.org/x/exp/typeparams",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

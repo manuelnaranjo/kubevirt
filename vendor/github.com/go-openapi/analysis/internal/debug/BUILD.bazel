@@ -5,5 +5,6 @@ go_library(
     srcs = ["debug.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/go-openapi/analysis/internal/debug",
     importpath = "github.com/go-openapi/analysis/internal/debug",
+    tags = ["manual"],
     visibility = ["//vendor/github.com/go-openapi/analysis:__subpackages__"],
 )

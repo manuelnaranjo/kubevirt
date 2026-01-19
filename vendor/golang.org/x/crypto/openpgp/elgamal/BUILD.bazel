@@ -5,5 +5,6 @@ go_library(
     srcs = ["elgamal.go"],
     importmap = "kubevirt.io/kubevirt/vendor/golang.org/x/crypto/openpgp/elgamal",
     importpath = "golang.org/x/crypto/openpgp/elgamal",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

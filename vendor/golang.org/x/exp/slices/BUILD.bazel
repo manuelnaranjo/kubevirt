@@ -11,6 +11,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/golang.org/x/exp/slices",
     importpath = "golang.org/x/exp/slices",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = ["//vendor/golang.org/x/exp/constraints:go_default_library"],
 )

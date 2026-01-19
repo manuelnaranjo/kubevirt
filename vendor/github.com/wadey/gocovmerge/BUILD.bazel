@@ -5,6 +5,7 @@ go_library(
     srcs = ["gocovmerge.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/wadey/gocovmerge",
     importpath = "github.com/wadey/gocovmerge",
+    tags = ["manual"],
     visibility = ["//visibility:private"],
     deps = ["//vendor/golang.org/x/tools/cover:go_default_library"],
 )
@@ -12,5 +13,6 @@ go_library(
 go_binary(
     name = "gocovmerge",
     embed = [":go_default_library"],
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

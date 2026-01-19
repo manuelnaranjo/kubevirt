@@ -10,6 +10,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/openshift/client-go/route/clientset/versioned/typed/route/v1",
     importpath = "github.com/openshift/client-go/route/clientset/versioned/typed/route/v1",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/openshift/api/route/v1:go_default_library",

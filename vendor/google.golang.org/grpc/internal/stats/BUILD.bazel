@@ -8,6 +8,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/grpc/internal/stats",
     importpath = "google.golang.org/grpc/internal/stats",
+    tags = ["manual"],
     visibility = ["//vendor/google.golang.org/grpc:__subpackages__"],
     deps = [
         "//vendor/google.golang.org/grpc/experimental/stats:go_default_library",

@@ -5,6 +5,7 @@ go_library(
     srcs = ["nested_types.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/onsi/gomega/gstruct/errors",
     importpath = "github.com/onsi/gomega/gstruct/errors",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = ["//vendor/github.com/onsi/gomega/types:go_default_library"],
 )

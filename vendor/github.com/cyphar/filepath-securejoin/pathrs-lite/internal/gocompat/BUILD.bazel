@@ -11,5 +11,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/cyphar/filepath-securejoin/pathrs-lite/internal/gocompat",
     importpath = "github.com/cyphar/filepath-securejoin/pathrs-lite/internal/gocompat",
+    tags = ["manual"],
     visibility = ["//vendor/github.com/cyphar/filepath-securejoin/pathrs-lite:__subpackages__"],
 )

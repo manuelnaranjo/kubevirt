@@ -40,5 +40,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/gogo/protobuf/proto",
     importpath = "github.com/gogo/protobuf/proto",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

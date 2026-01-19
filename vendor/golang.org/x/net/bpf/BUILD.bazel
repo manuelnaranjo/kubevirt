@@ -13,5 +13,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/golang.org/x/net/bpf",
     importpath = "golang.org/x/net/bpf",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

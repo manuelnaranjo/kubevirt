@@ -5,6 +5,7 @@ go_library(
     srcs = ["buffer.go"],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/klog/v2/internal/buffer",
     importpath = "k8s.io/klog/v2/internal/buffer",
+    tags = ["manual"],
     visibility = ["//vendor/k8s.io/klog/v2:__subpackages__"],
     deps = ["//vendor/k8s.io/klog/v2/internal/severity:go_default_library"],
 )

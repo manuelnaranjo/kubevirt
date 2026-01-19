@@ -15,5 +15,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/go.mongodb.org/mongo-driver/bson/bsonoptions",
     importpath = "go.mongodb.org/mongo-driver/bson/bsonoptions",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

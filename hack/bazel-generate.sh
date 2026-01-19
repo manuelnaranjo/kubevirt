@@ -16,6 +16,11 @@ bazel run \
 bazel run \
     --config=${ARCHITECTURE} \
     -- :buildozer 'add cdeps //:libvirt-libs' //vendor/libvirt.org/go/libvirt:go_default_library
+
+bazel run \
+    --config=${ARCHITECTURE} \
+    -- :buildozer 'add tags manual' '//vendor/...:*'
+
 # align BAZEL files to a single format
 bazel run \
     --config=${ARCHITECTURE} \

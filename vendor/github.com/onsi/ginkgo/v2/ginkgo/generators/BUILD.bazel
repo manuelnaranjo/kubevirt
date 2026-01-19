@@ -11,6 +11,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/onsi/ginkgo/v2/ginkgo/generators",
     importpath = "github.com/onsi/ginkgo/v2/ginkgo/generators",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/go-task/slim-sprig/v3:go_default_library",

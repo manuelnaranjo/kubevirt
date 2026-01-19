@@ -18,6 +18,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/golang.org/x/tools/internal/typesinternal",
     importpath = "golang.org/x/tools/internal/typesinternal",
+    tags = ["manual"],
     visibility = ["//vendor/golang.org/x/tools:__subpackages__"],
     deps = [
         "//vendor/golang.org/x/tools/go/ast/inspector:go_default_library",

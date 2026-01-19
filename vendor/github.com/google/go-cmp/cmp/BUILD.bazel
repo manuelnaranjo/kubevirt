@@ -17,6 +17,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/google/go-cmp/cmp",
     importpath = "github.com/google/go-cmp/cmp",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/google/go-cmp/cmp/internal/diff:go_default_library",

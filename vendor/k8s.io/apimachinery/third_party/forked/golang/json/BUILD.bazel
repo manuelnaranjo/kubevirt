@@ -5,5 +5,6 @@ go_library(
     srcs = ["fields.go"],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/apimachinery/third_party/forked/golang/json",
     importpath = "k8s.io/apimachinery/third_party/forked/golang/json",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

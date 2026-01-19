@@ -5,5 +5,6 @@ go_library(
     srcs = ["flags.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/google/go-cmp/cmp/internal/flags",
     importpath = "github.com/google/go-cmp/cmp/internal/flags",
+    tags = ["manual"],
     visibility = ["//vendor/github.com/google/go-cmp/cmp:__subpackages__"],
 )

@@ -11,6 +11,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/prometheus/client_golang/prometheus/promhttp",
     importpath = "github.com/prometheus/client_golang/prometheus/promhttp",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/prometheus/client_golang/internal/github.com/golang/gddo/httputil:go_default_library",

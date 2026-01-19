@@ -5,6 +5,7 @@ go_library(
     srcs = ["test_restmapper.go"],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/apimachinery/pkg/api/meta/testrestmapper",
     importpath = "k8s.io/apimachinery/pkg/api/meta/testrestmapper",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/k8s.io/apimachinery/pkg/api/meta:go_default_library",

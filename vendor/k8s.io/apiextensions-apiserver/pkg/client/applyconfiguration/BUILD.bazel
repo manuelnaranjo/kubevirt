@@ -5,6 +5,7 @@ go_library(
     srcs = ["utils.go"],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/apiextensions-apiserver/pkg/client/applyconfiguration",
     importpath = "k8s.io/apiextensions-apiserver/pkg/client/applyconfiguration",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1:go_default_library",

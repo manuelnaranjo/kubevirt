@@ -5,6 +5,7 @@ go_library(
     srcs = ["metrics_parser.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/kubevirt/monitoring/pkg/metrics/parser",
     importpath = "github.com/kubevirt/monitoring/pkg/metrics/parser",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = ["//vendor/github.com/prometheus/client_model/go:go_default_library"],
 )

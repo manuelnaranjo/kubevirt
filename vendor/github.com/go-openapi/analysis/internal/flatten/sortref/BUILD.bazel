@@ -8,6 +8,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/go-openapi/analysis/internal/flatten/sortref",
     importpath = "github.com/go-openapi/analysis/internal/flatten/sortref",
+    tags = ["manual"],
     visibility = ["//vendor/github.com/go-openapi/analysis:__subpackages__"],
     deps = [
         "//vendor/github.com/go-openapi/analysis/internal/flatten/normalize:go_default_library",

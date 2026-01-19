@@ -5,6 +5,7 @@ go_library(
     srcs = ["devices_emulator.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/opencontainers/runc/libcontainer/cgroups/devices",
     importpath = "github.com/opencontainers/runc/libcontainer/cgroups/devices",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = ["//vendor/github.com/opencontainers/runc/libcontainer/devices:go_default_library"],
 )

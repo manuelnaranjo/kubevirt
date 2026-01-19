@@ -5,6 +5,7 @@ go_library(
     srcs = ["peer.go"],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/grpc/peer",
     importpath = "google.golang.org/grpc/peer",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = ["//vendor/google.golang.org/grpc/credentials:go_default_library"],
 )

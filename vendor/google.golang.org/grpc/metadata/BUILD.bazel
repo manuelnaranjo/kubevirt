@@ -5,6 +5,7 @@ go_library(
     srcs = ["metadata.go"],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/grpc/metadata",
     importpath = "google.golang.org/grpc/metadata",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = ["//vendor/google.golang.org/grpc/internal:go_default_library"],
 )

@@ -72,6 +72,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/golang.org/x/net/ipv6",
     importpath = "golang.org/x/net/ipv6",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/golang.org/x/net/bpf:go_default_library",

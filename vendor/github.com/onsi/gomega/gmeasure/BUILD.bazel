@@ -13,6 +13,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/onsi/gomega/gmeasure",
     importpath = "github.com/onsi/gomega/gmeasure",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/onsi/gomega/gmeasure/table:go_default_library",

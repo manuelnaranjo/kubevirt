@@ -11,6 +11,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/insomniacslk/dhcp/iana",
     importpath = "github.com/insomniacslk/dhcp/iana",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = ["//vendor/github.com/u-root/uio/uio:go_default_library"],
 )

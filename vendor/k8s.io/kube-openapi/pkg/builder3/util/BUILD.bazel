@@ -5,6 +5,7 @@ go_library(
     srcs = ["util.go"],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/kube-openapi/pkg/builder3/util",
     importpath = "k8s.io/kube-openapi/pkg/builder3/util",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/k8s.io/kube-openapi/pkg/schemamutation:go_default_library",

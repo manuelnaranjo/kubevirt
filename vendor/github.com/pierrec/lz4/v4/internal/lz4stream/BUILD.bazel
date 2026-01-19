@@ -9,6 +9,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/pierrec/lz4/v4/internal/lz4stream",
     importpath = "github.com/pierrec/lz4/v4/internal/lz4stream",
+    tags = ["manual"],
     visibility = ["//vendor/github.com/pierrec/lz4/v4:__subpackages__"],
     deps = [
         "//vendor/github.com/pierrec/lz4/v4/internal/lz4block:go_default_library",

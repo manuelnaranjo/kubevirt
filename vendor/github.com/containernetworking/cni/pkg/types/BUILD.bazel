@@ -8,5 +8,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/containernetworking/cni/pkg/types",
     importpath = "github.com/containernetworking/cni/pkg/types",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

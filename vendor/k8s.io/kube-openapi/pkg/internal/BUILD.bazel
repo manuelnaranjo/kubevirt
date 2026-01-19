@@ -8,6 +8,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/kube-openapi/pkg/internal",
     importpath = "k8s.io/kube-openapi/pkg/internal",
+    tags = ["manual"],
     visibility = ["//vendor/k8s.io/kube-openapi/pkg:__subpackages__"],
     deps = [
         "//vendor/github.com/go-openapi/jsonreference:go_default_library",

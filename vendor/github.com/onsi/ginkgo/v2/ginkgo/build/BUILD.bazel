@@ -5,6 +5,7 @@ go_library(
     srcs = ["build_command.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/onsi/ginkgo/v2/ginkgo/build",
     importpath = "github.com/onsi/ginkgo/v2/ginkgo/build",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/onsi/ginkgo/v2/ginkgo/command:go_default_library",

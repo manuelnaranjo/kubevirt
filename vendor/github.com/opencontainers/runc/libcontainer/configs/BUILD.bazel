@@ -22,6 +22,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/opencontainers/runc/libcontainer/configs",
     importpath = "github.com/opencontainers/runc/libcontainer/configs",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/opencontainers/runc/libcontainer/devices:go_default_library",

@@ -5,6 +5,7 @@ go_library(
     srcs = ["pretty.go"],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/grpc/internal/pretty",
     importpath = "google.golang.org/grpc/internal/pretty",
+    tags = ["manual"],
     visibility = ["//vendor/google.golang.org/grpc:__subpackages__"],
     deps = [
         "//vendor/google.golang.org/protobuf/encoding/protojson:go_default_library",

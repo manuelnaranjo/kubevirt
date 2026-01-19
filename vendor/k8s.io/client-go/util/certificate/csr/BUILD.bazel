@@ -5,6 +5,7 @@ go_library(
     srcs = ["csr.go"],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/client-go/util/certificate/csr",
     importpath = "k8s.io/client-go/util/certificate/csr",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/k8s.io/api/certificates/v1:go_default_library",

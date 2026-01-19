@@ -5,6 +5,7 @@ go_library(
     srcs = ["messageset.go"],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/protobuf/internal/encoding/messageset",
     importpath = "google.golang.org/protobuf/internal/encoding/messageset",
+    tags = ["manual"],
     visibility = ["//vendor/google.golang.org/protobuf:__subpackages__"],
     deps = [
         "//vendor/google.golang.org/protobuf/encoding/protowire:go_default_library",

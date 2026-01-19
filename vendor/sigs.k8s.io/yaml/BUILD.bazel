@@ -8,6 +8,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/sigs.k8s.io/yaml",
     importpath = "sigs.k8s.io/yaml",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = ["//vendor/go.yaml.in/yaml/v2:go_default_library"],
 )

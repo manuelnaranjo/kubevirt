@@ -12,6 +12,7 @@ go_library(
     cgo = True,
     importmap = "kubevirt.io/kubevirt/vendor/github.com/opencontainers/runc/libcontainer/userns",
     importpath = "github.com/opencontainers/runc/libcontainer/userns",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = select({
         "@io_bazel_rules_go//go/platform:aix": [

@@ -15,5 +15,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/google/pprof/profile",
     importpath = "github.com/google/pprof/profile",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

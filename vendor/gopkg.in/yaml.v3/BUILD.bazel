@@ -19,5 +19,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/gopkg.in/yaml.v3",
     importpath = "gopkg.in/yaml.v3",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

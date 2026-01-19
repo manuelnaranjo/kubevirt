@@ -8,6 +8,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/kube-openapi/pkg/builder3",
     importpath = "k8s.io/kube-openapi/pkg/builder3",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/emicklei/go-restful/v3:go_default_library",

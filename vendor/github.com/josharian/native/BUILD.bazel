@@ -9,5 +9,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/josharian/native",
     importpath = "github.com/josharian/native",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

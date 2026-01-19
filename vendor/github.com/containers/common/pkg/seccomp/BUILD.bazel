@@ -10,6 +10,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/containers/common/pkg/seccomp",
     importpath = "github.com/containers/common/pkg/seccomp",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/opencontainers/runtime-spec/specs-go:go_default_library",

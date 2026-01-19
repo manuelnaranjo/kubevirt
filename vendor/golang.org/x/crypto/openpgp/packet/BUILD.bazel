@@ -24,6 +24,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/golang.org/x/crypto/openpgp/packet",
     importpath = "golang.org/x/crypto/openpgp/packet",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/golang.org/x/crypto/cast5:go_default_library",

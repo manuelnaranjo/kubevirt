@@ -28,5 +28,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/golang.org/x/sys/windows",
     importpath = "golang.org/x/sys/windows",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

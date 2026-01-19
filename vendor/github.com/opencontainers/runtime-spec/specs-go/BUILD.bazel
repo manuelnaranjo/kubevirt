@@ -9,5 +9,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/opencontainers/runtime-spec/specs-go",
     importpath = "github.com/opencontainers/runtime-spec/specs-go",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

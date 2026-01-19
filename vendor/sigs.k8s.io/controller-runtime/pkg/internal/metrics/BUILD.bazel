@@ -5,6 +5,7 @@ go_library(
     srcs = ["workqueue.go"],
     importmap = "kubevirt.io/kubevirt/vendor/sigs.k8s.io/controller-runtime/pkg/internal/metrics",
     importpath = "sigs.k8s.io/controller-runtime/pkg/internal/metrics",
+    tags = ["manual"],
     visibility = ["//vendor/sigs.k8s.io/controller-runtime/pkg:__subpackages__"],
     deps = [
         "//vendor/github.com/prometheus/client_golang/prometheus:go_default_library",

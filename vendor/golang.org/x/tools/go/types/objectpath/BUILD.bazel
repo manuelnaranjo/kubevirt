@@ -5,6 +5,7 @@ go_library(
     srcs = ["objectpath.go"],
     importmap = "kubevirt.io/kubevirt/vendor/golang.org/x/tools/go/types/objectpath",
     importpath = "golang.org/x/tools/go/types/objectpath",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/golang.org/x/tools/internal/aliases:go_default_library",

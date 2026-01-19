@@ -16,6 +16,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/cheggaaa/pb/v3",
     importpath = "github.com/cheggaaa/pb/v3",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/VividCortex/ewma:go_default_library",

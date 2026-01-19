@@ -8,5 +8,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/golang.org/x/time/rate",
     importpath = "golang.org/x/time/rate",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

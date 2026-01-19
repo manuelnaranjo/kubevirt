@@ -5,6 +5,7 @@ go_library(
     srcs = ["roundrobin.go"],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/grpc/balancer/roundrobin",
     importpath = "google.golang.org/grpc/balancer/roundrobin",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/google.golang.org/grpc/balancer:go_default_library",

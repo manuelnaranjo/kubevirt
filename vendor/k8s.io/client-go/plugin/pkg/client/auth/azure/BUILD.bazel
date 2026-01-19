@@ -5,6 +5,7 @@ go_library(
     srcs = ["azure_stub.go"],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/client-go/plugin/pkg/client/auth/azure",
     importpath = "k8s.io/client-go/plugin/pkg/client/auth/azure",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/k8s.io/client-go/rest:go_default_library",

@@ -5,6 +5,7 @@ go_library(
     srcs = ["pickfirstleaf.go"],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/grpc/balancer/pickfirst/pickfirstleaf",
     importpath = "google.golang.org/grpc/balancer/pickfirst/pickfirstleaf",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/google.golang.org/grpc/balancer:go_default_library",

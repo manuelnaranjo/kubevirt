@@ -10,6 +10,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/insomniacslk/dhcp/dhcpv6/server6",
     importpath = "github.com/insomniacslk/dhcp/dhcpv6/server6",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/insomniacslk/dhcp/dhcpv6:go_default_library",

@@ -23,5 +23,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/libvirt.org/go/libvirtxml",
     importpath = "libvirt.org/go/libvirtxml",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

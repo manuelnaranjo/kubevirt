@@ -18,6 +18,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/cilium/ebpf",
     importpath = "github.com/cilium/ebpf",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/cilium/ebpf/asm:go_default_library",

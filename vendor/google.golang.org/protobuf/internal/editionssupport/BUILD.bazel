@@ -5,6 +5,7 @@ go_library(
     srcs = ["editions.go"],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/protobuf/internal/editionssupport",
     importpath = "google.golang.org/protobuf/internal/editionssupport",
+    tags = ["manual"],
     visibility = ["//vendor/google.golang.org/protobuf:__subpackages__"],
     deps = ["//vendor/google.golang.org/protobuf/types/descriptorpb:go_default_library"],
 )

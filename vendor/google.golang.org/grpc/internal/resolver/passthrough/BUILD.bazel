@@ -5,6 +5,7 @@ go_library(
     srcs = ["passthrough.go"],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/grpc/internal/resolver/passthrough",
     importpath = "google.golang.org/grpc/internal/resolver/passthrough",
+    tags = ["manual"],
     visibility = ["//vendor/google.golang.org/grpc:__subpackages__"],
     deps = ["//vendor/google.golang.org/grpc/resolver:go_default_library"],
 )

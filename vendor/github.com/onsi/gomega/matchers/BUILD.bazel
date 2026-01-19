@@ -60,6 +60,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/onsi/gomega/matchers",
     importpath = "github.com/onsi/gomega/matchers",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/google/go-cmp/cmp:go_default_library",

@@ -9,6 +9,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/mattn/go-colorable",
     importpath = "github.com/mattn/go-colorable",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = select({
         "@io_bazel_rules_go//go/platform:aix": [

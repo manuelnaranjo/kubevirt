@@ -5,6 +5,7 @@ go_library(
     srcs = ["dns_resolver.go"],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/grpc/resolver/dns",
     importpath = "google.golang.org/grpc/resolver/dns",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/google.golang.org/grpc/internal/resolver/dns:go_default_library",

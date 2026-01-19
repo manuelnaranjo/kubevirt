@@ -10,6 +10,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/apimachinery/pkg/util/proxy",
     importpath = "k8s.io/apimachinery/pkg/util/proxy",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/mxk/go-flowrate/flowrate:go_default_library",

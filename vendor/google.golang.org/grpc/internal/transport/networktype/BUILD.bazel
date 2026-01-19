@@ -5,6 +5,7 @@ go_library(
     srcs = ["networktype.go"],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/grpc/internal/transport/networktype",
     importpath = "google.golang.org/grpc/internal/transport/networktype",
+    tags = ["manual"],
     visibility = ["//vendor/google.golang.org/grpc:__subpackages__"],
     deps = ["//vendor/google.golang.org/grpc/resolver:go_default_library"],
 )

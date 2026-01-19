@@ -8,5 +8,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/google/btree",
     importpath = "github.com/google/btree",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

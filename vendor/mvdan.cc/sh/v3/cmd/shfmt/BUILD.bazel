@@ -5,6 +5,7 @@ go_library(
     srcs = ["main.go"],
     importmap = "kubevirt.io/kubevirt/vendor/mvdan.cc/sh/v3/cmd/shfmt",
     importpath = "mvdan.cc/sh/v3/cmd/shfmt",
+    tags = ["manual"],
     visibility = ["//visibility:private"],
     deps = [
         "//vendor/github.com/google/renameio/v2/maybe:go_default_library",
@@ -21,5 +22,6 @@ go_library(
 go_binary(
     name = "shfmt",
     embed = [":go_default_library"],
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

@@ -5,6 +5,7 @@ go_library(
     srcs = ["randfill.go"],
     importmap = "kubevirt.io/kubevirt/vendor/sigs.k8s.io/randfill",
     importpath = "sigs.k8s.io/randfill",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = ["//vendor/sigs.k8s.io/randfill/bytesource:go_default_library"],
 )

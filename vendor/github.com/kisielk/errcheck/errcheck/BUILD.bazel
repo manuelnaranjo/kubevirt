@@ -12,6 +12,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/kisielk/errcheck/errcheck",
     importpath = "github.com/kisielk/errcheck/errcheck",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/golang.org/x/tools/go/packages:go_default_library",

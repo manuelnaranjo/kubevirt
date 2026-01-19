@@ -8,5 +8,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/mvdan.cc/editorconfig",
     importpath = "mvdan.cc/editorconfig",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

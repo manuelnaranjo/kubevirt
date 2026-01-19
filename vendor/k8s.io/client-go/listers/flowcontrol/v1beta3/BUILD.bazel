@@ -9,6 +9,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/client-go/listers/flowcontrol/v1beta3",
     importpath = "k8s.io/client-go/listers/flowcontrol/v1beta3",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/k8s.io/api/flowcontrol/v1beta3:go_default_library",

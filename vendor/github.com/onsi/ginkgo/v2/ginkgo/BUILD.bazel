@@ -5,6 +5,7 @@ go_library(
     srcs = ["main.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/onsi/ginkgo/v2/ginkgo",
     importpath = "github.com/onsi/ginkgo/v2/ginkgo",
+    tags = ["manual"],
     visibility = ["//visibility:private"],
     deps = [
         "//vendor/github.com/onsi/ginkgo/v2/ginkgo/build:go_default_library",
@@ -22,5 +23,6 @@ go_library(
 go_binary(
     name = "ginkgo",
     embed = [":go_default_library"],
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

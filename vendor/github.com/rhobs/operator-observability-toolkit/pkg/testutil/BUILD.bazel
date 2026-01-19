@@ -12,6 +12,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/rhobs/operator-observability-toolkit/pkg/testutil",
     importpath = "github.com/rhobs/operator-observability-toolkit/pkg/testutil",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/grafana/regexp:go_default_library",

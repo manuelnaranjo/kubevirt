@@ -5,6 +5,7 @@ go_library(
     srcs = ["devicefilter.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/opencontainers/runc/libcontainer/cgroups/ebpf/devicefilter",
     importpath = "github.com/opencontainers/runc/libcontainer/cgroups/ebpf/devicefilter",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/cilium/ebpf/asm:go_default_library",

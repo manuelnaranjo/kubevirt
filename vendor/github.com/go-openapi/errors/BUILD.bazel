@@ -13,5 +13,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/go-openapi/errors",
     importpath = "github.com/go-openapi/errors",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

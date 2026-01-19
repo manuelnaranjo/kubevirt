@@ -8,6 +8,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/client-go/informers/storagemigration/v1alpha1",
     importpath = "k8s.io/client-go/informers/storagemigration/v1alpha1",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/k8s.io/api/storagemigration/v1alpha1:go_default_library",

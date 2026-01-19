@@ -8,6 +8,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/klauspost/pgzip",
     importpath = "github.com/klauspost/pgzip",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = ["//vendor/github.com/klauspost/compress/flate:go_default_library"],
 )

@@ -8,6 +8,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/go-logr/logr/funcr",
     importpath = "github.com/go-logr/logr/funcr",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = ["//vendor/github.com/go-logr/logr:go_default_library"],
 )

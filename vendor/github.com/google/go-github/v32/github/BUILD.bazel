@@ -105,6 +105,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/google/go-github/v32/github",
     importpath = "github.com/google/go-github/v32/github",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/google/go-querystring/query:go_default_library",

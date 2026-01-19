@@ -13,6 +13,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/pierrec/lz4/v4/internal/lz4block",
     importpath = "github.com/pierrec/lz4/v4/internal/lz4block",
+    tags = ["manual"],
     visibility = ["//vendor/github.com/pierrec/lz4/v4:__subpackages__"],
     deps = ["//vendor/github.com/pierrec/lz4/v4/internal/lz4errors:go_default_library"],
 )

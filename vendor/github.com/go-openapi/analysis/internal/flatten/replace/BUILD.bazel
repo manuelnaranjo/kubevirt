@@ -5,6 +5,7 @@ go_library(
     srcs = ["replace.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/go-openapi/analysis/internal/flatten/replace",
     importpath = "github.com/go-openapi/analysis/internal/flatten/replace",
+    tags = ["manual"],
     visibility = ["//vendor/github.com/go-openapi/analysis:__subpackages__"],
     deps = [
         "//vendor/github.com/go-openapi/analysis/internal/debug:go_default_library",

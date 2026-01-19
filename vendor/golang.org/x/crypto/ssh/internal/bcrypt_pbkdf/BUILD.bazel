@@ -5,6 +5,7 @@ go_library(
     srcs = ["bcrypt_pbkdf.go"],
     importmap = "kubevirt.io/kubevirt/vendor/golang.org/x/crypto/ssh/internal/bcrypt_pbkdf",
     importpath = "golang.org/x/crypto/ssh/internal/bcrypt_pbkdf",
+    tags = ["manual"],
     visibility = ["//vendor/golang.org/x/crypto/ssh:__subpackages__"],
     deps = ["//vendor/golang.org/x/crypto/blowfish:go_default_library"],
 )

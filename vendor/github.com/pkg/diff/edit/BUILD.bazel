@@ -8,5 +8,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/pkg/diff/edit",
     importpath = "github.com/pkg/diff/edit",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

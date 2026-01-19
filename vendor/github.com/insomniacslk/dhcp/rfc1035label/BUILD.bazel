@@ -5,5 +5,6 @@ go_library(
     srcs = ["label.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/insomniacslk/dhcp/rfc1035label",
     importpath = "github.com/insomniacslk/dhcp/rfc1035label",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

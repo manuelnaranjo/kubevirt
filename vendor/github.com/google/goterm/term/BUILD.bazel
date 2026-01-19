@@ -9,5 +9,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/google/goterm/term",
     importpath = "github.com/google/goterm/term",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

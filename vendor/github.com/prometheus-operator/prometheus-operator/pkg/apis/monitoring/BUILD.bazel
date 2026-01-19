@@ -8,5 +8,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring",
     importpath = "github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

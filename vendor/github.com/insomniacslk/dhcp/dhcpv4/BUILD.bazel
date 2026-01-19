@@ -26,6 +26,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/insomniacslk/dhcp/dhcpv4",
     importpath = "github.com/insomniacslk/dhcp/dhcpv4",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/insomniacslk/dhcp/iana:go_default_library",

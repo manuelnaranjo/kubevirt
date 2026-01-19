@@ -12,6 +12,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/protobuf/internal/encoding/text",
     importpath = "google.golang.org/protobuf/internal/encoding/text",
+    tags = ["manual"],
     visibility = ["//vendor/google.golang.org/protobuf:__subpackages__"],
     deps = [
         "//vendor/google.golang.org/protobuf/internal/detrand:go_default_library",

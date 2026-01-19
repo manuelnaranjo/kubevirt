@@ -5,5 +5,6 @@ go_library(
     srcs = ["table.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/onsi/gomega/gmeasure/table",
     importpath = "github.com/onsi/gomega/gmeasure/table",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

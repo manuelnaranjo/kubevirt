@@ -8,5 +8,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/golang.org/x/tools/internal/aliases",
     importpath = "golang.org/x/tools/internal/aliases",
+    tags = ["manual"],
     visibility = ["//vendor/golang.org/x/tools:__subpackages__"],
 )

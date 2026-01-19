@@ -5,6 +5,7 @@ go_library(
     srcs = ["state.go"],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/grpc/balancer/grpclb/state",
     importpath = "google.golang.org/grpc/balancer/grpclb/state",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = ["//vendor/google.golang.org/grpc/resolver:go_default_library"],
 )

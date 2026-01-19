@@ -12,6 +12,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/onsi/ginkgo/v2",
     importpath = "github.com/onsi/ginkgo/v2",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/go-logr/logr:go_default_library",

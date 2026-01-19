@@ -9,5 +9,6 @@ go_library(
     cgo = True,
     importmap = "kubevirt.io/kubevirt/vendor/cyphar.com/go-pathrs/internal/libpathrs",
     importpath = "cyphar.com/go-pathrs/internal/libpathrs",
+    tags = ["manual"],
     visibility = ["//vendor/cyphar.com/go-pathrs:__subpackages__"],
 )

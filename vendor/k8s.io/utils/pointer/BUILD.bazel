@@ -5,6 +5,7 @@ go_library(
     srcs = ["pointer.go"],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/utils/pointer",
     importpath = "k8s.io/utils/pointer",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = ["//vendor/k8s.io/utils/ptr:go_default_library"],
 )

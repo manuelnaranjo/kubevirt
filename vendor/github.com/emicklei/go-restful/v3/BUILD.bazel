@@ -37,6 +37,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/emicklei/go-restful/v3",
     importpath = "github.com/emicklei/go-restful/v3",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = ["//vendor/github.com/emicklei/go-restful/v3/log:go_default_library"],
 )

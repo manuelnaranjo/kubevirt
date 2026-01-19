@@ -10,5 +10,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/go-logfmt/logfmt",
     importpath = "github.com/go-logfmt/logfmt",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

@@ -9,5 +9,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/grpc/internal/envconfig",
     importpath = "google.golang.org/grpc/internal/envconfig",
+    tags = ["manual"],
     visibility = ["//vendor/google.golang.org/grpc:__subpackages__"],
 )

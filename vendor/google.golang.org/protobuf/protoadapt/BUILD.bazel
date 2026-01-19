@@ -5,6 +5,7 @@ go_library(
     srcs = ["convert.go"],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/protobuf/protoadapt",
     importpath = "google.golang.org/protobuf/protoadapt",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/google.golang.org/protobuf/proto:go_default_library",

@@ -5,6 +5,7 @@ go_library(
     srcs = ["unix.go"],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/grpc/internal/resolver/unix",
     importpath = "google.golang.org/grpc/internal/resolver/unix",
+    tags = ["manual"],
     visibility = ["//vendor/google.golang.org/grpc:__subpackages__"],
     deps = [
         "//vendor/google.golang.org/grpc/internal/transport/networktype:go_default_library",

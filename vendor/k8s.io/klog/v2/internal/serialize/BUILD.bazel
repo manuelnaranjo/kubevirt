@@ -9,6 +9,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/klog/v2/internal/serialize",
     importpath = "k8s.io/klog/v2/internal/serialize",
+    tags = ["manual"],
     visibility = ["//vendor/k8s.io/klog/v2:__subpackages__"],
     deps = ["//vendor/github.com/go-logr/logr:go_default_library"],
 )

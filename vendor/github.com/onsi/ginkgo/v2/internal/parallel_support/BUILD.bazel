@@ -12,6 +12,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/onsi/ginkgo/v2/internal/parallel_support",
     importpath = "github.com/onsi/ginkgo/v2/internal/parallel_support",
+    tags = ["manual"],
     visibility = ["//vendor/github.com/onsi/ginkgo/v2:__subpackages__"],
     deps = [
         "//vendor/github.com/onsi/ginkgo/v2/reporters:go_default_library",

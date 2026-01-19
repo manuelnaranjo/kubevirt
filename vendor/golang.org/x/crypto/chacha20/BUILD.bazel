@@ -15,6 +15,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/golang.org/x/crypto/chacha20",
     importpath = "golang.org/x/crypto/chacha20",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/golang.org/x/crypto/internal/alias:go_default_library",

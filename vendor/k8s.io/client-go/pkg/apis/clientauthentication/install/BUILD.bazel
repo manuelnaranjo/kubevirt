@@ -5,6 +5,7 @@ go_library(
     srcs = ["install.go"],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/client-go/pkg/apis/clientauthentication/install",
     importpath = "k8s.io/client-go/pkg/apis/clientauthentication/install",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/k8s.io/apimachinery/pkg/runtime:go_default_library",

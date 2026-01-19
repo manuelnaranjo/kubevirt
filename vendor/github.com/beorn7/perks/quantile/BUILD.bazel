@@ -5,5 +5,6 @@ go_library(
     srcs = ["stream.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/beorn7/perks/quantile",
     importpath = "github.com/beorn7/perks/quantile",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

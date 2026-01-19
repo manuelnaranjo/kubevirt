@@ -8,6 +8,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/apimachinery/pkg/util/diff",
     importpath = "k8s.io/apimachinery/pkg/util/diff",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/pmezard/go-difflib/difflib:go_default_library",

@@ -15,5 +15,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/asaskevich/govalidator",
     importpath = "github.com/asaskevich/govalidator",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

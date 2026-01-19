@@ -5,6 +5,7 @@ go_library(
     srcs = ["reference.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/go-openapi/jsonreference",
     importpath = "github.com/go-openapi/jsonreference",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/go-openapi/jsonpointer:go_default_library",

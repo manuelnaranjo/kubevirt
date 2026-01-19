@@ -14,5 +14,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/cheggaaa/pb/v3/termutil",
     importpath = "github.com/cheggaaa/pb/v3/termutil",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

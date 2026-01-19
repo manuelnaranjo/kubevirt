@@ -5,6 +5,7 @@ go_library(
     srcs = ["delegatingresolver.go"],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/grpc/internal/resolver/delegatingresolver",
     importpath = "google.golang.org/grpc/internal/resolver/delegatingresolver",
+    tags = ["manual"],
     visibility = ["//vendor/google.golang.org/grpc:__subpackages__"],
     deps = [
         "//vendor/google.golang.org/grpc/grpclog:go_default_library",

@@ -8,6 +8,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/client-go/tools/cache/synctrack",
     importpath = "k8s.io/client-go/tools/cache/synctrack",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = ["//vendor/k8s.io/apimachinery/pkg/util/sets:go_default_library"],
 )

@@ -5,5 +5,6 @@ go_library(
     srcs = ["transform.go"],
     importmap = "kubevirt.io/kubevirt/vendor/golang.org/x/text/transform",
     importpath = "golang.org/x/text/transform",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

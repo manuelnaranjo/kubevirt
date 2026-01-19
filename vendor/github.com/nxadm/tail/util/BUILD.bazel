@@ -5,5 +5,6 @@ go_library(
     srcs = ["util.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/nxadm/tail/util",
     importpath = "github.com/nxadm/tail/util",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

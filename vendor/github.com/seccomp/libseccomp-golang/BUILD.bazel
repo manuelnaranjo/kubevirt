@@ -9,5 +9,6 @@ go_library(
     cgo = True,
     importmap = "kubevirt.io/kubevirt/vendor/github.com/seccomp/libseccomp-golang",
     importpath = "github.com/seccomp/libseccomp-golang",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

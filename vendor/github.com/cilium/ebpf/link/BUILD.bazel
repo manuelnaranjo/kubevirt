@@ -23,6 +23,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/cilium/ebpf/link",
     importpath = "github.com/cilium/ebpf/link",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/cilium/ebpf:go_default_library",

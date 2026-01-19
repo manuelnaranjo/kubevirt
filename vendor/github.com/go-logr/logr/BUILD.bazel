@@ -14,5 +14,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/go-logr/logr",
     importpath = "github.com/go-logr/logr",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

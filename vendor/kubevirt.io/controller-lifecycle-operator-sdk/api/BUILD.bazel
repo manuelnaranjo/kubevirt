@@ -5,6 +5,7 @@ go_library(
     srcs = ["types.go"],
     importmap = "kubevirt.io/kubevirt/vendor/kubevirt.io/controller-lifecycle-operator-sdk/api",
     importpath = "kubevirt.io/controller-lifecycle-operator-sdk/api",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/openshift/custom-resource-status/conditions/v1:go_default_library",

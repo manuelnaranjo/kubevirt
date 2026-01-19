@@ -9,6 +9,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/kube-openapi/pkg/schemaconv",
     importpath = "k8s.io/kube-openapi/pkg/schemaconv",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/k8s.io/kube-openapi/pkg/util/proto:go_default_library",

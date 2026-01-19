@@ -9,5 +9,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/golang.org/x/crypto/blowfish",
     importpath = "golang.org/x/crypto/blowfish",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

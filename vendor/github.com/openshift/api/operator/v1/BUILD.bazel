@@ -31,6 +31,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/openshift/api/operator/v1",
     importpath = "github.com/openshift/api/operator/v1",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/openshift/api/config/v1:go_default_library",

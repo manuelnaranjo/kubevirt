@@ -42,6 +42,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/go-openapi/spec",
     importpath = "github.com/go-openapi/spec",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/go-openapi/jsonpointer:go_default_library",

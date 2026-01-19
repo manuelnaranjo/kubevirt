@@ -5,6 +5,7 @@ go_library(
     srcs = ["interfaces.go"],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/client-go/tools/internal/events",
     importpath = "k8s.io/client-go/tools/internal/events",
+    tags = ["manual"],
     visibility = ["//vendor/k8s.io/client-go/tools:__subpackages__"],
     deps = [
         "//vendor/k8s.io/apimachinery/pkg/runtime:go_default_library",

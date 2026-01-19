@@ -8,5 +8,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/operator-framework/operator-lifecycle-manager/pkg/api/apis/operators",
     importpath = "github.com/operator-framework/operator-lifecycle-manager/pkg/api/apis/operators",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

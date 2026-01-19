@@ -8,6 +8,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/grpc/internal/syscall",
     importpath = "google.golang.org/grpc/internal/syscall",
+    tags = ["manual"],
     visibility = ["//vendor/google.golang.org/grpc:__subpackages__"],
     deps = select({
         "@io_bazel_rules_go//go/platform:aix": [

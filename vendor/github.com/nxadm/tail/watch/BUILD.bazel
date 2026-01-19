@@ -11,6 +11,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/nxadm/tail/watch",
     importpath = "github.com/nxadm/tail/watch",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/fsnotify/fsnotify:go_default_library",

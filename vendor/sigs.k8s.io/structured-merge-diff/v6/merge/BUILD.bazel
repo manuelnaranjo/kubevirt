@@ -8,6 +8,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/sigs.k8s.io/structured-merge-diff/v6/merge",
     importpath = "sigs.k8s.io/structured-merge-diff/v6/merge",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/sigs.k8s.io/structured-merge-diff/v6/fieldpath:go_default_library",

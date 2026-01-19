@@ -5,5 +5,6 @@ go_library(
     srcs = ["autoneg.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/munnerz/goautoneg",
     importpath = "github.com/munnerz/goautoneg",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

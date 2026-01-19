@@ -54,5 +54,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/golang.org/x/sys/cpu",
     importpath = "golang.org/x/sys/cpu",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

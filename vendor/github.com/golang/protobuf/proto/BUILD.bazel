@@ -18,6 +18,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/golang/protobuf/proto",
     importpath = "github.com/golang/protobuf/proto",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/google.golang.org/protobuf/encoding/prototext:go_default_library",

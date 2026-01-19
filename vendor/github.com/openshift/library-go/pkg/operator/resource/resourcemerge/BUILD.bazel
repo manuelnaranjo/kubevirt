@@ -11,6 +11,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/openshift/library-go/pkg/operator/resource/resourcemerge",
     importpath = "github.com/openshift/library-go/pkg/operator/resource/resourcemerge",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/openshift/api/operator/v1:go_default_library",

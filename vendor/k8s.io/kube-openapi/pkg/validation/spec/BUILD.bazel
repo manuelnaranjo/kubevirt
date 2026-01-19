@@ -24,6 +24,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/kube-openapi/pkg/validation/spec",
     importpath = "k8s.io/kube-openapi/pkg/validation/spec",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/go-openapi/jsonreference:go_default_library",

@@ -5,5 +5,6 @@ go_library(
     srcs = ["assert.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/cyphar/filepath-securejoin/pathrs-lite/internal/assert",
     importpath = "github.com/cyphar/filepath-securejoin/pathrs-lite/internal/assert",
+    tags = ["manual"],
     visibility = ["//vendor/github.com/cyphar/filepath-securejoin/pathrs-lite:__subpackages__"],
 )

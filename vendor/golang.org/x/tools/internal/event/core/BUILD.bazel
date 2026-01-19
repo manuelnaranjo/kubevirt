@@ -9,6 +9,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/golang.org/x/tools/internal/event/core",
     importpath = "golang.org/x/tools/internal/event/core",
+    tags = ["manual"],
     visibility = ["//vendor/golang.org/x/tools:__subpackages__"],
     deps = [
         "//vendor/golang.org/x/tools/internal/event/keys:go_default_library",

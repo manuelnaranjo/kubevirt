@@ -10,5 +10,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/sigs.k8s.io/structured-merge-diff/v6/schema",
     importpath = "sigs.k8s.io/structured-merge-diff/v6/schema",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

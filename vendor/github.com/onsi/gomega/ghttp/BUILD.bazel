@@ -8,6 +8,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/onsi/gomega/ghttp",
     importpath = "github.com/onsi/gomega/ghttp",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/onsi/gomega:go_default_library",

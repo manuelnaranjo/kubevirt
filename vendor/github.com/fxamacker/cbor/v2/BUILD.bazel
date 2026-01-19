@@ -21,6 +21,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/fxamacker/cbor/v2",
     importpath = "github.com/fxamacker/cbor/v2",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = ["//vendor/github.com/x448/float16:go_default_library"],
 )

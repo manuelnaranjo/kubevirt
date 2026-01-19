@@ -24,5 +24,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/rivo/uniseg",
     importpath = "github.com/rivo/uniseg",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

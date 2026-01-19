@@ -12,6 +12,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/coreos/go-systemd/v22/dbus",
     importpath = "github.com/coreos/go-systemd/v22/dbus",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = ["//vendor/github.com/godbus/dbus/v5:go_default_library"],
 )

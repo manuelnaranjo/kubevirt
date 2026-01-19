@@ -9,5 +9,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/pkg/errors",
     importpath = "github.com/pkg/errors",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

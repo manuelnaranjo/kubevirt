@@ -13,6 +13,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/krolaw/dhcp4",
     importpath = "github.com/krolaw/dhcp4",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/krolaw/dhcp4/conn:go_default_library",

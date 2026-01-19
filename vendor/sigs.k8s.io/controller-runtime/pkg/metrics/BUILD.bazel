@@ -11,6 +11,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/sigs.k8s.io/controller-runtime/pkg/metrics",
     importpath = "sigs.k8s.io/controller-runtime/pkg/metrics",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/prometheus/client_golang/prometheus:go_default_library",

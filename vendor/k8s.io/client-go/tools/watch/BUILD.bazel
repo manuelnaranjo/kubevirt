@@ -9,6 +9,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/client-go/tools/watch",
     importpath = "k8s.io/client-go/tools/watch",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/k8s.io/apimachinery/pkg/api/errors:go_default_library",

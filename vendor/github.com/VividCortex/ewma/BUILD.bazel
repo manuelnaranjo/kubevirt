@@ -5,5 +5,6 @@ go_library(
     srcs = ["ewma.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/VividCortex/ewma",
     importpath = "github.com/VividCortex/ewma",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

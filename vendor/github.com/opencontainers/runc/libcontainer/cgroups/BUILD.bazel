@@ -12,6 +12,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/opencontainers/runc/libcontainer/cgroups",
     importpath = "github.com/opencontainers/runc/libcontainer/cgroups",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/cyphar/filepath-securejoin:go_default_library",

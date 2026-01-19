@@ -16,6 +16,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/kubevirt.io/containerized-data-importer-api/pkg/apis/core/v1beta1",
     importpath = "kubevirt.io/containerized-data-importer-api/pkg/apis/core/v1beta1",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/k8s.io/api/authentication/v1:go_default_library",

@@ -9,6 +9,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/onsi/ginkgo/v2/ginkgo/command",
     importpath = "github.com/onsi/ginkgo/v2/ginkgo/command",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/onsi/ginkgo/v2/formatter:go_default_library",

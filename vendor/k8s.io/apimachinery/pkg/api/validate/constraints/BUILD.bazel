@@ -5,5 +5,6 @@ go_library(
     srcs = ["constraints.go"],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/apimachinery/pkg/api/validate/constraints",
     importpath = "k8s.io/apimachinery/pkg/api/validate/constraints",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

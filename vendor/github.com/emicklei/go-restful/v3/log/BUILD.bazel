@@ -5,5 +5,6 @@ go_library(
     srcs = ["log.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/emicklei/go-restful/v3/log",
     importpath = "github.com/emicklei/go-restful/v3/log",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

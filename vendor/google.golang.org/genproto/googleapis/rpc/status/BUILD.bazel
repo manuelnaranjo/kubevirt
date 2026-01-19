@@ -5,6 +5,7 @@ go_library(
     srcs = ["status.pb.go"],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/genproto/googleapis/rpc/status",
     importpath = "google.golang.org/genproto/googleapis/rpc/status",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/google.golang.org/protobuf/reflect/protoreflect:go_default_library",

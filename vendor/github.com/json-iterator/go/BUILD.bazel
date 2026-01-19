@@ -48,6 +48,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/json-iterator/go",
     importpath = "github.com/json-iterator/go",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/modern-go/concurrent:go_default_library",

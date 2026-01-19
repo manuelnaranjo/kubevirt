@@ -5,5 +5,6 @@ go_library(
     srcs = ["cache.go"],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/kube-openapi/pkg/cached",
     importpath = "k8s.io/kube-openapi/pkg/cached",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

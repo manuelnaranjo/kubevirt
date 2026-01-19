@@ -5,5 +5,6 @@ go_library(
     srcs = ["attributes.go"],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/grpc/attributes",
     importpath = "google.golang.org/grpc/attributes",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

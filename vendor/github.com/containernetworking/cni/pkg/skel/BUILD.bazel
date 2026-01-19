@@ -5,6 +5,7 @@ go_library(
     srcs = ["skel.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/containernetworking/cni/pkg/skel",
     importpath = "github.com/containernetworking/cni/pkg/skel",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/containernetworking/cni/pkg/ns:go_default_library",

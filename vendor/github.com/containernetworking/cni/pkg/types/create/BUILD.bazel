@@ -5,6 +5,7 @@ go_library(
     srcs = ["create.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/containernetworking/cni/pkg/types/create",
     importpath = "github.com/containernetworking/cni/pkg/types/create",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [
         "//vendor/github.com/containernetworking/cni/pkg/types:go_default_library",

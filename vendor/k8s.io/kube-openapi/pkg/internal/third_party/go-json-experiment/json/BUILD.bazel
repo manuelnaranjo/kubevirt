@@ -24,5 +24,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/k8s.io/kube-openapi/pkg/internal/third_party/go-json-experiment/json",
     importpath = "k8s.io/kube-openapi/pkg/internal/third_party/go-json-experiment/json",
+    tags = ["manual"],
     visibility = ["//vendor/k8s.io/kube-openapi/pkg:__subpackages__"],
 )

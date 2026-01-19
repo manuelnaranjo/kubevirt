@@ -8,6 +8,7 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/opencontainers/runc/libcontainer/user",
     importpath = "github.com/opencontainers/runc/libcontainer/user",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = select({
         "@io_bazel_rules_go//go/platform:android": [

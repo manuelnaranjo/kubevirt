@@ -5,5 +5,6 @@ go_library(
     srcs = ["ulid.go"],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/oklog/ulid",
     importpath = "github.com/oklog/ulid",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

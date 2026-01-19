@@ -5,5 +5,6 @@ go_library(
     srcs = ["backoff.go"],
     importmap = "kubevirt.io/kubevirt/vendor/google.golang.org/grpc/backoff",
     importpath = "google.golang.org/grpc/backoff",
+    tags = ["manual"],
     visibility = ["//visibility:public"],
 )

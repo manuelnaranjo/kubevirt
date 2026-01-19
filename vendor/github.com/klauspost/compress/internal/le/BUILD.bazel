@@ -9,5 +9,6 @@ go_library(
     ],
     importmap = "kubevirt.io/kubevirt/vendor/github.com/klauspost/compress/internal/le",
     importpath = "github.com/klauspost/compress/internal/le",
+    tags = ["manual"],
     visibility = ["//vendor/github.com/klauspost/compress:__subpackages__"],
 )
