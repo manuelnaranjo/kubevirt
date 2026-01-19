@@ -1,0 +1,243 @@
+# WORKSPACE.bzlmod - Legacy dependencies that cannot be migrated to MODULE.bazel
+#
+# This file contains dependencies that need to remain in WORKSPACE format:
+# - http_file dependencies (disk images, RPMs)
+# - http_archive dependencies not available as Bazel modules
+# - go_repository dependencies that require specific commit pinning
+# - RPM package definitions via bazeldnf
+
+workspace(name = "kubevirt")
+
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file")
+
+# ============================================================================
+# bazeldnf - not available in BCR, load from archive
+# ============================================================================
+
+http_archive(
+    name = "bazeldnf",
+    sha256 = "0a4b9740da1839ded674c8f5012c069b235b101f1eaa2552a4721287808541af",
+    strip_prefix = "bazeldnf-v0.5.9-2",
+    urls = [
+        "https://github.com/brianmcarey/bazeldnf/releases/download/v0.5.9-2/bazeldnf-v0.5.9-2.tar.gz",
+        "https://storage.googleapis.com/builddeps/0a4b9740da1839ded674c8f5012c069b235b101f1eaa2552a4721287808541af",
+    ],
+)
+
+load(
+    "@bazeldnf//bazeldnf:repositories.bzl",
+    "bazeldnf_dependencies",
+    "bazeldnf_register_toolchains",
+)
+
+bazeldnf_dependencies()
+
+bazeldnf_register_toolchains(
+    name = "bazeldnf_prebuilt",
+)
+
+# ============================================================================
+# goimports tool from ash2k/bazel-tools
+# ============================================================================
+
+http_archive(
+    name = "com_github_ash2k_bazel_tools",
+    sha256 = "46fdbc00930c8dc9d84690b5bd94db6b4683b061199967d2cda1cfbda8f02c49",
+    strip_prefix = "bazel-tools-19b174803c0db1a01e77f10fa2079c35f54eed6e",
+    urls = [
+        "https://github.com/ash2k/bazel-tools/archive/19b174803c0db1a01e77f10fa2079c35f54eed6e.zip",
+        "https://storage.googleapis.com/builddeps/46fdbc00930c8dc9d84690b5bd94db6b4683b061199967d2cda1cfbda8f02c49",
+    ],
+)
+
+load("@com_github_ash2k_bazel_tools//goimports:deps.bzl", "goimports_dependencies")
+
+goimports_dependencies()
+
+# ============================================================================
+# Container RPM rules
+# ============================================================================
+
+http_archive(
+    name = "io_bazel_rules_container_rpm",
+    sha256 = "151261f1b81649de6e36f027c945722bff31176f1340682679cade2839e4b1e1",
+    strip_prefix = "rules_container_rpm-0.0.5",
+    urls = [
+        "https://github.com/rmohr/rules_container_rpm/archive/v0.0.5.tar.gz",
+        "https://storage.googleapis.com/builddeps/151261f1b81649de6e36f027c945722bff31176f1340682679cade2839e4b1e1",
+    ],
+)
+
+# ============================================================================
+# Libguestfs appliance archives
+# ============================================================================
+
+http_archive(
+    name = "libguestfs-appliance-x86_64",
+    sha256 = "fb6da700eeae24da89aae6516091f7c5f46958b0b7812d2b122dc11dca1ab26a",
+    urls = [
+        "https://storage.googleapis.com/kubevirt-prow/devel/release/kubevirt/libguestfs-appliance/libguestfs-appliance-1.54.0-qcow2-linux-5.14.0-575-centos9-amd64.tar.xz",
+    ],
+)
+
+http_archive(
+    name = "libguestfs-appliance-s390x",
+    sha256 = "532cb951d4245265da645c8cce14033c19ea8f0d163c01e88f4153dae44e0f95",
+    urls = [
+        "https://storage.googleapis.com/kubevirt-prow/devel/release/kubevirt/libguestfs-appliance/libguestfs-appliance-1.54.0-qcow2-linux-5.14.0-575-centos9-s390x.tar.xz",
+    ],
+)
+
+# ============================================================================
+# Disk images (http_file)
+# ============================================================================
+
+http_file(
+    name = "alpine_image",
+    sha256 = "f87a0fd3ab0e65d2a84acd5dad5f8b6afce51cb465f65dd6f8a3810a3723b6e4",
+    urls = [
+        "https://dl-cdn.alpinelinux.org/alpine/v3.20/releases/x86_64/alpine-virt-3.20.1-x86_64.iso",
+        "https://storage.googleapis.com/builddeps/f87a0fd3ab0e65d2a84acd5dad5f8b6afce51cb465f65dd6f8a3810a3723b6e4",
+    ],
+)
+
+http_file(
+    name = "alpine_image_aarch64",
+    sha256 = "ca2f0e8aa7a1d7917bce7b9e7bd413772b64ec529a1938d20352558f90a5035a",
+    urls = [
+        "https://dl-cdn.alpinelinux.org/alpine/v3.20/releases/aarch64/alpine-virt-3.20.1-aarch64.iso",
+        "https://storage.googleapis.com/builddeps/ca2f0e8aa7a1d7917bce7b9e7bd413772b64ec529a1938d20352558f90a5035a",
+    ],
+)
+
+http_file(
+    name = "alpine_image_s390x",
+    sha256 = "4ca1462252246d53e4949523b87fcea088e8b4992dbd6df792818c5875069b16",
+    urls = [
+        "https://dl-cdn.alpinelinux.org/alpine/v3.18/releases/s390x/alpine-standard-3.18.8-s390x.iso",
+        "https://storage.googleapis.com/builddeps/4ca1462252246d53e4949523b87fcea088e8b4992dbd6df792818c5875069b16",
+    ],
+)
+
+http_file(
+    name = "cirros_image",
+    sha256 = "932fcae93574e242dc3d772d5235061747dfe537668443a1f0567d893614b464",
+    urls = [
+        "https://download.cirros-cloud.net/0.5.2/cirros-0.5.2-x86_64-disk.img",
+        "https://storage.googleapis.com/builddeps/932fcae93574e242dc3d772d5235061747dfe537668443a1f0567d893614b464",
+    ],
+)
+
+http_file(
+    name = "cirros_image_aarch64",
+    sha256 = "889c1117647b3b16cfc47957931c6573bf8e755fc9098fdcad13727b6c9f2629",
+    urls = [
+        "https://download.cirros-cloud.net/0.5.2/cirros-0.5.2-aarch64-disk.img",
+        "https://storage.googleapis.com/builddeps/889c1117647b3b16cfc47957931c6573bf8e755fc9098fdcad13727b6c9f2629",
+    ],
+)
+
+http_file(
+    name = "virtio_win_image",
+    sha256 = "57b0f6dc8dc92dc2ae8621f8b1bfbd8a873de9bedc788c4c4b305ea28acc77cd",
+    urls = [
+        "https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.266-1/virtio-win-0.1.266.iso",
+        "https://storage.googleapis.com/builddeps/57b0f6dc8dc92dc2ae8621f8b1bfbd8a873de9bedc788c4c4b305ea28acc77cd",
+    ],
+)
+
+http_file(
+    name = "qemu-img",
+    sha256 = "669250ad47aad5939cf4d1b88036fd95a94845d8e0bbdb05e933f3d2fe262fea",
+    urls = ["https://storage.googleapis.com/builddeps/669250ad47aad5939cf4d1b88036fd95a94845d8e0bbdb05e933f3d2fe262fea"],
+)
+
+# ============================================================================
+# go_repository dependencies for tools not in go.mod
+# These are used for winrm CLI tools and other external tooling
+# ============================================================================
+
+load("@bazel_gazelle//:deps.bzl", "go_repository")
+
+# Winrmcli dependencies
+go_repository(
+    name = "com_github_masterzen_winrmcli",
+    commit = "c85a68ee8b6e3ac95af2a5fd62d2f41c9e9c5f32",
+    importpath = "github.com/masterzen/winrm-cli",
+)
+
+# Winrmcp deps
+go_repository(
+    name = "com_github_packer_community_winrmcp",
+    commit = "c76d91c1e7db27b0868c5d09e292bb540616c9a2",
+    importpath = "github.com/packer-community/winrmcp",
+)
+
+go_repository(
+    name = "com_github_masterzen_winrm_cli",
+    commit = "6f0c57dee4569c04f64c44c335752b415e5d73a7",
+    importpath = "github.com/masterzen/winrm-cli",
+)
+
+go_repository(
+    name = "com_github_masterzen_winrm",
+    commit = "1d17eaf15943ca3554cdebb3b1b10aaa543a0b7e",
+    importpath = "github.com/masterzen/winrm",
+)
+
+go_repository(
+    name = "com_github_nu7hatch_gouuid",
+    commit = "179d4d0c4d8d407a32af483c2354df1d2c91e6c3",
+    importpath = "github.com/nu7hatch/gouuid",
+)
+
+go_repository(
+    name = "com_github_dylanmei_iso8601",
+    commit = "2075bf119b58e5576c6ed9f867b8f3d17f2e54d4",
+    importpath = "github.com/dylanmei/iso8601",
+)
+
+go_repository(
+    name = "com_github_gofrs_uuid",
+    commit = "abfe1881e60ef34074c1b8d8c63b42565c356ed6",
+    importpath = "github.com/gofrs/uuid",
+)
+
+go_repository(
+    name = "com_github_christrenkamp_goxpath",
+    commit = "c5096ec8773dd9f554971472081ddfbb0782334e",
+    importpath = "github.com/ChrisTrenkamp/goxpath",
+)
+
+go_repository(
+    name = "com_github_azure_go_ntlmssp",
+    commit = "4a21cbd618b459155f8b8ee7f4491cd54f5efa77",
+    importpath = "github.com/Azure/go-ntlmssp",
+)
+
+go_repository(
+    name = "com_github_masterzen_simplexml",
+    commit = "31eea30827864c9ab643aa5a0d5b2d4988ec8409",
+    importpath = "github.com/masterzen/simplexml",
+)
+
+# override rules_docker issue with this dependency
+# rules_docker 0.16 uses 0.1.4, let's grab by commit
+go_repository(
+    name = "com_github_google_go_containerregistry",
+    commit = "8a2841911ffee4f6892ca0083e89752fb46c48dd",  # v0.1.4
+    importpath = "github.com/google/go-containerregistry",
+)
+
+# ============================================================================
+# RPM packages - loaded via bazeldnf
+# The RPM definitions are extensive (873 packages). They are loaded from
+# a separate file to keep this WORKSPACE clean.
+# ============================================================================
+
+load("@bazeldnf//bazeldnf:defs.bzl", "rpm")
+
+# Load all RPM definitions from a separate file
+load("//bazel:rpm_deps.bzl", "rpm_dependencies")
+
+rpm_dependencies()
