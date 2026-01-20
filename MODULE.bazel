@@ -16,7 +16,7 @@ bazel_dep(name = "platforms", version = "1.0.0")
 bazel_dep(name = "rules_oci", version = "2.0.1")
 
 # Buildifier for formatting
-bazel_dep(name = "buildifier_prebuilt", version = "7.3.1")
+bazel_dep(name = "buildifier_prebuilt", version = "8.2.1.1")
 
 # Go rules - using repo name rules_go as expected by rules_go
 bazel_dep(name = "rules_go", version = "0.59.0", repo_name = "io_bazel_rules_go")
