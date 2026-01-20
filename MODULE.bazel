@@ -19,10 +19,10 @@ bazel_dep(name = "rules_oci", version = "2.0.1")
 bazel_dep(name = "buildifier_prebuilt", version = "7.3.1")
 
 # Go rules - using repo name rules_go as expected by rules_go
-bazel_dep(name = "rules_go", version = "0.54.1", repo_name = "io_bazel_rules_go")
+bazel_dep(name = "rules_go", version = "0.59.0", repo_name = "io_bazel_rules_go")
 
 # Gazelle for BUILD file generation
-bazel_dep(name = "gazelle", version = "0.39.1", repo_name = "bazel_gazelle")
+bazel_dep(name = "gazelle", version = "0.47.0", repo_name = "bazel_gazelle")
 
 # Package rules
 bazel_dep(name = "rules_pkg", version = "1.0.1")
@@ -58,6 +58,7 @@ go_deps.from_file(go_mod = "//:go.mod")
 use_repo(
     go_deps,
     "cat_dario_mergo",
+    "cc_mvdan_sh_v3",
     "com_github_cheggaaa_pb_v3",
     "com_github_containernetworking_cni",
     "com_github_containernetworking_plugins",
@@ -75,6 +76,7 @@ use_repo(
     "com_github_google_go_cmp",
     "com_github_google_go_github_v32",
     "com_github_google_goexpect",
+    "com_github_google_goterm",
     "com_github_google_uuid",
     "com_github_gordonklaus_ineffassign",
     "com_github_gorilla_websocket",
@@ -85,6 +87,7 @@ use_repo(
     "com_github_krolaw_dhcp4",
     "com_github_kubernetes_csi_external_snapshotter_client_v4",
     "com_github_kubevirt_monitoring_pkg_metrics_parser",
+    "com_github_masterzen_winrm_cli",
     "com_github_mdlayher_vsock",
     "com_github_mitchellh_go_ps",
     "com_github_mitchellh_go_vnc",
@@ -99,12 +102,13 @@ use_repo(
     "com_github_openshift_client_go",
     "com_github_openshift_library_go",
     "com_github_operator_framework_operator_lifecycle_manager",
+    "com_github_packer_community_winrmcp",
     "com_github_pkg_errors",
     "com_github_prometheus_client_golang",
     "com_github_prometheus_client_model",
     "com_github_prometheus_common",
-    "com_github_prometheus_procfs",
     "com_github_prometheus_operator_prometheus_operator_pkg_apis_monitoring",
+    "com_github_prometheus_procfs",
     "com_github_rhobs_operator_observability_toolkit",
     "com_github_spf13_cobra",
     "com_github_spf13_pflag",
@@ -117,7 +121,12 @@ use_repo(
     "io_k8s_kube_aggregator",
     "io_k8s_kube_openapi",
     "io_k8s_kubectl",
+    "io_k8s_sigs_controller_runtime",
+    "io_k8s_sigs_randfill",
+    "io_k8s_sigs_yaml",
     "io_k8s_utils",
+    "io_kubevirt_api",
+    "io_kubevirt_client_go",
     "io_kubevirt_containerized_data_importer_api",
     "io_kubevirt_qe_tools",
     "org_golang_google_grpc",
@@ -131,9 +140,6 @@ use_repo(
     "org_libvirt_go_libvirt",
     "org_libvirt_go_libvirtxml",
     "org_uber_go_mock",
-    "io_k8s_sigs_controller_runtime",
-    "io_k8s_sigs_randfill",
-    "io_k8s_sigs_yaml",
 )
 
 # ============================================================================
@@ -148,13 +154,11 @@ oci.pull(
     digest = "sha256:0ba6aa6b538aeae3d0f716ea8837703eb147173cd673241662e89adb794da829",
     image = "gcr.io/distroless/base-debian12",
 )
-
 oci.pull(
     name = "go_image_base_aarch64",
     digest = "sha256:9ee08ca352647dad1511153afb18f4a6dbb4f56bafc7d618d0082c16a14cfdf1",
     image = "gcr.io/distroless/base-debian12",
 )
-
 oci.pull(
     name = "go_image_base_s390x",
     digest = "sha256:6e2e356c462d69668a0313bf45ed3de614e9d4e0b9c03fa081d3bcae143a58ba",
@@ -167,43 +171,36 @@ oci.pull(
     digest = "sha256:897af945d1c58366086d5933ae4f341a5f1413b88e6c7f2b659436adc5d0f522",
     image = "quay.io/kubevirtci/fedora-with-test-tooling",
 )
-
 oci.pull(
     name = "alpine_with_test_tooling",
     digest = "sha256:882450d4a0141d29422d049390cae59176c1a9ddf75bd9f3ecdd5a9081c7d95b",
     image = "quay.io/kubevirtci/alpine-with-test-tooling-container-disk",
 )
-
 oci.pull(
     name = "fedora_with_test_tooling_aarch64",
     digest = "sha256:3d5a2a95f7f9382dc6730073fe19a6b1bc668b424c362339c88c6a13dff2ef49",
     image = "quay.io/kubevirtci/fedora-with-test-tooling",
 )
-
 oci.pull(
     name = "fedora_with_test_tooling_s390x",
     digest = "sha256:3d9f468750d90845a81608ea13c85237ea295c6295c911a99dc5e0504c8bc05b",
     image = "quay.io/kubevirtci/fedora-with-test-tooling",
 )
-
 oci.pull(
     name = "alpine-ext-kernel-boot-demo-container-base",
     digest = "sha256:de4bc8de772ff7570e6dda871ea9cdd502feeeff1973f16f84bfbd60ff8f4149",
     image = "quay.io/kubevirt/alpine-ext-kernel-boot-demo",
 )
-
 oci.pull(
     name = "fedora_realtime",
     digest = "sha256:f91379d202a5493aba9ce06870b5d1ada2c112f314530c9820a9ad07426aa565",
     image = "quay.io/kubevirt/fedora-realtime-container-disk",
 )
-
 oci.pull(
     name = "busybox",
     digest = "sha256:545e6a6310a27636260920bc07b994a299b6708a1b26910cfefd335fdfb60d2b",
     image = "registry.k8s.io/busybox",
 )
-
 use_repo(
     oci,
     "alpine-ext-kernel-boot-demo-container-base",

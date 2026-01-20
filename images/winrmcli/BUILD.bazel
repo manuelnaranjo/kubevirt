@@ -7,7 +7,7 @@ gazelle(name = "gazelle")
 pkg_tar(
     name = "winrm-cli-tar",
     srcs = [
-        "@com_github_masterzen_winrmcli//:winrm-cli",
+        "@com_github_masterzen_winrm_cli//:winrm-cli",
         "@com_github_packer_community_winrmcp//:winrmcp",
     ],
     package_dir = "/usr/bin",

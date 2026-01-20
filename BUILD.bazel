@@ -468,3 +468,8 @@ go_library(
     importpath = "kubevirt.io/kubevirt",
     visibility = ["//visibility:public"],
 )
+
+alias(
+    name = "go",
+    actual = "@io_bazel_rules_go//go",
+)
