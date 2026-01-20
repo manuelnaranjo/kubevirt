@@ -11,46 +11,6 @@ workspace(name = "kubevirt")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file")
 
 # ============================================================================
-# bazeldnf - not available in BCR, load from archive
-# ============================================================================
-
-http_archive(
-    name = "bazeldnf",
-    sha256 = "0a4b9740da1839ded674c8f5012c069b235b101f1eaa2552a4721287808541af",
-    strip_prefix = "bazeldnf-v0.5.9-2",
-    urls = [
-        "https://github.com/brianmcarey/bazeldnf/releases/download/v0.5.9-2/bazeldnf-v0.5.9-2.tar.gz",
-        "https://storage.googleapis.com/builddeps/0a4b9740da1839ded674c8f5012c069b235b101f1eaa2552a4721287808541af",
-    ],
-)
-
-load(
-    "@bazeldnf//bazeldnf:repositories.bzl",
-    "bazeldnf_dependencies",
-    "bazeldnf_register_toolchains",
-)
-
-bazeldnf_dependencies()
-
-bazeldnf_register_toolchains(
-    name = "bazeldnf_prebuilt",
-)
-
-# ============================================================================
-# Container RPM rules
-# ============================================================================
-
-http_archive(
-    name = "io_bazel_rules_container_rpm",
-    sha256 = "151261f1b81649de6e36f027c945722bff31176f1340682679cade2839e4b1e1",
-    strip_prefix = "rules_container_rpm-0.0.5",
-    urls = [
-        "https://github.com/rmohr/rules_container_rpm/archive/v0.0.5.tar.gz",
-        "https://storage.googleapis.com/builddeps/151261f1b81649de6e36f027c945722bff31176f1340682679cade2839e4b1e1",
-    ],
-)
-
-# ============================================================================
 # Libguestfs appliance archives
 # ============================================================================
 

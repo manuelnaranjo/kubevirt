@@ -31,7 +31,7 @@ bazel_dep(name = "rules_pkg", version = "1.0.1")
 bazel_dep(name = "rules_distroless", version = "0.4.2")
 
 # bazel_skylib for common utilities
-bazel_dep(name = "bazel_skylib", version = "1.7.1")
+bazel_dep(name = "bazel_skylib", version = "1.8.0")
 
 # Protobuf (required by rules_go)
 bazel_dep(name = "protobuf", version = "29.3")
@@ -225,3 +225,6 @@ register_toolchains(
     "//bazel/toolchain/aarch64-none-linux-gnu:aarch64_linux_toolchain",
     "//bazel/toolchain/x86_64-none-linux-gnu:x86_64_linux_toolchain",
 )
+
+# RPM support
+bazel_dep(name = "bazeldnf", version = "v0.99.2-rc0")
