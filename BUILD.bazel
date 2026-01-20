@@ -1,11 +1,9 @@
 load("@bazel_gazelle//:def.bzl", "gazelle")
 load("@bazeldnf//bazeldnf:defs.bzl", "bazeldnf")
 load("@buildifier_prebuilt//:rules.bzl", "buildifier")
-load("@com_github_ash2k_bazel_tools//goimports:def.bzl", "goimports")
 load("@io_bazel_rules_go//go:def.bzl", "go_library", "nogo")
 load("@rules_distroless//distroless:defs.bzl", "passwd")
 load("@rules_pkg//:pkg.bzl", "pkg_tar")
-load("@rules_shell//shell:sh_binary.bzl", "sh_binary")
 
 passwd(
     name = "passwd",
@@ -37,18 +35,10 @@ pkg_tar(
     visibility = ["//visibility:public"],
 )
 
-goimports(
+# goimports alias - actual target is in //bazel:goimports
+alias(
     name = "goimports",
-    display_diffs = True,
-    exclude_paths = [
-        "./vendor/*",
-        "./.history/*",
-        "./.git/*",
-        "./_ci-configs/*",
-    ],
-    local = ["kubevirt.io/kubevirt"],
-    prefix = "kubevirt.io/kubevirt",
-    write = True,
+    actual = "//bazel:goimports",
 )
 
 nogo(

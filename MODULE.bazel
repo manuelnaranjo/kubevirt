@@ -36,6 +36,9 @@ bazel_dep(name = "bazel_skylib", version = "1.7.1")
 # Protobuf (required by rules_go)
 bazel_dep(name = "protobuf", version = "29.3")
 
+# Shell rules (for sh_binary)
+bazel_dep(name = "rules_shell", version = "0.4.1")
+
 # ============================================================================
 # Go SDK and dependencies configuration
 # ============================================================================

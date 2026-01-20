@@ -207,5 +207,6 @@ replace (
 tool (
 	github.com/onsi/ginkgo/v2/ginkgo
 	github.com/wadey/gocovmerge
+	golang.org/x/tools/cmd/goimports
 	mvdan.cc/sh/v3/cmd/shfmt
 )
