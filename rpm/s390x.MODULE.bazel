@@ -1,0 +1,137 @@
+bazeldnf = use_extension("@bazeldnf//bazeldnf:extensions.bzl", "bazeldnf")
+
+bazeldnf.config(
+    name = "bazeldnf-centos-s390x",
+    lock_file = "//rpm/lock-files:centos-s390x.json",
+    nobest = True,
+    repofile = "//rpm:repo.yaml",
+    rpms = ["acl", "curl-minimal", "vim-minimal", "coreutils-single", "glibc-minimal-langpack", "libcurl-minimal"],
+    rpm_repository_prefix = "bazeldnf-s390x",
+    excludes = [],
+    architectures = ["s390x"],
+)
+
+bazeldnf.config(
+    name = "bazeldnf-testimage-s390x",
+    lock_file = "//rpm/lock-files:testimage-s390x.json",
+    nobest = True,
+    repofile = "//rpm:repo.yaml",
+    rpms = ["device-mapper", "e2fsprogs", "iputils", "nmap-ncat", "procps-ng", "qemu-img", "sevctl", "tar", "targetcli", "util-linux", "which"],
+    rpm_repository_prefix = "bazeldnf-s390x",
+    excludes = [],
+    architectures = ["s390x"],
+)
+
+bazeldnf.config(
+    name = "bazeldnf-libvirt-s390x",
+    lock_file = "//rpm/lock-files:libvirt-s390x.json",
+    nobest = True,
+    repofile = "//rpm:repo.yaml",
+    rpms = ["libvirt-devel", "keyutils-libs", "krb5-libs", "libmount", "lz4-libs"],
+    rpm_repository_prefix = "bazeldnf-s390x",
+    excludes = [],
+    architectures = ["s390x"],
+)
+
+bazeldnf.config(
+    name = "bazeldnf-sandboxroot-s390x",
+    lock_file = "//rpm/lock-files:sandboxroot-s390x.json",
+    nobest = True,
+    repofile = "//rpm:repo.yaml",
+    rpms = ["findutils", "gcc", "glibc-static", "python3", "sssd-client"],
+    rpm_repository_prefix = "bazeldnf-s390x",
+    excludes = [],
+    architectures = ["s390x"],
+)
+
+bazeldnf.config(
+    name = "bazeldnf-launcherbase-s390x",
+    lock_file = "//rpm/lock-files:launcherbase-s390x.json",
+    nobest = True,
+    repofile = "//rpm:repo.yaml",
+    rpms = ["libvirt-client", "libvirt-daemon-driver-qemu", "passt", "qemu-kvm-core", "qemu-kvm-device-usb-host", "swtpm-tools", "findutils", "nftables", "nmap-ncat", "procps-ng", "selinux-policy", "selinux-policy-targeted", "tar", "virtiofsd", "xorriso", "qemu-kvm-device-display-virtio-gpu", "qemu-kvm-device-display-virtio-gpu-ccw"],
+    rpm_repository_prefix = "bazeldnf-s390x",
+    excludes = [],
+    architectures = ["s390x"],
+)
+
+bazeldnf.config(
+    name = "bazeldnf-handlerbase-s390x",
+    lock_file = "//rpm/lock-files:handlerbase-s390x.json",
+    nobest = True,
+    repofile = "//rpm:repo.yaml",
+    rpms = ["qemu-img", "findutils", "iproute", "nftables", "procps-ng", "selinux-policy", "selinux-policy-targeted", "tar", "util-linux", "xorriso"],
+    rpm_repository_prefix = "bazeldnf-s390x",
+    excludes = [],
+    architectures = ["s390x"],
+)
+
+bazeldnf.config(
+    name = "bazeldnf-libguestfstools-s390x",
+    lock_file = "//rpm/lock-files:libguestfstools-s390x.json",
+    nobest = True,
+    repofile = "//rpm:repo.yaml",
+    rpms = ["libguestfs", "guestfs-tools", "libvirt-daemon-driver-qemu", "qemu-kvm-core", "selinux-policy", "selinux-policy-targeted", "edk2-ovmf"],
+    rpm_repository_prefix = "bazeldnf-s390x",
+    excludes = ["^(kernel-|linux-firmware)", "^(python[3]{0,1}-)", "^mozjs60", "^(libvirt-daemon-kvm|swtpm)", "^(man-db|mandoc)", "^dbus"],
+    architectures = ["s390x"],
+)
+
+bazeldnf.config(
+    name = "bazeldnf-exportserverbase-s390x",
+    lock_file = "//rpm/lock-files:exportserverbase-s390x.json",
+    nobest = True,
+    repofile = "//rpm:repo.yaml",
+    rpms = ["tar"],
+    rpm_repository_prefix = "bazeldnf-s390x",
+    excludes = [],
+    architectures = ["s390x"],
+)
+
+bazeldnf.config(
+    name = "bazeldnf-pr-helper-s390x",
+    lock_file = "//rpm/lock-files:pr-helper-s390x.json",
+    nobest = True,
+    repofile = "//rpm:repo.yaml",
+    rpms = ["qemu-pr-helper"],
+    rpm_repository_prefix = "bazeldnf-s390x",
+    excludes = [],
+    architectures = ["s390x"],
+)
+
+bazeldnf.config(
+    name = "bazeldnf-sidecar-shim-s390x",
+    lock_file = "//rpm/lock-files:sidecar-shim-s390x.json",
+    nobest = True,
+    repofile = "//rpm:repo.yaml",
+    rpms = ["python3"],
+    rpm_repository_prefix = "bazeldnf-s390x",
+    excludes = [],
+    architectures = ["s390x"],
+)
+
+bazeldnf.config(
+    name = "bazeldnf-passt-s390x",
+    lock_file = "//rpm/lock-files:passt-s390x.json",
+    nobest = True,
+    repofile = "//rpm:repo.yaml",
+    rpms = ["passt"],
+    rpm_repository_prefix = "bazeldnf-s390x",
+    excludes = [],
+    architectures = ["s390x"],
+)
+
+use_repo(
+    bazeldnf,
+    "bazeldnf-centos-s390x",
+    "bazeldnf-testimage-s390x",
+    "bazeldnf-libvirt-s390x",
+    "bazeldnf-sandboxroot-s390x",
+    "bazeldnf-launcherbase-s390x",
+    "bazeldnf-handlerbase-s390x",
+    "bazeldnf-libguestfstools-s390x",
+    "bazeldnf-exportserverbase-s390x",
+    "bazeldnf-pr-helper-s390x",
+    "bazeldnf-sidecar-shim-s390x",
+    "bazeldnf-passt-s390x",
+)

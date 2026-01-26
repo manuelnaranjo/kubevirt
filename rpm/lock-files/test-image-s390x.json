@@ -1,0 +1,1768 @@
+{
+	"cli-arguments": [
+		"--lockfile",
+		"rpm/test-image-s390x.json",
+		"--arch",
+		"s390x",
+		"--nobest",
+		"--basesystem",
+		"centos-stream-release",
+		"--repofile",
+		"rpm/repo.yaml",
+		"device-mapper",
+		"e2fsprogs",
+		"iputils",
+		"nmap-ncat",
+		"procps-ng",
+		"qemu-img",
+		"sevctl",
+		"tar",
+		"targetcli",
+		"util-linux",
+		"which"
+	],
+	"name": "",
+	"repositories": {
+		"centos/stream9-appstream-s390x": [
+			"http://mirror.stream.centos.org/9-stream/AppStream/s390x/os/"
+		],
+		"centos/stream9-baseos-s390x": [
+			"http://mirror.stream.centos.org/9-stream/BaseOS/s390x/os/"
+		]
+	},
+	"rpms": [
+		{
+			"id": "acl",
+			"name": "acl",
+			"integrity": "sha256-XRKj4VewckSnwFRpBa+GQUhzDpgqx86qSwvyh9165mk=",
+			"urls": [
+				"Packages/acl-2.3.1-4.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"libacl"
+			]
+		},
+		{
+			"id": "alternatives",
+			"name": "alternatives",
+			"integrity": "sha256-jrfvEXEUBZxEgY7siMTtBsJxoRhb4bEXitCWrcyTTxE=",
+			"urls": [
+				"Packages/alternatives-1.24-2.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "audit-libs",
+			"name": "audit-libs",
+			"integrity": "sha256-Jn+eJSjSynDIOr2AACqrgoTqk9o/LYe+DROg7H77E8k=",
+			"urls": [
+				"Packages/audit-libs-3.1.5-8.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"libcap-ng"
+			]
+		},
+		{
+			"id": "basesystem",
+			"name": "basesystem",
+			"integrity": "sha256-p6aH7zndKNAdNPqxjqfj6H9kn2wgLd7YImC36mJbmXM=",
+			"urls": [
+				"Packages/basesystem-11-13.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"filesystem",
+				"setup"
+			]
+		},
+		{
+			"id": "bash",
+			"name": "bash",
+			"integrity": "sha256-f2lCmjQ9U75fM5Dg5gMoacM88enjRO4USKTsKZjcnZ4=",
+			"urls": [
+				"Packages/bash-5.1.8-9.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"filesystem",
+				"glibc",
+				"ncurses-libs"
+			]
+		},
+		{
+			"id": "bzip2-libs",
+			"name": "bzip2-libs",
+			"integrity": "sha256-JtNtITlZ+6Iw1MhVBBDWbgSyeayMzue4YAaAqH3eLXM=",
+			"urls": [
+				"Packages/bzip2-libs-1.0.8-10.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "ca-certificates",
+			"name": "ca-certificates",
+			"integrity": "sha256-SJ/fJYNEiSQS/y8Q0MHIScRdWhXEYoq9oz8yWkLdG7A=",
+			"urls": [
+				"Packages/ca-certificates-2025.2.80_v9.0.305-91.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"bash",
+				"coreutils-single",
+				"findutils",
+				"grep",
+				"libffi",
+				"p11-kit-trust",
+				"sed"
+			]
+		},
+		{
+			"id": "centos-gpg-keys",
+			"name": "centos-gpg-keys",
+			"integrity": "sha256-TseGosvc0LaLEgRn/ozsaNDeomI5zG37KFJYKYxDpJg=",
+			"urls": [
+				"Packages/centos-gpg-keys-9.0-34.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": []
+		},
+		{
+			"id": "centos-stream-release",
+			"name": "centos-stream-release",
+			"integrity": "sha256-gIpOokLb1PT69iMR+0i6dMr9s/yMP1Pf2XrKDhCZZQ8=",
+			"urls": [
+				"Packages/centos-stream-release-9.0-34.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"centos-stream-repos"
+			]
+		},
+		{
+			"id": "centos-stream-repos",
+			"name": "centos-stream-repos",
+			"integrity": "sha256-7bwwU7BMWCbCA2mkT1h9VZmjFQas9suucNvWEI9V0EY=",
+			"urls": [
+				"Packages/centos-stream-repos-9.0-34.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"centos-gpg-keys"
+			]
+		},
+		{
+			"id": "coreutils-single",
+			"name": "coreutils-single",
+			"integrity": "sha256-M/IKnRqNy+m25Ye9pyipG1sBTNCwyXnHkIE1xf7SMRU=",
+			"urls": [
+				"Packages/coreutils-single-8.32-39.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"libacl",
+				"libattr",
+				"libcap",
+				"libselinux"
+			]
+		},
+		{
+			"id": "cracklib",
+			"name": "cracklib",
+			"integrity": "sha256-FABv2RMlgcp6uGuH60dR79JSebxg30is7ZhQAuQBES0=",
+			"urls": [
+				"Packages/cracklib-2.9.6-28.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"bash",
+				"glibc",
+				"gzip",
+				"zlib"
+			]
+		},
+		{
+			"id": "cracklib-dicts",
+			"name": "cracklib-dicts",
+			"integrity": "sha256-oKyI/1kmIK436ggm1Zh08PWgiCjAL81RRHMwLRXPbAM=",
+			"urls": [
+				"Packages/cracklib-dicts-2.9.6-28.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"cracklib"
+			]
+		},
+		{
+			"id": "crypto-policies",
+			"name": "crypto-policies",
+			"integrity": "sha256-OMHkC0d3lQF5ltsGg7cgBKSBDYijIK4FVOZzaxGMXJo=",
+			"urls": [
+				"Packages/crypto-policies-20251126-1.gite9c4db2.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"bash"
+			]
+		},
+		{
+			"id": "dbus",
+			"name": "dbus",
+			"integrity": "sha256-qZ0nhxaJm7NRANTJwmpmp5XTCVVdjXHvbRc54vRM9E0=",
+			"urls": [
+				"Packages/dbus-1.12.20-8.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"dbus-broker"
+			]
+		},
+		{
+			"id": "dbus-broker",
+			"name": "dbus-broker",
+			"integrity": "sha256-04pa6FH5AGAAw816NzEPkBoChk4CctcoTE8tse/NYf8=",
+			"urls": [
+				"Packages/dbus-broker-28-7.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"audit-libs",
+				"bash",
+				"dbus-common",
+				"expat",
+				"glibc",
+				"libcap-ng",
+				"libgcc",
+				"libselinux",
+				"shadow-utils",
+				"systemd",
+				"systemd-libs"
+			]
+		},
+		{
+			"id": "dbus-common",
+			"name": "dbus-common",
+			"integrity": "sha256-/5EobZQTJWxQiGoMlrPV0Hc70lKEualLKLmKUhXwmlY=",
+			"urls": [
+				"Packages/dbus-common-1.12.20-8.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"bash",
+				"systemd"
+			]
+		},
+		{
+			"id": "dbus-libs",
+			"name": "dbus-libs",
+			"integrity": "sha256-AxdOo719UlomPSP71ceXrP8lbT8BynXViyVYxWGi5HI=",
+			"urls": [
+				"Packages/dbus-libs-1.12.20-8.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"systemd-libs"
+			]
+		},
+		{
+			"id": "device-mapper",
+			"name": "device-mapper",
+			"integrity": "sha256-uhwab1KaFwCyxyV7r4irQhdw6ix2CIm8dNHgNy7Pbqg=",
+			"urls": [
+				"Packages/device-mapper-1.02.206-2.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"bash",
+				"device-mapper-libs",
+				"glibc",
+				"systemd",
+				"util-linux-core"
+			]
+		},
+		{
+			"id": "device-mapper-libs",
+			"name": "device-mapper-libs",
+			"integrity": "sha256-YYJ7FTnH24hTjFj7oqC5XIzF7Q8aaWqya2rKtM9cTmc=",
+			"urls": [
+				"Packages/device-mapper-libs-1.02.206-2.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"device-mapper",
+				"glibc",
+				"libselinux",
+				"systemd-libs"
+			]
+		},
+		{
+			"id": "e2fsprogs",
+			"name": "e2fsprogs",
+			"integrity": "sha256-uQSPQXiFNplWoWaOIEyiSZ4tRrLGH2KjTLjKp3l+L/E=",
+			"urls": [
+				"Packages/e2fsprogs-1.46.5-8.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"e2fsprogs-libs",
+				"fuse-libs",
+				"glibc",
+				"libblkid",
+				"libcom_err",
+				"libss",
+				"libuuid"
+			]
+		},
+		{
+			"id": "e2fsprogs-libs",
+			"name": "e2fsprogs-libs",
+			"integrity": "sha256-0nn61kU7m1+Q/BQYFydZT7Sq+YC2QZdtBJRIrpePJ8I=",
+			"urls": [
+				"Packages/e2fsprogs-libs-1.46.5-8.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"libcom_err"
+			]
+		},
+		{
+			"id": "expat",
+			"name": "expat",
+			"integrity": "sha256-boXAXH6ss9lkrzkaZ4mJGSOblz2AlMRCuRfqRQOR0l0=",
+			"urls": [
+				"Packages/expat-2.5.0-6.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "filesystem",
+			"name": "filesystem",
+			"integrity": "sha256-Z6cz/hJM2p2on2lGdXgAwP5zuRikd63PZ9++8VyZVyk=",
+			"urls": [
+				"Packages/filesystem-3.16-5.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"bash",
+				"setup"
+			]
+		},
+		{
+			"id": "findutils",
+			"name": "findutils",
+			"integrity": "sha256-YnIEqOWpW94ZCxdV2s/XL/5mhiQ4pumHjQ0P7JDPUJc=",
+			"urls": [
+				"Packages/findutils-4.8.0-7.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"libselinux"
+			]
+		},
+		{
+			"id": "fips-provider-next",
+			"name": "fips-provider-next",
+			"integrity": "sha256-Dx+GOgCzKwUXx4XAto+DlCbK5MCH/eOcjF2RqzzfLuQ=",
+			"urls": [
+				"Packages/fips-provider-next-1.2.0-7.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-appstream-s390x",
+			"dependencies": [
+				"glibc",
+				"libgcc"
+			]
+		},
+		{
+			"id": "fuse-libs",
+			"name": "fuse-libs",
+			"integrity": "sha256-ibVoFQZp8kZ4lUC7g7JNsighobXXYYgeWRpnZDwqrqo=",
+			"urls": [
+				"Packages/fuse-libs-2.9.9-17.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "gdbm-libs",
+			"name": "gdbm-libs",
+			"integrity": "sha256-KcmrclNr5yuceChe8SEXYzzz4t/Rh1e891h82U654FU=",
+			"urls": [
+				"Packages/gdbm-libs-1.23-1.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "glib2",
+			"name": "glib2",
+			"integrity": "sha256-3wODUwYvUG38q3EviliZUmQ6tnTaDJ1dz755ZQX6zDE=",
+			"urls": [
+				"Packages/glib2-2.68.4-18.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"bash",
+				"glibc",
+				"gnutls",
+				"libffi",
+				"libmount",
+				"libselinux",
+				"pcre",
+				"zlib"
+			]
+		},
+		{
+			"id": "glibc",
+			"name": "glibc",
+			"integrity": "sha256-sGgqNlEvXmFySroOGvBBSBRU7iPSkOWXjz5QFmFe+WI=",
+			"urls": [
+				"Packages/glibc-2.34-245.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"basesystem",
+				"glibc-common",
+				"glibc-langpack-fur",
+				"libgcc"
+			]
+		},
+		{
+			"id": "glibc-common",
+			"name": "glibc-common",
+			"integrity": "sha256-LVgFDCKC2ZYb31ZahuF1/BQWE2ncSgYx1JGiMlCyKZA=",
+			"urls": [
+				"Packages/glibc-common-2.34-245.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"bash",
+				"glibc",
+				"tzdata"
+			]
+		},
+		{
+			"id": "glibc-langpack-fur",
+			"name": "glibc-langpack-fur",
+			"integrity": "sha256-Ph3+M8oAZd6n6CYSlOVD/x7hCD3FV8alr2DcnqE0Q1I=",
+			"urls": [
+				"Packages/glibc-langpack-fur-2.34-245.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"glibc-common"
+			]
+		},
+		{
+			"id": "gnutls",
+			"name": "gnutls",
+			"integrity": "sha256-gtOwi3s2TJuoQN5EYauBPzwsSb/pQIvISX1j/1qoktI=",
+			"urls": [
+				"Packages/gnutls-3.8.10-2.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"crypto-policies",
+				"glibc",
+				"libidn2",
+				"libtasn1",
+				"libunistring",
+				"nettle",
+				"p11-kit",
+				"p11-kit-trust"
+			]
+		},
+		{
+			"id": "gobject-introspection",
+			"name": "gobject-introspection",
+			"integrity": "sha256-J/9VC1WW1qiuQUwgtCwgq6jzd5Q3L9Gd3OUnCm4NAyg=",
+			"urls": [
+				"Packages/gobject-introspection-1.68.0-11.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glib2",
+				"glibc",
+				"libffi"
+			]
+		},
+		{
+			"id": "grep",
+			"name": "grep",
+			"integrity": "sha256-trg3OPxq+5uijQwsV+rxfNvlsm/4mo2heBLdJhBF3z4=",
+			"urls": [
+				"Packages/grep-3.6-5.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"bash",
+				"glibc",
+				"libsigsegv",
+				"pcre"
+			]
+		},
+		{
+			"id": "gzip",
+			"name": "gzip",
+			"integrity": "sha256-cri4GAJ9nXFr4Gl0PANDHwV85a9is4JzwkmZCJDLxQQ=",
+			"urls": [
+				"Packages/gzip-1.12-1.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"bash",
+				"coreutils-single",
+				"glibc"
+			]
+		},
+		{
+			"id": "iputils",
+			"name": "iputils",
+			"integrity": "sha256-7Z9lxdYhQVSXZ0t2wkjXnaASjY+x7hg4BgEpiJ+Uc2A=",
+			"urls": [
+				"Packages/iputils-20210202-15.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"bash",
+				"glibc",
+				"libcap",
+				"libidn2"
+			]
+		},
+		{
+			"id": "kmod-libs",
+			"name": "kmod-libs",
+			"integrity": "sha256-4EuQ8JkiSyyx3SjfT/RaqhmC0msuLwTLe9zfm1oTBsQ=",
+			"urls": [
+				"Packages/kmod-libs-28-11.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"libgcc",
+				"libzstd",
+				"openssl-libs",
+				"xz-libs",
+				"zlib"
+			]
+		},
+		{
+			"id": "libacl",
+			"name": "libacl",
+			"integrity": "sha256-v90jFsF0IDLfmxXRqR/y42dPrq4eJ+SoURZeXGu2ZvU=",
+			"urls": [
+				"Packages/libacl-2.3.1-4.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"libattr"
+			]
+		},
+		{
+			"id": "libaio",
+			"name": "libaio",
+			"integrity": "sha256-tK3s2VJztK51kLhOy+1ae0oXlQZrq0MNFfBOuCu53Bw=",
+			"urls": [
+				"Packages/libaio-0.3.111-13.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "libattr",
+			"name": "libattr",
+			"integrity": "sha256-w3M1vmKqyp8h8rCwMS04AOJF9ucPqLV9A6uJzOhj8r4=",
+			"urls": [
+				"Packages/libattr-2.5.1-3.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "libblkid",
+			"name": "libblkid",
+			"integrity": "sha256-KLNV3exrKZtlJsgAMs0/mnT79/lluzxCU1Kn5hbKsoc=",
+			"urls": [
+				"Packages/libblkid-2.37.4-21.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"bash",
+				"coreutils-single",
+				"glibc",
+				"libuuid"
+			]
+		},
+		{
+			"id": "libcap",
+			"name": "libcap",
+			"integrity": "sha256-KIPzUAFu+HuPaqM5ZgI8sPPHib3LNjdAN/yUCW7mG/c=",
+			"urls": [
+				"Packages/libcap-2.48-10.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"libgcc"
+			]
+		},
+		{
+			"id": "libcap-ng",
+			"name": "libcap-ng",
+			"integrity": "sha256-m2j9p45oXTR64bnpN2ExJdAdfIzbBiJuPFfmywi58wY=",
+			"urls": [
+				"Packages/libcap-ng-0.8.2-7.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "libcom_err",
+			"name": "libcom_err",
+			"integrity": "sha256-uKqJInV3GPhcMd/HwzNDTldqUvlCXpH1Hbj7CCZhw/8=",
+			"urls": [
+				"Packages/libcom_err-1.46.5-8.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "libdb",
+			"name": "libdb",
+			"integrity": "sha256-W66W42L7RzG4QfhNIrjsh27solGUBGJa/FG1rp/NYyY=",
+			"urls": [
+				"Packages/libdb-5.3.28-57.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "libeconf",
+			"name": "libeconf",
+			"integrity": "sha256-AlAlaX4fnSIvtiJL5fakY61jCXHGf0pV/41w/CV4BEM=",
+			"urls": [
+				"Packages/libeconf-0.4.1-5.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "libfdisk",
+			"name": "libfdisk",
+			"integrity": "sha256-Z/XY1GcUE5t1zYSUEgHg+g4e69CyZ2Ksz7Eda0yLUbs=",
+			"urls": [
+				"Packages/libfdisk-2.37.4-21.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"libblkid",
+				"libuuid"
+			]
+		},
+		{
+			"id": "libffi",
+			"name": "libffi",
+			"integrity": "sha256-JVVsShvbhfQmWV+qdplmFqRZhsk8rENhwjcfLptzcwQ=",
+			"urls": [
+				"Packages/libffi-3.4.2-8.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "libgcc",
+			"name": "libgcc",
+			"integrity": "sha256-bM3fjsUy3cSde4V61Gy1QE78MKG6LUr1ddt3xALv244=",
+			"urls": [
+				"Packages/libgcc-11.5.0-14.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "libgcrypt",
+			"name": "libgcrypt",
+			"integrity": "sha256-zzDIb8Ghj1BNY508vPnkMa8epjnmpefbH20wt2PdUag=",
+			"urls": [
+				"Packages/libgcrypt-1.10.0-11.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"libgpg-error"
+			]
+		},
+		{
+			"id": "libgpg-error",
+			"name": "libgpg-error",
+			"integrity": "sha256-ZVNnzXLxkI28LkL+41l0RH0z6ufsBySdPfCYplEtRgE=",
+			"urls": [
+				"Packages/libgpg-error-1.42-5.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "libibverbs",
+			"name": "libibverbs",
+			"integrity": "sha256-XkFlL+XI1p3oVIyoSUtkv+99orrgb9/FgACDvj3J+8E=",
+			"urls": [
+				"Packages/libibverbs-57.0-2.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"libnl3"
+			]
+		},
+		{
+			"id": "libidn2",
+			"name": "libidn2",
+			"integrity": "sha256-cWcWtojUtwLO5SOoLU7gNWdfAe5ATrfdfy72PTOJu2Y=",
+			"urls": [
+				"Packages/libidn2-2.3.0-7.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"libunistring"
+			]
+		},
+		{
+			"id": "libmount",
+			"name": "libmount",
+			"integrity": "sha256-1/mCVwFpcI9/87qXbdPfTGTPHZoZf12pjX2uLp9fLLI=",
+			"urls": [
+				"Packages/libmount-2.37.4-21.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"libblkid",
+				"libselinux",
+				"libuuid"
+			]
+		},
+		{
+			"id": "libnl3",
+			"name": "libnl3",
+			"integrity": "sha256-r3VPfMBnDeFEmioqXvNTqiEYdZP39+SDifs6Q3JJA8w=",
+			"urls": [
+				"Packages/libnl3-3.11.0-1.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"libgcc"
+			]
+		},
+		{
+			"id": "libpcap",
+			"name": "libpcap",
+			"integrity": "sha256-ypnnfdOXUbnnafvsc69HcEsw66wrP9Cl87Tjttyn68I=",
+			"urls": [
+				"Packages/libpcap-1.10.0-4.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"libibverbs"
+			]
+		},
+		{
+			"id": "libpwquality",
+			"name": "libpwquality",
+			"integrity": "sha256-uLUXhHSgpTvGRj6BfgvKijVo4zO8rp7aPau+hKHiSUE=",
+			"urls": [
+				"Packages/libpwquality-1.4.4-8.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"cracklib",
+				"cracklib-dicts",
+				"glibc",
+				"pam"
+			]
+		},
+		{
+			"id": "libseccomp",
+			"name": "libseccomp",
+			"integrity": "sha256-FHmZPBOXDQppgmBRlIoIDqIW+3TwcX2HGIAQZe3xod4=",
+			"urls": [
+				"Packages/libseccomp-2.5.2-2.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "libselinux",
+			"name": "libselinux",
+			"integrity": "sha256-FrPAxz3P/4tUpVVKS8vWOWA1CNhQKFfAX/mqI2BpAJQ=",
+			"urls": [
+				"Packages/libselinux-3.6-3.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"libsepol",
+				"pcre2"
+			]
+		},
+		{
+			"id": "libsemanage",
+			"name": "libsemanage",
+			"integrity": "sha256-iIpO9ofEPAMyS/48WBWBDUgyJHjNlmtLyx0jehazoLA=",
+			"urls": [
+				"Packages/libsemanage-3.6-5.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"audit-libs",
+				"bzip2-libs",
+				"glibc",
+				"libselinux",
+				"libsepol"
+			]
+		},
+		{
+			"id": "libsepol",
+			"name": "libsepol",
+			"integrity": "sha256-wSRvhVPCrsPKhnIfi9d/q09PzSJSe7am5JS0BG7hdGE=",
+			"urls": [
+				"Packages/libsepol-3.6-3.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "libsigsegv",
+			"name": "libsigsegv",
+			"integrity": "sha256-cwyCfWa9KS/M22+KxMKRdufwYoNIm+QbZ/S/Vd7rP/s=",
+			"urls": [
+				"Packages/libsigsegv-2.13-4.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "libsmartcols",
+			"name": "libsmartcols",
+			"integrity": "sha256-lJKduO5wJ/yiHorBdRnfz5Nmpae6jIumJ9y1l2sZkDY=",
+			"urls": [
+				"Packages/libsmartcols-2.37.4-21.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "libss",
+			"name": "libss",
+			"integrity": "sha256-laEOCdctrrss2uBUyt2OnvPDaJ2t5CNnI+jmn91nTTo=",
+			"urls": [
+				"Packages/libss-1.46.5-8.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"libcom_err"
+			]
+		},
+		{
+			"id": "libtasn1",
+			"name": "libtasn1",
+			"integrity": "sha256-DrvBLDrj8nDv7yllu3fW6AZzPrB1Bex6M0aPD9cjYL0=",
+			"urls": [
+				"Packages/libtasn1-4.16.0-9.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "libunistring",
+			"name": "libunistring",
+			"integrity": "sha256-ApztyfedzBRfWeK78hIdQGs4U3ZdVjRadbyYd2DV0tI=",
+			"urls": [
+				"Packages/libunistring-0.9.10-15.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "liburing",
+			"name": "liburing",
+			"integrity": "sha256-slm8rcdiOEBJWjPZ2r7GJRGg8hM7cx0HC1nF32Do98Y=",
+			"urls": [
+				"Packages/liburing-2.12-1.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-appstream-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "libutempter",
+			"name": "libutempter",
+			"integrity": "sha256-bAANrEMFIVvrN8iTGoXuE3gG8GVH7PuaI+GRXwGjuqI=",
+			"urls": [
+				"Packages/libutempter-1.2.1-6.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"bash",
+				"glibc",
+				"shadow-utils"
+			]
+		},
+		{
+			"id": "libuuid",
+			"name": "libuuid",
+			"integrity": "sha256-tgTW7y9Jwp2TYB9srRrATYPxTscZug9WHWkSlI1vK1Y=",
+			"urls": [
+				"Packages/libuuid-2.37.4-21.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "libxcrypt",
+			"name": "libxcrypt",
+			"integrity": "sha256-3Z1R9ornmbQcvkzACUUoDGXtDAmLcvedjTmlxGKzcHQ=",
+			"urls": [
+				"Packages/libxcrypt-4.4.18-3.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "libzstd",
+			"name": "libzstd",
+			"integrity": "sha256-cgzpJ6RHtsn9JHnsuSQRLUUOybT5JwkLNu80sQrUsWM=",
+			"urls": [
+				"Packages/libzstd-1.5.5-1.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "lz4-libs",
+			"name": "lz4-libs",
+			"integrity": "sha256-NYx8Gensh3iHQGY0LFkbcYd8MyTwcnNXNC3/tOHsNJg=",
+			"urls": [
+				"Packages/lz4-libs-1.9.3-5.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "ncurses-base",
+			"name": "ncurses-base",
+			"integrity": "sha256-SfZHD6fdGzuoHM3QVHsplTryg14GfekV7so8RdX6ozk=",
+			"urls": [
+				"Packages/ncurses-base-6.2-12.20210508.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": []
+		},
+		{
+			"id": "ncurses-libs",
+			"name": "ncurses-libs",
+			"integrity": "sha256-0qYwejmLnN6PCoP/+Sw7MfX2xMFfkR9k/4QWinzQYKQ=",
+			"urls": [
+				"Packages/ncurses-libs-6.2-12.20210508.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"ncurses-base"
+			]
+		},
+		{
+			"id": "nettle",
+			"name": "nettle",
+			"integrity": "sha256-0Foz4LZzvDRYDEQ/fXwotQ+LT9d62H7TzvMPmR18vwk=",
+			"urls": [
+				"Packages/nettle-3.10.1-1.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "nmap-ncat",
+			"name": "nmap-ncat",
+			"integrity": "sha256-E/AOet0Ac6EveM8qHXvWbwTh3VjbGgAg6tMNTsYCZVQ=",
+			"urls": [
+				"Packages/nmap-ncat-7.92-4.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-appstream-s390x",
+			"dependencies": [
+				"alternatives",
+				"bash",
+				"glibc",
+				"libpcap",
+				"openssl-libs"
+			]
+		},
+		{
+			"id": "openssl",
+			"name": "openssl",
+			"integrity": "sha256-8a4/yfYWGt1QtiXoDbibK5oFX2yoPKaHXShY7K2wxYk=",
+			"urls": [
+				"Packages/openssl-3.5.1-6.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"bash",
+				"coreutils-single",
+				"glibc",
+				"openssl-libs"
+			]
+		},
+		{
+			"id": "openssl-libs",
+			"name": "openssl-libs",
+			"integrity": "sha256-OABtnRpWH8adX2arV9XOqK5YznVXjUNf0Oh1g0aeuyc=",
+			"urls": [
+				"Packages/openssl-libs-3.5.1-6.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"ca-certificates",
+				"crypto-policies",
+				"fips-provider-next",
+				"glibc",
+				"zlib"
+			]
+		},
+		{
+			"id": "p11-kit",
+			"name": "p11-kit",
+			"integrity": "sha256-0JKxrgqDypReiDtbwRholCESWuWz1wutqDV4ESi83P0=",
+			"urls": [
+				"Packages/p11-kit-0.25.10-1.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"libffi",
+				"libtasn1"
+			]
+		},
+		{
+			"id": "p11-kit-trust",
+			"name": "p11-kit-trust",
+			"integrity": "sha256-QXDXeptYTwKRh528yT75Dz51z4PY0uMLz+et2WqUxN8=",
+			"urls": [
+				"Packages/p11-kit-trust-0.25.10-1.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"alternatives",
+				"bash",
+				"glibc",
+				"libtasn1",
+				"p11-kit"
+			]
+		},
+		{
+			"id": "pam",
+			"name": "pam",
+			"integrity": "sha256-+COsGF8aDJZuYIMB8J4ipkXjfER/TdSba2kw/2f9gVY=",
+			"urls": [
+				"Packages/pam-1.5.1-28.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"audit-libs",
+				"bash",
+				"glibc",
+				"libdb",
+				"libeconf",
+				"libpwquality",
+				"libselinux",
+				"libxcrypt",
+				"openssl",
+				"openssl-libs"
+			]
+		},
+		{
+			"id": "pcre",
+			"name": "pcre",
+			"integrity": "sha256-5C69K3HtTV7jSl+7oRY5bCLtTet9erYYnwSKP2A+Xbs=",
+			"urls": [
+				"Packages/pcre-8.44-4.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "pcre2",
+			"name": "pcre2",
+			"integrity": "sha256-98LfRhuP5qlhehwQifyIV25N8W9v+a6oOwVBPS4VtNU=",
+			"urls": [
+				"Packages/pcre2-10.40-6.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"pcre2-syntax"
+			]
+		},
+		{
+			"id": "pcre2-syntax",
+			"name": "pcre2-syntax",
+			"integrity": "sha256-vjaoT24xGlkZBmTWGkZkcTkasB+3e9HSNI6adkFK3tQ=",
+			"urls": [
+				"Packages/pcre2-syntax-10.40-6.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": []
+		},
+		{
+			"id": "procps-ng",
+			"name": "procps-ng",
+			"integrity": "sha256-Pq8ImSEyrSpLfJJFk6jzq4cZZzdKlnNHZJQcuarn8ZE=",
+			"urls": [
+				"Packages/procps-ng-3.3.17-14.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"ncurses-libs",
+				"systemd-libs"
+			]
+		},
+		{
+			"id": "python3",
+			"name": "python3",
+			"integrity": "sha256-jSVgaVYPAucNq3fYH7H4Qnrc2ryPVawdZOnIl1sOq24=",
+			"urls": [
+				"Packages/python3-3.9.25-3.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"python3-libs"
+			]
+		},
+		{
+			"id": "python3-configshell",
+			"name": "python3-configshell",
+			"integrity": "sha256-FVdcz1JgnbUuhTXr3VL2Ty/J9ZmitPCsedLD9JqjLNE=",
+			"urls": [
+				"Packages/python3-configshell-1.1.30-1.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"python3",
+				"python3-pyparsing",
+				"python3-six",
+				"python3-urwid"
+			]
+		},
+		{
+			"id": "python3-dbus",
+			"name": "python3-dbus",
+			"integrity": "sha256-YoX9jL1IQxGg6fa0/vTIsIkrRo82M+SbPJMGH7ags2A=",
+			"urls": [
+				"Packages/python3-dbus-1.2.18-2.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"dbus-libs",
+				"glib2",
+				"glibc",
+				"python3"
+			]
+		},
+		{
+			"id": "python3-gobject-base",
+			"name": "python3-gobject-base",
+			"integrity": "sha256-ekz6Q9EvWv0wNeTJI5WsrgS06MOX8Yje5Pb6TJM9smM=",
+			"urls": [
+				"Packages/python3-gobject-base-3.40.1-6.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glib2",
+				"glibc",
+				"gobject-introspection",
+				"libffi",
+				"python3",
+				"python3-gobject-base-noarch"
+			]
+		},
+		{
+			"id": "python3-gobject-base-noarch",
+			"name": "python3-gobject-base-noarch",
+			"integrity": "sha256-V64U9Slu0myr0mSiuIoBWwX5YrZcljPrMo2gKaA3KwE=",
+			"urls": [
+				"Packages/python3-gobject-base-noarch-3.40.1-6.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"python3",
+				"python3-gobject-base"
+			]
+		},
+		{
+			"id": "python3-kmod",
+			"name": "python3-kmod",
+			"integrity": "sha256-0m5hZE+nNdwuY7h5P5vFSdRHagfHfcWHRX6GSH4DY9Q=",
+			"urls": [
+				"Packages/python3-kmod-0.9-32.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"kmod-libs",
+				"python3"
+			]
+		},
+		{
+			"id": "python3-libs",
+			"name": "python3-libs",
+			"integrity": "sha256-SN3FkSTonAC+Z9dS9tLE9uZchoGkVLxps5OS9Wn+hRg=",
+			"urls": [
+				"Packages/python3-libs-3.9.25-3.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"bash",
+				"bzip2-libs",
+				"expat",
+				"gdbm-libs",
+				"glibc",
+				"libffi",
+				"libuuid",
+				"libxcrypt",
+				"ncurses-libs",
+				"openssl-libs",
+				"python3-pip-wheel",
+				"python3-setuptools-wheel",
+				"readline",
+				"sqlite-libs",
+				"tzdata",
+				"xz-libs",
+				"zlib"
+			]
+		},
+		{
+			"id": "python3-pip-wheel",
+			"name": "python3-pip-wheel",
+			"integrity": "sha256-HICW8d1XxdbbTRORyvsVMmQxkjuhOfMRkBV3OjB/gNk=",
+			"urls": [
+				"Packages/python3-pip-wheel-21.3.1-1.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"ca-certificates"
+			]
+		},
+		{
+			"id": "python3-pyparsing",
+			"name": "python3-pyparsing",
+			"integrity": "sha256-7iCmD7g1OS/HbBoaPpvvoOSz0nvc+/sKq5D83fPGBDk=",
+			"urls": [
+				"Packages/python3-pyparsing-2.4.7-9.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"python3"
+			]
+		},
+		{
+			"id": "python3-pyudev",
+			"name": "python3-pyudev",
+			"integrity": "sha256-24Fddq+ruN1+ymylpb+DgwT4KCTEHk8GttJbXrY8ZcY=",
+			"urls": [
+				"Packages/python3-pyudev-0.22.0-6.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"python3",
+				"python3-six",
+				"systemd-libs"
+			]
+		},
+		{
+			"id": "python3-rtslib",
+			"name": "python3-rtslib",
+			"integrity": "sha256-LMemFQBdRINd5dIRIIci2evH5dNq1iYyxXc6MB728NI=",
+			"urls": [
+				"Packages/python3-rtslib-2.1.76-1.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-appstream-s390x",
+			"dependencies": [
+				"python3",
+				"python3-kmod",
+				"python3-pyudev",
+				"python3-six"
+			]
+		},
+		{
+			"id": "python3-setuptools-wheel",
+			"name": "python3-setuptools-wheel",
+			"integrity": "sha256-TWHGZsOGK9GMrrrCKVwIhie0dhLzNnzWNvyuyaAhu6w=",
+			"urls": [
+				"Packages/python3-setuptools-wheel-53.0.0-15.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": []
+		},
+		{
+			"id": "python3-six",
+			"name": "python3-six",
+			"integrity": "sha256-7+z/7SlgIHmh6h1ByBknHscFqXpoiRtD4dYmsvoOqKE=",
+			"urls": [
+				"Packages/python3-six-1.15.0-9.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"python3"
+			]
+		},
+		{
+			"id": "python3-urwid",
+			"name": "python3-urwid",
+			"integrity": "sha256-jCNH8kd0V4ruRZF3gspeU1zbXrC8Eqi78wGozHEXSrc=",
+			"urls": [
+				"Packages/python3-urwid-2.1.2-4.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"python3"
+			]
+		},
+		{
+			"id": "qemu-img",
+			"name": "qemu-img",
+			"integrity": "sha256-9wNCx+2ALESui941GdS59QL4Q/JIhGlVlgo5oqHs4WQ=",
+			"urls": [
+				"Packages/qemu-img-10.1.0-10.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-appstream-s390x",
+			"dependencies": [
+				"glib2",
+				"glibc",
+				"gnutls",
+				"libaio",
+				"libgcc",
+				"libselinux",
+				"liburing",
+				"libzstd",
+				"zlib"
+			]
+		},
+		{
+			"id": "readline",
+			"name": "readline",
+			"integrity": "sha256-e0tvZB9l2Z0zzL769Pv+JaFG2AIT01mUB3m+StKVaag=",
+			"urls": [
+				"Packages/readline-8.1-4.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"ncurses-libs"
+			]
+		},
+		{
+			"id": "sed",
+			"name": "sed",
+			"integrity": "sha256-cYWzmRKUn+VrwKm9ZGOxwtwSBu+gDa3s/W43yQKOFXU=",
+			"urls": [
+				"Packages/sed-4.8-9.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"libacl",
+				"libselinux"
+			]
+		},
+		{
+			"id": "setup",
+			"name": "setup",
+			"integrity": "sha256-QqHFpBXETjtVVR9JWVwIfiulXw/Z7OgFa3kZg2AbdtI=",
+			"urls": [
+				"Packages/setup-2.13.7-10.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"centos-stream-release"
+			]
+		},
+		{
+			"id": "sevctl",
+			"name": "sevctl",
+			"integrity": "sha256-H5wFW3EOOEDqFgJ/aGmVh0Wc9BMuNQmv9dsMTdevENw=",
+			"urls": [
+				"Packages/sevctl-0.1.0-4.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-appstream-s390x",
+			"dependencies": [
+				"glibc",
+				"libgcc",
+				"openssl-libs"
+			]
+		},
+		{
+			"id": "shadow-utils",
+			"name": "shadow-utils",
+			"integrity": "sha256-GMQ8mUpMj2yXwZXyvzD/rTOLPPXuCOPYE3MdvO31G04=",
+			"urls": [
+				"Packages/shadow-utils-4.9-16.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"audit-libs",
+				"glibc",
+				"libacl",
+				"libattr",
+				"libselinux",
+				"libsemanage",
+				"libxcrypt",
+				"setup"
+			]
+		},
+		{
+			"id": "sqlite-libs",
+			"name": "sqlite-libs",
+			"integrity": "sha256-dZkyqSFTsUSSMIyDMKo5j8q+yH8rQmNaIxtFVDEDLzs=",
+			"urls": [
+				"Packages/sqlite-libs-3.34.1-9.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"zlib"
+			]
+		},
+		{
+			"id": "systemd",
+			"name": "systemd",
+			"integrity": "sha256-XWH7YRsgsWbhfW8jlTWVeTm1oCHZUI8i2SzaBg3YL+0=",
+			"urls": [
+				"Packages/systemd-252-64.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"acl",
+				"audit-libs",
+				"bash",
+				"bzip2-libs",
+				"coreutils-single",
+				"dbus",
+				"glibc",
+				"glibc-common",
+				"grep",
+				"kmod-libs",
+				"libacl",
+				"libblkid",
+				"libcap",
+				"libfdisk",
+				"libgcc",
+				"libgcrypt",
+				"libmount",
+				"libseccomp",
+				"libselinux",
+				"libxcrypt",
+				"libzstd",
+				"lz4-libs",
+				"openssl-libs",
+				"p11-kit",
+				"pam",
+				"pcre2",
+				"sed",
+				"shadow-utils",
+				"systemd-libs",
+				"systemd-pam",
+				"systemd-rpm-macros",
+				"util-linux",
+				"xz-libs",
+				"zlib"
+			]
+		},
+		{
+			"id": "systemd-libs",
+			"name": "systemd-libs",
+			"integrity": "sha256-jyMr7iG5/ahbm5xpoU00gwZiB0X5twJh78FKhec/EPU=",
+			"urls": [
+				"Packages/systemd-libs-252-64.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"bash",
+				"coreutils-single",
+				"glibc",
+				"glibc-common",
+				"grep",
+				"libcap",
+				"libgcc",
+				"libgcrypt",
+				"libselinux",
+				"libxcrypt",
+				"libzstd",
+				"lz4-libs",
+				"openssl-libs",
+				"p11-kit",
+				"sed",
+				"xz-libs"
+			]
+		},
+		{
+			"id": "systemd-pam",
+			"name": "systemd-pam",
+			"integrity": "sha256-0tiSNb9pqchArXHTaJWoRUchNWwiuf77QFGYB1wGKOk=",
+			"urls": [
+				"Packages/systemd-pam-252-64.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"libcap",
+				"libgcc",
+				"libselinux",
+				"libxcrypt",
+				"openssl-libs",
+				"p11-kit",
+				"pam",
+				"systemd"
+			]
+		},
+		{
+			"id": "systemd-rpm-macros",
+			"name": "systemd-rpm-macros",
+			"integrity": "sha256-Om17PSXl+vXBUU/0v9raySeowzwVnQhwfl5jHuMw7g4=",
+			"urls": [
+				"Packages/systemd-rpm-macros-252-64.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"bash"
+			]
+		},
+		{
+			"id": "tar",
+			"name": "tar",
+			"integrity": "sha256-4LoRfhvqEiZ60LDATlNuhVEHHn8I4vnk3rjbDrV1MaM=",
+			"urls": [
+				"Packages/tar-1.34-9.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc",
+				"libacl",
+				"libselinux"
+			]
+		},
+		{
+			"id": "target-restore",
+			"name": "target-restore",
+			"integrity": "sha256-UG00znPWG+zWGQwKhpVOGDww4tTvuHOk4lgimBJnDOM=",
+			"urls": [
+				"Packages/target-restore-2.1.76-1.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-appstream-s390x",
+			"dependencies": [
+				"bash",
+				"python3",
+				"python3-rtslib",
+				"systemd"
+			]
+		},
+		{
+			"id": "targetcli",
+			"name": "targetcli",
+			"integrity": "sha256-ca7kV07PVco97DUOHe4/EYiQmytUMPI7tzUrqtMi4h8=",
+			"urls": [
+				"Packages/targetcli-2.1.57-3.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-appstream-s390x",
+			"dependencies": [
+				"python3",
+				"python3-configshell",
+				"python3-dbus",
+				"python3-gobject-base",
+				"python3-rtslib",
+				"python3-six",
+				"target-restore"
+			]
+		},
+		{
+			"id": "tzdata",
+			"name": "tzdata",
+			"integrity": "sha256-p6cPToqhRzFTI1kAp2dTrvj0Okwh64aQEr9LBlzIuTI=",
+			"urls": [
+				"Packages/tzdata-2025c-1.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": []
+		},
+		{
+			"id": "util-linux",
+			"name": "util-linux",
+			"integrity": "sha256-vFUB9aJlhoKKMMyXhw8vkH1ExhB9eXTGIP+SBxi01r0=",
+			"urls": [
+				"Packages/util-linux-2.37.4-21.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"audit-libs",
+				"bash",
+				"coreutils-single",
+				"glibc",
+				"libblkid",
+				"libcap-ng",
+				"libfdisk",
+				"libmount",
+				"libselinux",
+				"libsmartcols",
+				"libutempter",
+				"libuuid",
+				"libxcrypt",
+				"ncurses-libs",
+				"pam",
+				"readline",
+				"systemd-libs",
+				"util-linux-core",
+				"zlib"
+			]
+		},
+		{
+			"id": "util-linux-core",
+			"name": "util-linux-core",
+			"integrity": "sha256-YlU8hfYhVkQd4bTl2pJBgrO6+r70f+gDU5OW/UT620M=",
+			"urls": [
+				"Packages/util-linux-core-2.37.4-21.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"bash",
+				"glibc",
+				"libblkid",
+				"libmount",
+				"libselinux",
+				"libsmartcols",
+				"libuuid",
+				"ncurses-libs",
+				"systemd-libs"
+			]
+		},
+		{
+			"id": "which",
+			"name": "which",
+			"integrity": "sha256-Zxzr3im5b/UP014JuGdQVyEUS0UHwcge5gJ298FPhyM=",
+			"urls": [
+				"Packages/which-2.21-30.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "xz-libs",
+			"name": "xz-libs",
+			"integrity": "sha256-9d9YskI2GuWq+X0RScQzHMdiOUyttevQVNsImm4QriQ=",
+			"urls": [
+				"Packages/xz-libs-5.2.5-8.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"id": "zlib",
+			"name": "zlib",
+			"integrity": "sha256-u+ldrfc4NpTVsT6orom3ZpftcAm0voiSINSn0j2yh1k=",
+			"urls": [
+				"Packages/zlib-1.2.11-41.el9.s390x.rpm"
+			],
+			"repository": "centos/stream9-baseos-s390x",
+			"dependencies": [
+				"glibc"
+			]
+		}
+	],
+	"targets": [
+		"device-mapper",
+		"e2fsprogs",
+		"iputils",
+		"nmap-ncat",
+		"procps-ng",
+		"qemu-img",
+		"sevctl",
+		"tar",
+		"targetcli",
+		"util-linux",
+		"which"
+	]
+}

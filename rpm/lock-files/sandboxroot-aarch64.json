@@ -1,0 +1,1279 @@
+{
+	"cli-arguments": [
+		"--lockfile",
+		"rpm/lock-files/sandboxroot-aarch64.json",
+		"--arch",
+		"aarch64",
+		"--nobest",
+		"--basesystem",
+		"centos-stream-release",
+		"--repofile",
+		"rpm/repo.yaml",
+		"findutils",
+		"gcc",
+		"glibc-static",
+		"python3",
+		"sssd-client"
+	],
+	"name": "",
+	"repositories": {
+		"centos/stream9-appstream-aarch64": [
+			"https://mirror.stream.centos.org/9-stream/AppStream/aarch64/os/"
+		],
+		"centos/stream9-baseos-aarch64": [
+			"https://mirror.stream.centos.org/9-stream/BaseOS/aarch64/os/"
+		],
+		"centos/stream9-crb-aarch64": [
+			"https://mirror.stream.centos.org/9-stream/CRB/aarch64/os/"
+		]
+	},
+	"rpms": [
+		{
+			"name": "alternatives",
+			"integrity": "sha256-O40NYVTMwQR0dAcq/JTMH3K3wjTYzU5Qc0xnymfaQWE=",
+			"urls": [
+				"Packages/alternatives-1.24-2.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "audit-libs",
+			"integrity": "sha256-g6+Lmk3QU58Q/9ou4J/kqT6vRfsSo/xKrqWJkCXxLKw=",
+			"urls": [
+				"Packages/audit-libs-3.1.5-8.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc",
+				"libcap-ng"
+			]
+		},
+		{
+			"name": "basesystem",
+			"integrity": "sha256-p6aH7zndKNAdNPqxjqfj6H9kn2wgLd7YImC36mJbmXM=",
+			"urls": [
+				"Packages/basesystem-11-13.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"filesystem",
+				"setup"
+			]
+		},
+		{
+			"name": "bash",
+			"integrity": "sha256-rLeC6NrNLz77JdC4sbZMWbimCoT8hqT8qI7eGv/Gj0w=",
+			"urls": [
+				"Packages/bash-5.1.8-9.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"filesystem",
+				"glibc",
+				"ncurses-libs"
+			]
+		},
+		{
+			"name": "binutils",
+			"integrity": "sha256-UnY4GuOVwNXPdBTLe/07wUq5P4MjMjjx4rCqhwPrFZs=",
+			"urls": [
+				"Packages/binutils-2.35.2-69.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"alternatives",
+				"bash",
+				"binutils-gold",
+				"coreutils",
+				"elfutils-debuginfod-client",
+				"glibc",
+				"libgcc",
+				"libstdc++",
+				"zlib"
+			]
+		},
+		{
+			"name": "binutils-gold",
+			"integrity": "sha256-s+gzsEmvIa0UZ1hsWXXklLqZpwcjIKj32Bok7btwcbI=",
+			"urls": [
+				"Packages/binutils-gold-2.35.2-69.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"binutils",
+				"glibc",
+				"libgcc",
+				"libstdc++",
+				"zlib"
+			]
+		},
+		{
+			"name": "bzip2-libs",
+			"integrity": "sha256-BleHqTKZG9jnpwXYqXdljK+rBveM8uQFtol4oCcYmY4=",
+			"urls": [
+				"Packages/bzip2-libs-1.0.8-10.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "ca-certificates",
+			"integrity": "sha256-SJ/fJYNEiSQS/y8Q0MHIScRdWhXEYoq9oz8yWkLdG7A=",
+			"urls": [
+				"Packages/ca-certificates-2025.2.80_v9.0.305-91.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"bash",
+				"coreutils",
+				"findutils",
+				"grep",
+				"libffi",
+				"p11-kit-trust",
+				"sed"
+			]
+		},
+		{
+			"name": "centos-gpg-keys",
+			"integrity": "sha256-TseGosvc0LaLEgRn/ozsaNDeomI5zG37KFJYKYxDpJg=",
+			"urls": [
+				"Packages/centos-gpg-keys-9.0-34.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": []
+		},
+		{
+			"name": "centos-stream-release",
+			"integrity": "sha256-gIpOokLb1PT69iMR+0i6dMr9s/yMP1Pf2XrKDhCZZQ8=",
+			"urls": [
+				"Packages/centos-stream-release-9.0-34.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"centos-stream-repos"
+			]
+		},
+		{
+			"name": "centos-stream-repos",
+			"integrity": "sha256-7bwwU7BMWCbCA2mkT1h9VZmjFQas9suucNvWEI9V0EY=",
+			"urls": [
+				"Packages/centos-stream-repos-9.0-34.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"centos-gpg-keys"
+			]
+		},
+		{
+			"name": "coreutils",
+			"integrity": "sha256-Nu8FUOtnRzeHQPKE2rbjI040211l0PeKRH2Id9PxcuY=",
+			"urls": [
+				"Packages/coreutils-8.32-39.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"coreutils-common",
+				"glibc",
+				"gmp",
+				"libacl",
+				"libattr",
+				"libcap",
+				"libselinux",
+				"openssl-libs"
+			]
+		},
+		{
+			"name": "coreutils-common",
+			"integrity": "sha256-aaToWbLCYhx4ef+xlAQyvJ5y3RGgfAHSfv/ZlsmTJ88=",
+			"urls": [
+				"Packages/coreutils-common-8.32-39.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": []
+		},
+		{
+			"name": "cpp",
+			"integrity": "sha256-bBSrKhz6f8qlXhpqHTUiDIFwEMiTIcfoZUhVzJWCs4E=",
+			"urls": [
+				"Packages/cpp-11.5.0-14.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-appstream-aarch64",
+			"dependencies": [
+				"filesystem",
+				"glibc",
+				"gmp",
+				"libmpc",
+				"libzstd",
+				"mpfr",
+				"zlib"
+			]
+		},
+		{
+			"name": "cracklib",
+			"integrity": "sha256-eNvYPk3nwBHe3IBxrwVpid7OJdrnYF62BwOyGeu+rcE=",
+			"urls": [
+				"Packages/cracklib-2.9.6-28.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"bash",
+				"glibc",
+				"gzip",
+				"zlib"
+			]
+		},
+		{
+			"name": "cracklib-dicts",
+			"integrity": "sha256-O0SduD0aZJuT7/OG4JirAfJAKLEGgn2f74mavJmBixU=",
+			"urls": [
+				"Packages/cracklib-dicts-2.9.6-28.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"cracklib"
+			]
+		},
+		{
+			"name": "crypto-policies",
+			"integrity": "sha256-OMHkC0d3lQF5ltsGg7cgBKSBDYijIK4FVOZzaxGMXJo=",
+			"urls": [
+				"Packages/crypto-policies-20251126-1.gite9c4db2.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"bash"
+			]
+		},
+		{
+			"name": "elfutils-debuginfod-client",
+			"integrity": "sha256-dFo/HexD40utesNndHKlfdmKKTu17W1CwqQjFjrni58=",
+			"urls": [
+				"Packages/elfutils-debuginfod-client-0.194-1.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"elfutils-libelf",
+				"elfutils-libs",
+				"glibc",
+				"json-c",
+				"libcurl-minimal",
+				"openssl-libs"
+			]
+		},
+		{
+			"name": "elfutils-default-yama-scope",
+			"integrity": "sha256-bZTloRuCmi56pX4o/Dv9cnp351DgQ1gyNrIPB1ROXjo=",
+			"urls": [
+				"Packages/elfutils-default-yama-scope-0.194-1.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"bash"
+			]
+		},
+		{
+			"name": "elfutils-libelf",
+			"integrity": "sha256-rJzCcmWTZPa2DzdUsl/tsumqH4o/2R7r3l9OdezIUQ4=",
+			"urls": [
+				"Packages/elfutils-libelf-0.194-1.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc",
+				"libzstd",
+				"zlib"
+			]
+		},
+		{
+			"name": "elfutils-libs",
+			"integrity": "sha256-eLYU/1bXZANnkJTeWXzlbyendquO1A7zmaDQIpdqNbI=",
+			"urls": [
+				"Packages/elfutils-libs-0.194-1.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"bzip2-libs",
+				"elfutils-default-yama-scope",
+				"elfutils-libelf",
+				"glibc",
+				"libzstd",
+				"xz-libs",
+				"zlib"
+			]
+		},
+		{
+			"name": "expat",
+			"integrity": "sha256-AfH/IZQXN3XrvB0Ak0FSWFolnJqFLph+Zy0YEDhOR4Y=",
+			"urls": [
+				"Packages/expat-2.5.0-6.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "filesystem",
+			"integrity": "sha256-wg8auXYKi6Xy2cs31+j6J/SfkaIaRv561kj/bK8jcBM=",
+			"urls": [
+				"Packages/filesystem-3.16-5.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"bash",
+				"setup"
+			]
+		},
+		{
+			"name": "findutils",
+			"integrity": "sha256-3pkUomWkbMYp90I+9fU97vxwRKnEasuUHZyg3Gv8c/g=",
+			"urls": [
+				"Packages/findutils-4.8.0-7.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc",
+				"libselinux"
+			]
+		},
+		{
+			"name": "gawk",
+			"integrity": "sha256-ZW0jxYOwcF6q11z/vogPLsOcfVt6dWxqiFPCl37sMxs=",
+			"urls": [
+				"Packages/gawk-5.1.0-6.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"filesystem",
+				"glibc",
+				"gmp",
+				"libsigsegv",
+				"mpfr",
+				"readline"
+			]
+		},
+		{
+			"name": "gcc",
+			"integrity": "sha256-qzu3OkRD/e9glprk1XzOZwqI5Mc9inWBEb9xMDfu8oY=",
+			"urls": [
+				"Packages/gcc-11.5.0-14.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-appstream-aarch64",
+			"dependencies": [
+				"bash",
+				"binutils",
+				"cpp",
+				"glibc",
+				"glibc-devel",
+				"gmp",
+				"libasan",
+				"libatomic",
+				"libgcc",
+				"libgomp",
+				"libmpc",
+				"libubsan",
+				"libzstd",
+				"make",
+				"mpfr",
+				"zlib"
+			]
+		},
+		{
+			"name": "gdbm-libs",
+			"integrity": "sha256-aXVGJ9gQslLGIC8u+HZco5ucigsP1toDJankktv4j5Y=",
+			"urls": [
+				"Packages/gdbm-libs-1.23-1.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "glibc",
+			"integrity": "sha256-v2oPEtASZirhJKoY7QDU8nBwnNqDvWCxb2qTE4vNHlA=",
+			"urls": [
+				"Packages/glibc-2.34-245.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"basesystem",
+				"glibc-common",
+				"glibc-langpack-cs",
+				"libgcc"
+			]
+		},
+		{
+			"name": "glibc-common",
+			"integrity": "sha256-RkUjjvkSbNkf1P83/GgWk0eXed588U+uhSYFyvlCMVY=",
+			"urls": [
+				"Packages/glibc-common-2.34-245.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"bash",
+				"glibc",
+				"tzdata"
+			]
+		},
+		{
+			"name": "glibc-devel",
+			"integrity": "sha256-NWCa0f0ofvtPV2ZGfVwZNAYGwdYFITcfgvavsh3oe04=",
+			"urls": [
+				"Packages/glibc-devel-2.34-245.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-appstream-aarch64",
+			"dependencies": [
+				"glibc",
+				"kernel-headers",
+				"libxcrypt-devel"
+			]
+		},
+		{
+			"name": "glibc-langpack-cs",
+			"integrity": "sha256-xcTpezWTN+Z+ktm6HiQksfVKs5+q44srCWAGn1ewxlg=",
+			"urls": [
+				"Packages/glibc-langpack-cs-2.34-245.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc",
+				"glibc-common"
+			]
+		},
+		{
+			"name": "glibc-static",
+			"integrity": "sha256-DTH7bl+PncjjSV7MmNIxdk0gXkRitAa2MFXYvvl88IU=",
+			"urls": [
+				"Packages/glibc-static-2.34-245.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-crb-aarch64",
+			"dependencies": [
+				"glibc-devel",
+				"libxcrypt-static"
+			]
+		},
+		{
+			"name": "gmp",
+			"integrity": "sha256-AXFsLeKvXdzoDPwvgfvKvlBnBYP40+v4rxBYmC7bnHA=",
+			"urls": [
+				"Packages/gmp-6.2.0-13.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "grep",
+			"integrity": "sha256-M731caYsuLfWWWF+knjkYEOqk2+OljICdQ0ZRjqAX2A=",
+			"urls": [
+				"Packages/grep-3.6-5.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"bash",
+				"glibc",
+				"libsigsegv",
+				"pcre"
+			]
+		},
+		{
+			"name": "gzip",
+			"integrity": "sha256-WjmkQdrQHMyK9gHxzKW+1GrCMfvb456jICvVTPk5DYE=",
+			"urls": [
+				"Packages/gzip-1.12-1.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"bash",
+				"coreutils",
+				"glibc"
+			]
+		},
+		{
+			"name": "json-c",
+			"integrity": "sha256-ZaaKI/M1QLTXzS2SJ6Y9ftoaerfN1SRX/ulmLAZzHPo=",
+			"urls": [
+				"Packages/json-c-0.14-11.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "kernel-headers",
+			"integrity": "sha256-5nkoa6PExj4xOH1XSB/1Pc2Vm6uB1B4Pi5cq1ibpeNM=",
+			"urls": [
+				"Packages/kernel-headers-5.14.0-661.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-appstream-aarch64",
+			"dependencies": []
+		},
+		{
+			"name": "keyutils-libs",
+			"integrity": "sha256-XZfuPtKFM+suoBpr6XaW+7vHL4F43PfxrPMOZ0opim4=",
+			"urls": [
+				"Packages/keyutils-libs-1.6.3-1.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "krb5-libs",
+			"integrity": "sha256-dnEUf+ecsfov0BHO5FG+MlqOSspikP9n655NAfDB7f0=",
+			"urls": [
+				"Packages/krb5-libs-1.21.1-8.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"bash",
+				"coreutils",
+				"crypto-policies",
+				"gawk",
+				"glibc",
+				"grep",
+				"keyutils-libs",
+				"libcom_err",
+				"libselinux",
+				"libverto",
+				"openssl-libs",
+				"sed"
+			]
+		},
+		{
+			"name": "libacl",
+			"integrity": "sha256-kOQ5LjEs15PuukzWi9EoNqiCrDc1bHhIBtZ6DNHUjCU=",
+			"urls": [
+				"Packages/libacl-2.3.1-4.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc",
+				"libattr"
+			]
+		},
+		{
+			"name": "libasan",
+			"integrity": "sha256-4sMSq/YyuuSTgmsi+CuAgJwwe0DnmTImZVuunJuvoig=",
+			"urls": [
+				"Packages/libasan-11.5.0-14.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-appstream-aarch64",
+			"dependencies": [
+				"glibc",
+				"libgcc",
+				"libstdc++"
+			]
+		},
+		{
+			"name": "libatomic",
+			"integrity": "sha256-kRGtXc0WrATuBtvtvHML30ONWPHxavLeXNPNs+NG774=",
+			"urls": [
+				"Packages/libatomic-11.5.0-14.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "libattr",
+			"integrity": "sha256-oBAczqZq7zdvQGfBAC69+12+7s0zQEdFmzhV7/F6b9o=",
+			"urls": [
+				"Packages/libattr-2.5.1-3.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "libcap",
+			"integrity": "sha256-cVn+TB5r6cgyRjK/q8vIati3y1EFrLC4pcNXdMk0cPI=",
+			"urls": [
+				"Packages/libcap-2.48-10.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc",
+				"libgcc"
+			]
+		},
+		{
+			"name": "libcap-ng",
+			"integrity": "sha256-HfpyCKvhr1UiUjyr2rtzeD7R30Qk3IhG6rilcNAQ3qo=",
+			"urls": [
+				"Packages/libcap-ng-0.8.2-7.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "libcom_err",
+			"integrity": "sha256-e/GU5PaeVIVm/yGxeK4fR9XgDwZL+kkmFuTdQvgS8qc=",
+			"urls": [
+				"Packages/libcom_err-1.46.5-8.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "libcurl-minimal",
+			"integrity": "sha256-OHUwDefzezcRqlNQjBFUcUHn5BUCDsOXN3MoyQqXgnE=",
+			"urls": [
+				"Packages/libcurl-minimal-7.76.1-38.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc",
+				"krb5-libs",
+				"libcom_err",
+				"libnghttp2",
+				"openssl-libs",
+				"zlib"
+			]
+		},
+		{
+			"name": "libdb",
+			"integrity": "sha256-Ms/LPb0EDCBurWqua7M3gkavlasse6GKnbfsDOxknzQ=",
+			"urls": [
+				"Packages/libdb-5.3.28-57.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "libeconf",
+			"integrity": "sha256-QGdSM3hb9f/A6XzVWe/S6fS4uMOSATu2yUQcbgGzMtY=",
+			"urls": [
+				"Packages/libeconf-0.4.1-5.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "libffi",
+			"integrity": "sha256-2m0/GyHCOpfmHDX94ESspbyfEJf/3LOHdZ9UTGFUgwE=",
+			"urls": [
+				"Packages/libffi-3.4.2-8.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "libgcc",
+			"integrity": "sha256-7QWYyctPEEBsZi0XrCNn7roeIHaDlTQQFGknu6PZLEY=",
+			"urls": [
+				"Packages/libgcc-11.5.0-14.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "libgomp",
+			"integrity": "sha256-JNaEVQ/acO1+r1kjk/eCSfuLD0h5eTzc024Ix7mvT/U=",
+			"urls": [
+				"Packages/libgomp-11.5.0-14.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "libmpc",
+			"integrity": "sha256-SJvYkDexp31pbjkTFcdA8YXmRHqs2x1/6EtBFJHDS4g=",
+			"urls": [
+				"Packages/libmpc-1.2.1-4.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-appstream-aarch64",
+			"dependencies": [
+				"glibc",
+				"gmp",
+				"mpfr"
+			]
+		},
+		{
+			"name": "libnghttp2",
+			"integrity": "sha256-ucNoVwHcKtEa2sgwVYEbuMSQm9c0afMZU+99U0x0e4M=",
+			"urls": [
+				"Packages/libnghttp2-1.43.0-6.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "libpkgconf",
+			"integrity": "sha256-rYYidASrDfBPG5j3SSGnfEBoJR2nQGfTYzzBxD/uSps=",
+			"urls": [
+				"Packages/libpkgconf-1.7.3-10.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "libpwquality",
+			"integrity": "sha256-PCKiaM4CLLRyKqLTWpXBF0d49CT78p6YmQgBZR1Gius=",
+			"urls": [
+				"Packages/libpwquality-1.4.4-8.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"cracklib",
+				"cracklib-dicts",
+				"glibc",
+				"pam"
+			]
+		},
+		{
+			"name": "libselinux",
+			"integrity": "sha256-QrYZDZ5OpgGQWZkfUJZaxiZwEjQyQfDMZP0kxuIKqio=",
+			"urls": [
+				"Packages/libselinux-3.6-3.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc",
+				"libsepol",
+				"pcre2"
+			]
+		},
+		{
+			"name": "libsepol",
+			"integrity": "sha256-LNY+1JeviiAseXkLBDYroiS1DsfDd6uyGQEWDkAA4H0=",
+			"urls": [
+				"Packages/libsepol-3.6-3.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "libsigsegv",
+			"integrity": "sha256-CXOZcYrlD7A/3oX6FRwGDFBEWhpa8YUFLKxrktb9za4=",
+			"urls": [
+				"Packages/libsigsegv-2.13-4.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "libsss_idmap",
+			"integrity": "sha256-86zvfw8Pntqacbn55twA8mP2tBMZg5dMYL2lW4STYYk=",
+			"urls": [
+				"Packages/libsss_idmap-2.9.7-5.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "libsss_nss_idmap",
+			"integrity": "sha256-qSxZNHtxv/pRWTdNa8SPb05JRaL7bfOez9fApD7PT1I=",
+			"urls": [
+				"Packages/libsss_nss_idmap-2.9.7-5.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "libstdc++",
+			"integrity": "sha256-7FSC8JZ4GhbVV2Lpa+P2sh7i9xS8jkUyfql4roeVHMA=",
+			"urls": [
+				"Packages/libstdc++-11.5.0-14.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc",
+				"libgcc"
+			]
+		},
+		{
+			"name": "libtasn1",
+			"integrity": "sha256-e5no8QgbosURAhtma5+BdquzEWiSDobDks1FKZ9AC1k=",
+			"urls": [
+				"Packages/libtasn1-4.16.0-9.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "libubsan",
+			"integrity": "sha256-pPCVWMDibIK1rnxR1dl9G1758PUBWcQ6lGqZWIQq8x4=",
+			"urls": [
+				"Packages/libubsan-11.5.0-14.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-appstream-aarch64",
+			"dependencies": [
+				"glibc",
+				"libgcc",
+				"libstdc++"
+			]
+		},
+		{
+			"name": "libuuid",
+			"integrity": "sha256-nvgAM78ru6eso6j3iaSKdZfyETJxxtqdn3G8ohOq4lk=",
+			"urls": [
+				"Packages/libuuid-2.37.4-21.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "libverto",
+			"integrity": "sha256-EZDqgxCw2rPrut4xgLTCz3Bk6QyJTlQVcR13UecJvoo=",
+			"urls": [
+				"Packages/libverto-0.3.2-3.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "libxcrypt",
+			"integrity": "sha256-9pfZGrsZ6b6babiDaoAnEdLPeYmvJ6ThuiYfNc5TuLU=",
+			"urls": [
+				"Packages/libxcrypt-4.4.18-3.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "libxcrypt-devel",
+			"integrity": "sha256-TWCFzUBoJkV20CN4TO3fDZ4Z63Yz2Hwx79lETasMNCA=",
+			"urls": [
+				"Packages/libxcrypt-devel-4.4.18-3.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-appstream-aarch64",
+			"dependencies": [
+				"glibc-devel",
+				"libxcrypt",
+				"pkgconf-pkg-config"
+			]
+		},
+		{
+			"name": "libxcrypt-static",
+			"integrity": "sha256-NAM7igierICVapVCp3tMXowyonqw6M9hcoqfuslw1a0=",
+			"urls": [
+				"Packages/libxcrypt-static-4.4.18-3.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-crb-aarch64",
+			"dependencies": [
+				"glibc-devel",
+				"glibc-static",
+				"libxcrypt-devel"
+			]
+		},
+		{
+			"name": "libzstd",
+			"integrity": "sha256-Sfs6EFLZ9Qq7mtPwq07RhrLAu1H8sEiDcC+8Ni0RYQg=",
+			"urls": [
+				"Packages/libzstd-1.5.5-1.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "make",
+			"integrity": "sha256-Zfu0KIcO6pWbuDHBGn4OqiSQcbcYW12NFq2EsSQoCug=",
+			"urls": [
+				"Packages/make-4.3-8.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "mpfr",
+			"integrity": "sha256-0uIF5ql5g2aKcigxajLJ7wJG7iZ++mXSOZoFurUxXIY=",
+			"urls": [
+				"Packages/mpfr-4.1.0-8.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc",
+				"gmp"
+			]
+		},
+		{
+			"name": "ncurses-base",
+			"integrity": "sha256-SfZHD6fdGzuoHM3QVHsplTryg14GfekV7so8RdX6ozk=",
+			"urls": [
+				"Packages/ncurses-base-6.2-12.20210508.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": []
+		},
+		{
+			"name": "ncurses-libs",
+			"integrity": "sha256-e2HR2rjUETpq0BXAg6wwU+ydsfJQNSfVR7p8dB1U5Xo=",
+			"urls": [
+				"Packages/ncurses-libs-6.2-12.20210508.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc",
+				"ncurses-base"
+			]
+		},
+		{
+			"name": "openssl",
+			"integrity": "sha256-LMvM6khIDVxHJCEpPpVM1uYmULIa2WsbdC/eYOo+l7Y=",
+			"urls": [
+				"Packages/openssl-3.5.1-6.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"bash",
+				"coreutils",
+				"glibc",
+				"openssl-libs"
+			]
+		},
+		{
+			"name": "openssl-fips-provider",
+			"integrity": "sha256-yXePXpGPyuPnF4HY30zndmu3JfPI0WQbHxGbnVFcnog=",
+			"urls": [
+				"Packages/openssl-fips-provider-3.5.1-6.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc",
+				"openssl-libs"
+			]
+		},
+		{
+			"name": "openssl-libs",
+			"integrity": "sha256-/0XSe9sZzPrwO0QJ9DuLcwm3xJfhP5PHwug+lOqfuy0=",
+			"urls": [
+				"Packages/openssl-libs-3.5.1-6.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"ca-certificates",
+				"crypto-policies",
+				"glibc",
+				"openssl-fips-provider",
+				"zlib"
+			]
+		},
+		{
+			"name": "p11-kit",
+			"integrity": "sha256-cmHa5Qu9tVTTd0dP9+YzNaTOJLfH5MJgtiItV21eq0w=",
+			"urls": [
+				"Packages/p11-kit-0.25.10-1.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc",
+				"libffi",
+				"libtasn1"
+			]
+		},
+		{
+			"name": "p11-kit-trust",
+			"integrity": "sha256-R0ChU4bR5GHPGwl9LQ6WaR+Mq6zMs22nEU3SCTcExgE=",
+			"urls": [
+				"Packages/p11-kit-trust-0.25.10-1.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"alternatives",
+				"bash",
+				"glibc",
+				"libtasn1",
+				"p11-kit"
+			]
+		},
+		{
+			"name": "pam",
+			"integrity": "sha256-WYR3ynba3vscgNQyLCsHSqxU2ezz1xc1NkG5ORR9jKo=",
+			"urls": [
+				"Packages/pam-1.5.1-28.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"audit-libs",
+				"bash",
+				"glibc",
+				"libdb",
+				"libeconf",
+				"libpwquality",
+				"libselinux",
+				"libxcrypt",
+				"openssl",
+				"openssl-libs"
+			]
+		},
+		{
+			"name": "pcre",
+			"integrity": "sha256-3F1xeGpoz6FfSa7NEukN5690iaLQpNECvjip+vDJmug=",
+			"urls": [
+				"Packages/pcre-8.44-4.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "pcre2",
+			"integrity": "sha256-wT4yPDg71bvjQVcBqiGlaz/vwy2W4IHpHAEu9pLHhZk=",
+			"urls": [
+				"Packages/pcre2-10.40-6.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc",
+				"pcre2-syntax"
+			]
+		},
+		{
+			"name": "pcre2-syntax",
+			"integrity": "sha256-vjaoT24xGlkZBmTWGkZkcTkasB+3e9HSNI6adkFK3tQ=",
+			"urls": [
+				"Packages/pcre2-syntax-10.40-6.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": []
+		},
+		{
+			"name": "pkgconf",
+			"integrity": "sha256-lPF0yYKdRPNFu4pzQUfzebqV+0fQS+/bIKF+ixWLNxA=",
+			"urls": [
+				"Packages/pkgconf-1.7.3-10.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc",
+				"libpkgconf"
+			]
+		},
+		{
+			"name": "pkgconf-m4",
+			"integrity": "sha256-3klGRU8RCpsSq1DJw9+qaGM7SuPLTlJ4sj1JHrPtwno=",
+			"urls": [
+				"Packages/pkgconf-m4-1.7.3-10.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": []
+		},
+		{
+			"name": "pkgconf-pkg-config",
+			"integrity": "sha256-02/1NhxLMSc7Ff808P7FrlMW1lVScLPQUdl8hcEt76w=",
+			"urls": [
+				"Packages/pkgconf-pkg-config-1.7.3-10.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"bash",
+				"pkgconf",
+				"pkgconf-m4"
+			]
+		},
+		{
+			"name": "python3",
+			"integrity": "sha256-a8xJzLBDhgFbIeD5qX5OdP3cOyqusRpN6JBmK+qBFtA=",
+			"urls": [
+				"Packages/python3-3.9.25-3.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc",
+				"python3-libs"
+			]
+		},
+		{
+			"name": "python3-libs",
+			"integrity": "sha256-pzgsK/ehnfAlDKLyin4lopShm0LlSlpjxcSZuMbGxoU=",
+			"urls": [
+				"Packages/python3-libs-3.9.25-3.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"bash",
+				"bzip2-libs",
+				"expat",
+				"gdbm-libs",
+				"glibc",
+				"libffi",
+				"libuuid",
+				"libxcrypt",
+				"ncurses-libs",
+				"openssl-libs",
+				"python3-pip-wheel",
+				"python3-setuptools-wheel",
+				"readline",
+				"sqlite-libs",
+				"tzdata",
+				"xz-libs",
+				"zlib"
+			]
+		},
+		{
+			"name": "python3-pip-wheel",
+			"integrity": "sha256-HICW8d1XxdbbTRORyvsVMmQxkjuhOfMRkBV3OjB/gNk=",
+			"urls": [
+				"Packages/python3-pip-wheel-21.3.1-1.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"ca-certificates"
+			]
+		},
+		{
+			"name": "python3-setuptools-wheel",
+			"integrity": "sha256-TWHGZsOGK9GMrrrCKVwIhie0dhLzNnzWNvyuyaAhu6w=",
+			"urls": [
+				"Packages/python3-setuptools-wheel-53.0.0-15.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": []
+		},
+		{
+			"name": "readline",
+			"integrity": "sha256-Ls7Eeogv9DTMhptpGn4ejXY5vBr0S8shT/SSH2dXdqo=",
+			"urls": [
+				"Packages/readline-8.1-4.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc",
+				"ncurses-libs"
+			]
+		},
+		{
+			"name": "sed",
+			"integrity": "sha256-z97A8CavmEwRJ3rmE/Fq96huphcKrD2klaAnWZ/cjj0=",
+			"urls": [
+				"Packages/sed-4.8-9.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc",
+				"libacl",
+				"libselinux"
+			]
+		},
+		{
+			"name": "setup",
+			"integrity": "sha256-QqHFpBXETjtVVR9JWVwIfiulXw/Z7OgFa3kZg2AbdtI=",
+			"urls": [
+				"Packages/setup-2.13.7-10.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"centos-stream-release"
+			]
+		},
+		{
+			"name": "sqlite-libs",
+			"integrity": "sha256-EV++AcsAclfL0ne7g+Y+shHdJE8Q4VDl5xs+3KaBgcY=",
+			"urls": [
+				"Packages/sqlite-libs-3.34.1-9.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc",
+				"zlib"
+			]
+		},
+		{
+			"name": "sssd-client",
+			"integrity": "sha256-1iT+TO6slJQSDtEm85H2qIW33Vdrt0C0mAW1iYVm270=",
+			"urls": [
+				"Packages/sssd-client-2.9.7-5.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"alternatives",
+				"bash",
+				"glibc",
+				"krb5-libs",
+				"libcom_err",
+				"libsss_idmap",
+				"libsss_nss_idmap",
+				"pam"
+			]
+		},
+		{
+			"name": "tzdata",
+			"integrity": "sha256-p6cPToqhRzFTI1kAp2dTrvj0Okwh64aQEr9LBlzIuTI=",
+			"urls": [
+				"Packages/tzdata-2025c-1.el9.noarch.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": []
+		},
+		{
+			"name": "xz-libs",
+			"integrity": "sha256-mXhBY6MVFSOb5C5oYIR4uDN/0WjNsSvLox3p3XjjWiU=",
+			"urls": [
+				"Packages/xz-libs-5.2.5-8.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		},
+		{
+			"name": "zlib",
+			"integrity": "sha256-xQ4QfN01RgKUhS2ZyVQpbg6DPTeFKhvh4qrqLxtI+dI=",
+			"urls": [
+				"Packages/zlib-1.2.11-41.el9.aarch64.rpm"
+			],
+			"repository": "centos/stream9-baseos-aarch64",
+			"dependencies": [
+				"glibc"
+			]
+		}
+	],
+	"targets": [
+		"findutils",
+		"gcc",
+		"glibc-static",
+		"python3",
+		"sssd-client"
+	]
+}

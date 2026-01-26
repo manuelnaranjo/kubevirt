@@ -1,0 +1,137 @@
+bazeldnf = use_extension("@bazeldnf//bazeldnf:extensions.bzl", "bazeldnf")
+
+bazeldnf.config(
+    name = "bazeldnf-centos-x86_64",
+    lock_file = "//rpm/lock-files:centos-x86_64.json",
+    nobest = True,
+    repofile = "//rpm:repo.yaml",
+    rpms = ["acl", "curl-minimal", "vim-minimal", "coreutils-single", "glibc-minimal-langpack", "libcurl-minimal"],
+    rpm_repository_prefix = "bazeldnf-x86_64",
+    excludes = [],
+    architectures = ["x86_64"],
+)
+
+bazeldnf.config(
+    name = "bazeldnf-testimage-x86_64",
+    lock_file = "//rpm/lock-files:testimage-x86_64.json",
+    nobest = True,
+    repofile = "//rpm:repo.yaml",
+    rpms = ["device-mapper", "e2fsprogs", "iputils", "nmap-ncat", "procps-ng", "qemu-img", "sevctl", "tar", "targetcli", "util-linux", "which"],
+    rpm_repository_prefix = "bazeldnf-x86_64",
+    excludes = [],
+    architectures = ["x86_64"],
+)
+
+bazeldnf.config(
+    name = "bazeldnf-libvirt-x86_64",
+    lock_file = "//rpm/lock-files:libvirt-x86_64.json",
+    nobest = True,
+    repofile = "//rpm:repo.yaml",
+    rpms = ["libvirt-devel", "keyutils-libs", "krb5-libs", "libmount", "lz4-libs"],
+    rpm_repository_prefix = "bazeldnf-x86_64",
+    excludes = [],
+    architectures = ["x86_64"],
+)
+
+bazeldnf.config(
+    name = "bazeldnf-sandboxroot-x86_64",
+    lock_file = "//rpm/lock-files:sandboxroot-x86_64.json",
+    nobest = True,
+    repofile = "//rpm:repo.yaml",
+    rpms = ["findutils", "gcc", "glibc-static", "python3", "sssd-client"],
+    rpm_repository_prefix = "bazeldnf-x86_64",
+    excludes = [],
+    architectures = ["x86_64"],
+)
+
+bazeldnf.config(
+    name = "bazeldnf-launcherbase-x86_64",
+    lock_file = "//rpm/lock-files:launcherbase-x86_64.json",
+    nobest = True,
+    repofile = "//rpm:repo.yaml",
+    rpms = ["libvirt-client", "libvirt-daemon-driver-qemu", "passt", "qemu-kvm-core", "qemu-kvm-device-usb-host", "swtpm-tools", "findutils", "nftables", "nmap-ncat", "procps-ng", "selinux-policy", "selinux-policy-targeted", "tar", "virtiofsd", "xorriso"],
+    rpm_repository_prefix = "bazeldnf-x86_64",
+    excludes = [],
+    architectures = ["x86_64"],
+)
+
+bazeldnf.config(
+    name = "bazeldnf-handlerbase-x86_64",
+    lock_file = "//rpm/lock-files:handlerbase-x86_64.json",
+    nobest = True,
+    repofile = "//rpm:repo.yaml",
+    rpms = ["qemu-img", "findutils", "iproute", "nftables", "procps-ng", "selinux-policy", "selinux-policy-targeted", "tar", "util-linux", "xorriso"],
+    rpm_repository_prefix = "bazeldnf-x86_64",
+    excludes = [],
+    architectures = ["x86_64"],
+)
+
+bazeldnf.config(
+    name = "bazeldnf-libguestfstools-x86_64",
+    lock_file = "//rpm/lock-files:libguestfstools-x86_64.json",
+    nobest = True,
+    repofile = "//rpm:repo.yaml",
+    rpms = ["libguestfs", "guestfs-tools", "libvirt-daemon-driver-qemu", "qemu-kvm-core", "selinux-policy", "selinux-policy-targeted"],
+    rpm_repository_prefix = "bazeldnf-x86_64",
+    excludes = ["^(kernel-|linux-firmware)", "^(python[3]{0,1}-)", "^mozjs60", "^(libvirt-daemon-kvm|swtpm)", "^(man-db|mandoc)", "^dbus"],
+    architectures = ["x86_64"],
+)
+
+bazeldnf.config(
+    name = "bazeldnf-exportserverbase-x86_64",
+    lock_file = "//rpm/lock-files:exportserverbase-x86_64.json",
+    nobest = True,
+    repofile = "//rpm:repo.yaml",
+    rpms = ["tar"],
+    rpm_repository_prefix = "bazeldnf-x86_64",
+    excludes = [],
+    architectures = ["x86_64"],
+)
+
+bazeldnf.config(
+    name = "bazeldnf-pr-helper-x86_64",
+    lock_file = "//rpm/lock-files:pr-helper-x86_64.json",
+    nobest = True,
+    repofile = "//rpm:repo.yaml",
+    rpms = ["qemu-pr-helper"],
+    rpm_repository_prefix = "bazeldnf-x86_64",
+    excludes = [],
+    architectures = ["x86_64"],
+)
+
+bazeldnf.config(
+    name = "bazeldnf-sidecar-shim-x86_64",
+    lock_file = "//rpm/lock-files:sidecar-shim-x86_64.json",
+    nobest = True,
+    repofile = "//rpm:repo.yaml",
+    rpms = ["python3"],
+    rpm_repository_prefix = "bazeldnf-x86_64",
+    excludes = [],
+    architectures = ["x86_64"],
+)
+
+bazeldnf.config(
+    name = "bazeldnf-passt-x86_64",
+    lock_file = "//rpm/lock-files:passt-x86_64.json",
+    nobest = True,
+    repofile = "//rpm:repo.yaml",
+    rpms = ["passt"],
+    rpm_repository_prefix = "bazeldnf-x86_64",
+    excludes = [],
+    architectures = ["x86_64"],
+)
+
+use_repo(
+    bazeldnf,
+    "bazeldnf-centos-x86_64",
+    "bazeldnf-testimage-x86_64",
+    "bazeldnf-libvirt-x86_64",
+    "bazeldnf-sandboxroot-x86_64",
+    "bazeldnf-launcherbase-x86_64",
+    "bazeldnf-handlerbase-x86_64",
+    "bazeldnf-libguestfstools-x86_64",
+    "bazeldnf-exportserverbase-x86_64",
+    "bazeldnf-pr-helper-x86_64",
+    "bazeldnf-sidecar-shim-x86_64",
+    "bazeldnf-passt-x86_64",
+)

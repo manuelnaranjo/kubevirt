@@ -39,6 +39,9 @@ bazel_dep(name = "protobuf", version = "29.3")
 # Shell rules (for sh_binary)
 bazel_dep(name = "rules_shell", version = "0.4.1")
 
+# helper bazel library
+bazel_dep(name = "bazel_lib", version = "3.1.1")
+
 # ============================================================================
 # Go SDK and dependencies configuration
 # ============================================================================
@@ -226,5 +229,19 @@ register_toolchains(
     "//bazel/toolchain/x86_64-none-linux-gnu:x86_64_linux_toolchain",
 )
 
-# RPM support
+# ============================================================================
+# RPM / bazeldnf configuration
+# ============================================================================
+
 bazel_dep(name = "bazeldnf", version = "v0.99.2-rc0")
+archive_override(
+    module_name = "bazeldnf",
+    strip_prefix = "bazeldnf-v0.99.1-rc0",
+    urls = [
+        "https://github.com/bookingcom/bazeldnf/releases/download/v0.99.1-rc0/bazeldnf-v0.99.1-rc0.tar.gz",
+    ],
+)
+
+include("//rpm:x86_64.MODULE.bazel")
+include("//rpm:aarch64.MODULE.bazel")
+include("//rpm:s390x.MODULE.bazel")
