@@ -5,6 +5,7 @@ ARG SONOBUOY_ARCH
 ARG BAZEL_ARCH
 
 ENV BAZEL_VERSION=6.5.0
+ENV BAZELISK_VERSION=1.29.0
 ENV GIMME_GO_VERSION=1.24.9
 ENV OPERATOR_COURIER_VERSION=2.1.11
 ENV SONOBUOY_VERSION=0.56.9
@@ -129,9 +130,11 @@ COPY entrypoint.sh /entrypoint.sh
 
 COPY create_bazel_cache_rcs.sh /create_bazel_cache_rcs.sh
 
+# install and warm-up bazelisk
 RUN if test "${ARCH}" != "s390x"; then \
-       curl -L -o /usr/bin/bazel https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-linux-${BAZEL_ARCH} && \
+       curl -L -o /usr/bin/bazel https://github.com/bazelbuild/bazelisk/releases/download/v${BAZELISK_VERSION}/bazelisk-linux-${BAZEL_ARCH} && \
        chmod u+x /usr/bin/bazel; \
+       USE_BAZEL_VERSION=${BAZEL_VERSION} bazel help; \
     fi
 
 # Add /root/go/src/kubevirt.io/kubevirt and mark it as a safe directory for git

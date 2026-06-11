@@ -28,7 +28,7 @@ for ARCH in ${ARCHITECTURES}; do
     case ${ARCH} in
     amd64)
         sonobuoy_arch="amd64"
-        bazel_arch="x86_64"
+        bazel_arch="amd64"
         ;;
     *)
         sonobuoy_arch=${ARCH}
